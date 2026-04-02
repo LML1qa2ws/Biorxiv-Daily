@@ -1,0 +1,56 @@
+# OpenClaw Skill 配置文件
+# OpenClaw Skill Configuration for BioRxiv Daily Report
+
+name: biorxiv-daily-report
+version: "1.0.0"
+description: |
+  每日自动抓取 BioRxiv / MedRxiv 最新预印本文献，
+  按关键词过滤并生成结构化中英文简报，支持多渠道推送。
+
+  Automatically fetches the latest BioRxiv/MedRxiv preprints daily,
+  filters by keywords, generates a structured bilingual summary,
+  and pushes to configured channels.
+
+author: LML1qa2ws
+license: MIT
+
+# 触发方式 / Trigger
+trigger:
+  # 定时任务：北京时间 08:30 (UTC 00:30) / Cron: Beijing 08:30 (UTC 00:30)
+  cron: "30 0 * * *"
+  # 也支持手动触发 / Also supports manual trigger
+  manual: true
+
+# 技能动作 / Skill actions
+actions:
+  - name: fetch_and_push
+    description: Fetch BioRxiv papers and push daily report
+    command: python scripts/fetch_biorxiv.py --config config.yaml
+    working_dir: "."
+    env:
+      - OPENCLAW_API_URL
+      - OPENCLAW_API_KEY
+
+# 推送渠道配置模板 / Push channel configuration template
+# 在 OpenClaw 控制台或环境变量中配置实际值
+# Configure actual values in OpenClaw console or environment variables
+channels:
+  telegram:
+    enabled: false
+    # token: $TELEGRAM_BOT_TOKEN
+    # chat_id: $TELEGRAM_CHAT_ID
+  slack:
+    enabled: false
+    # webhook_url: $SLACK_WEBHOOK_URL
+  email:
+    enabled: false
+    # smtp_server: $SMTP_SERVER
+    # smtp_port: 465
+    # username: $EMAIL_USER
+    # password: $EMAIL_PASSWORD
+    # recipients: $EMAIL_RECIPIENTS
+
+# 输出格式 / Output format
+output:
+  format: markdown
+  language: bilingual  # zh, en, or bilingual

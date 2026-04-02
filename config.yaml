@@ -1,0 +1,42 @@
+# BioRxiv 每日推送配置文件
+# Daily Push Configuration for BioRxiv + OpenClaw Integration
+
+# 搜索关键词 / Search queries
+search_queries:
+  - "machine learning AND genomics"
+  - "single-cell sequencing"
+  - "CRISPR"
+  - "protein structure"
+  - "RNA splicing"
+
+# 推送来源 / Data sources
+sources:
+  - biorxiv
+  - medrxiv
+
+# 每次抓取的最大文章数 / Max articles per query
+max_results_per_query: 10
+
+# 摘要最大显示字符数 / Max abstract length in characters
+max_abstract_length: 300
+
+# 推送时间 (UTC) / Schedule time (UTC)
+# 对应北京时间 08:30 / Corresponds to Beijing time 08:30
+schedule: "30 0 * * *"
+
+# 输出配置 / Output configuration
+output:
+  # 保存日报 Markdown 文件 / Save daily report as Markdown
+  save_markdown: true
+  reports_dir: "reports"
+  # 更新 README / Update README
+  update_readme: false
+
+# OpenClaw 推送配置 / OpenClaw push configuration
+openclaw:
+  # 是否启用 OpenClaw 推送 / Enable OpenClaw push
+  enabled: true
+  # 推送渠道，可选：telegram, slack, email / Push channels
+  channels: []
+  # OpenClaw skill 名称 / OpenClaw skill name
+  skill: "literature-daily-report"

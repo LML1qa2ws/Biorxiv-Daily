@@ -1,0 +1,59 @@
+name: BioRxiv 每日推送 / Daily Push
+
+on:
+  # 定时触发：UTC 00:30（对应北京时间 08:30）
+  # Scheduled: UTC 00:30 (Beijing time 08:30)
+  schedule:
+    - cron: '30 0 * * *'
+  # 支持手动触发 / Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '报告日期 YYYY-MM-DD (留空表示今日) / Report date (leave empty for today)'
+        required: false
+        default: ''
+
+jobs:
+  daily-push:
+    name: 抓取并推送文献 / Fetch and Push Papers
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout 仓库 / Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 设置 Python / Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 安装依赖 / Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 抓取并生成日报 / Fetch papers and generate report
+        env:
+          OPENCLAW_API_URL: ${{ secrets.OPENCLAW_API_URL }}
+          OPENCLAW_API_KEY: ${{ secrets.OPENCLAW_API_KEY }}
+        run: |
+          DATE_ARG=""
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            DATE_ARG="--date ${{ github.event.inputs.date }}"
+          fi
+          python scripts/fetch_biorxiv.py --config config.yaml $DATE_ARG
+
+      - name: 提交日报到仓库 / Commit report to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          # 只在有新文件时提交 / Only commit if there are new files
+          if git diff --cached --quiet; then
+            echo "没有新文献报告，跳过提交。/ No new reports to commit."
+          else
+            git commit -m "📄 每日文献日报 $(date -u +'%Y-%m-%d') / Daily literature report"
+            git push
+          fi
