@@ -9,11 +9,11 @@
       --primary:    #BE185D;
       --accent:     #EC4899;
       --accent2:    #F472B6;
-      --bg:         #FFF1F7;
+      --bg:         #F5F7FA;
       --card:       #FFFFFF;
-      --text:       #4A1942;
-      --muted:      #9D174D;
-      --border:     #F9A8D4;
+      --text:       #2D3748;
+      --muted:      #718096;
+      --border:     #E2E8F0;
       --tag-bg:     #FDF2F8;
       --tag-color:  #BE185D;
       --highlights: #FCE7F3;
@@ -22,8 +22,8 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-      background: #FFF1F7;
-      color: #4A1942;
+      background: #F5F7FA;
+      color: #2D3748;
       font-size: 15px;
       line-height: 1.8;
     }
@@ -39,58 +39,66 @@
       content: "";
       position: absolute; top: -30px; right: -30px;
       width: 180px; height: 180px; border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.08);
     }
     .brand-banner::after {
       content: "";
       position: absolute; bottom: -40px; left: -20px;
       width: 140px; height: 140px; border-radius: 50%;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
     }
     .brand-name { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 2px; position: relative; z-index: 1; }
-    .brand-sub { font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 4px; letter-spacing: 1px; position: relative; z-index: 1; }
+    .brand-sub { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; letter-spacing: 1px; position: relative; z-index: 1; }
     .brand-tag { display: inline-block; margin-top: 10px; padding: 3px 12px; border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; font-size: 11px; color: rgba(255,255,255,0.8); position: relative; z-index: 1; }
-    .issue-bar { background: #FCE7F3; border-bottom: 1px solid #F9A8D4; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #9D174D; }
+    .issue-bar { background: #F7F9FC; border-bottom: 1px solid #E2E8F0; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #718096; }
     .issue-bar .issue-no { font-weight: 700; color: #BE185D; }
     .date-section { padding: 20px 24px 10px; border-bottom: 2px solid #BE185D; }
     .date-section h2 { font-size: 18px; font-weight: 700; color: #BE185D; }
-    .date-section .date-line { font-size: 12px; color: #9D174D; margin-top: 4px; }
-    .toc { margin: 0 24px; padding: 14px 18px; background: #FDF2F8; border-left: 4px solid #BE185D; border-radius: 0 10px 10px 0; margin-top: 16px; }
-    .toc-title { font-size: 12px; font-weight: 700; color: #BE185D; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-    .toc ol { padding-left: 18px; }
-    .toc li { font-size: 13px; color: #4A1942; line-height: 2; }
-    .toc li a { color: #BE185D; text-decoration: none; }
-    .toc li a:hover { text-decoration: underline; }
-    .section-divider { height: 1px; background: #F9A8D4; margin: 24px 24px 0; }
-    .paper-card { margin: 20px 24px; border: 1px solid #F9A8D4; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
-    .card-header { background: linear-gradient(90deg, #BE185D, #EC4899); padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
-    .card-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .card-journal-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 12px; white-space: nowrap; }
-    .card-if-badge { background: #F472B6; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap; }
-    .card-body { padding: 18px 18px 14px; }
-    .paper-title-en { font-size: 15px; font-weight: 700; color: #4A1942; line-height: 1.6; margin-bottom: 8px; }
-    .paper-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-    .meta-item { font-size: 12px; color: #9D174D; display: flex; align-items: center; gap: 3px; }
-    .section-block { margin-bottom: 12px; }
-    .section-label { display: inline-block; font-size: 11px; font-weight: 700; color: #BE185D; background: #FDF2F8; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; letter-spacing: 0.5px; }
-    .section-text { font-size: 13.5px; color: #4A1942; line-height: 1.9; }
+    .date-section .date-line { font-size: 12px; color: #718096; margin-top: 4px; }
+    .stats-bar { display: flex; border-bottom: 1px solid #E2E8F0; }
+    .stat-item { flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid #E2E8F0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 22px; font-weight: 700; color: #BE185D; }
+    .stat-label { font-size: 11px; color: #718096; margin-top: 2px; }
+    .toc-section { padding: 16px 24px; background: #F7FDF9; border-bottom: 1px solid #E2E8F0; }
+    .toc-title { font-size: 13px; font-weight: 700; color: #BE185D; margin-bottom: 8px; letter-spacing: 1px; }
+    .toc-cat { margin-bottom: 6px; }
+    .toc-cat-label { font-size: 12px; font-weight: 600; color: #2D3748; display: inline-block; margin-right: 8px; }
+    .toc-items { display: inline; font-size: 12px; color: #718096; }
+    .cat-header { padding: 14px 24px 6px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #E2E8F0; margin-top: 8px; }
+    .cat-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; background: #FDF2F8; }
+    .cat-name { font-size: 15px; font-weight: 700; color: #BE185D; }
+    .cat-count { font-size: 12px; color: #718096; margin-left: auto; }
+    .section-divider { height: 1px; background: #E2E8F0; margin: 0 24px; }
+    .paper-card { margin: 12px 16px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .card-header { padding: 14px 16px 10px; border-bottom: 1px solid #F0F4F8; display: flex; align-items: flex-start; gap: 10px; }
+    .card-num { flex-shrink: 0; width: 24px; height: 24px; border-radius: 6px; background: #BE185D; color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .card-journal-badge { background: #EC4899; color: #fff; font-size: 10px; padding: 1px 7px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+    .importance-label { font-size: 10px; padding: 1px 7px; border-radius: 10px; font-weight: 600; white-space: nowrap; }
+    .cns-top { background: #BE185D; color: #fff; }
+    .cns-major { background: #EC4899; color: #fff; }
+    .cns-sub { background: #FDF2F8; color: #BE185D; }
+    .card-body { padding: 12px 16px; }
+    .paper-title-en { font-size: 14px; font-weight: 700; color: #1A2733; line-height: 1.5; margin-bottom: 4px; }
+    .paper-meta { font-size: 11px; color: #718096; }
+    .meta-item { margin-right: 8px; }
+    .section-block { margin-top: 10px; }
+    .section-label { font-size: 11px; font-weight: 700; color: #BE185D; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .section-text { font-size: 13px; color: #4A5568; line-height: 1.7; }
     .section-text em { color: #EC4899; font-style: normal; font-weight: 600; }
-    .card-footer { border-top: 1px solid #F9A8D4; padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; background: #FFF1F7; }
-    .footer-authors { font-size: 12px; color: #9D174D; flex: 1; }
-    .doi-link { font-size: 12px; color: #BE185D; text-decoration: none; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+    .tags { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 4px; }
+    .tag { background: #FDF2F8; color: #BE185D; font-size: 10px; padding: 1px 7px; border-radius: 10px; font-weight: 600; }
+    .card-footer { border-top: 1px solid #E2E8F0; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; background: #F5F7FA; }
+    .footer-authors { font-size: 12px; color: #718096; flex: 1; }
+    .doi-link { font-size: 12px; color: #BE185D; text-decoration: none; font-weight: 600; }
     .doi-link:hover { text-decoration: underline; }
-    .importance-label { font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 700; white-space: nowrap; }
-    .imp-high { background: rgba(255,255,255,0.25); color: #fff; }
-    .imp-medium { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
-    .imp-normal { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
-    .journal-stats { margin: 16px 24px 20px; display: flex; flex-wrap: wrap; gap: 6px; }
-    .journal-stats .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
-    .tag-blue { background: #FDF2F8; color: #BE185D; }
+    .journal-stats { margin: 12px 24px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .journal-badge { background: #FDF2F8; color: #BE185D; font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
     .footer { background: linear-gradient(135deg, #BE185D 0%, #EC4899 100%); padding: 24px; text-align: center; }
     .footer-logo { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
     .footer-desc { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.8; }
     .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.4); }
-    @media (max-width: 480px) { .brand-name { font-size: 18px; } .paper-card { margin: 16px 12px; } .toc { margin: 16px 12px 0; } .section-divider { margin: 20px 12px 0; } }
+    @media (max-width: 480px) { .brand-name { font-size: 18px; } .paper-card { margin: 12px; } .stats-bar { flex-wrap: wrap; } }
   </style>
 </head>
 <body>
@@ -108,34 +116,64 @@
     <h2>CNS科研动态日报 · 2026-04-02</h2>
     <div class="date-line">数据来源：PubMed | CNS及大子刊 | 每日更新</div>
   </div>
-  <div class="toc">
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">20</div>
+      <div class="stat-label">论文总数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">11</div>
+      <div class="stat-label">覆盖期刊</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">最多篇期刊</div>
+    </div>
+  </div>
+  <div class="toc-section">
     <div class="toc-title">📋 本期目录</div>
     <ol>
-      <li><a href="#paper1">Hope, hard lessons and the path to better nutrition....</a></li>      <li><a href="#paper2">Systematic analysis of snRNA genes reveals frequent RNU2-2 v...</a></li>      <li><a href="#paper3">Characterization of functional human-specific regulatory ele...</a></li>      <li><a href="#paper4">The archaeal roots of eukaryotic life....</a></li>      <li><a href="#paper5">Perinatal infection elicits clonally restricted T follicular...</a></li>      <li><a href="#paper6">Pancreatic-targeted lipid nanoparticles based on organ capsu...</a></li>      <li><a href="#paper7">Assessing uncertainty of sequence representations generated ...</a></li>      <li><a href="#paper8">Chikungunya virus persists in joint-associated macrophages a...</a></li>
+<li><a href="#paper1">The m5C orchestrator NSUN7 drives SPARC/HMGB1 axis-mediated infla...</a></li>
+<li><a href="#paper2">An atlas to navigate environmental factors and health....</a></li>
+<li><a href="#paper3">Next-gen micropillars for investigating oligodendrocyte myelinati...</a></li>
+<li><a href="#paper4">Pre-assembly of biomolecular condensate seeds drives RSV replicat...</a></li>
+<li><a href="#paper5">Selenoprotein P deficiency drives hepatocellular carcinoma progre...</a></li>
+<li><a href="#paper6">Conserved pathway for homarine catabolism in environmental bacter...</a></li>
+<li><a href="#paper7">Mosaic gastruloids reveal a temporal restriction for developmenta...</a></li>
+<li><a href="#paper8">Changing practice and policy for patients with early pregnancy lo...</a></li>
+<li><a href="#paper9">Targeting systemic and tumor metabolic balances with ketogenic di...</a></li>
+<li><a href="#paper10">Retraction Note: MAVS is a sensor of fumarate during antiviral im...</a></li>
     </ol>
   </div>
   <div class="journal-stats">
     <span style="font-size:11px;font-weight:700;color:#BE185D;margin-right:8px">期刊分布：</span>
-    <span class="tag tag-blue">Cell Rep.: 3篇</span> <span class="tag tag-blue">N. Engl. J. Med.: 3篇</span> <span class="tag tag-blue">Nat. Med.: 2篇</span> <span class="tag tag-blue">Nat. Microbiol.: 2篇</span> <span class="tag tag-blue">Nat. Biotechnol.: 2篇</span> <span class="tag tag-blue">Nat. Immunol.: 2篇</span> <span class="tag tag-blue">Nat. Genet.: 1篇</span> <span class="tag tag-blue">Proc. Natl. Acad. Sci. U.S.A.: 1篇</span> <span class="tag tag-blue">Immunity: 1篇</span> <span class="tag tag-blue">Nature: 1篇</span> <span class="tag tag-blue">Nat. Methods: 1篇</span> <span class="tag tag-blue">Dev. Cell: 1篇</span> 
+    <span class="journal-badge">Proc. Natl. Acad. Sci. U.S.A. 3篇</span><span class="journal-badge">Nat. Med. 3篇</span><span class="journal-badge">Cell Rep. 3篇</span><span class="journal-badge">Nat. Microbiol. 2篇</span><span class="journal-badge">Sci. Transl. Med. 2篇</span><span class="journal-badge">Nat. Neurosci. 2篇</span><span class="journal-badge">Nat. Methods 1篇</span><span class="journal-badge">Nature 1篇</span><span class="journal-badge">Gut 1篇</span><span class="journal-badge">Nat. Cell Biol. 1篇</span><span class="journal-badge">J. Exp. Med. 1篇</span>
   </div>
   <div class="section-divider"></div>
 
   <div class="paper-card" id="paper1">
     <div class="card-header">
       <div class="card-num">1</div>
-      <div class="card-journal-badge">Nat. Med.</div>
-      <span class="importance-label imp-high">Nat Med</span>
+      <div class="card-journal-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
+      <span class="importance-label cns-sub">Proc Natl Acad Sci U S A</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Hope, hard lessons and the path to better nutrition.</div>
+      <div class="paper-title-en">The m5C orchestrator NSUN7 drives SPARC/HMGB1 axis-mediated inflammation to exacerbate kidney injury.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Menon P</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Dong YH, Xie SS, Sun S, Ren Y, Yang Q et al.</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 31</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text">Growing evidence indicates that kidney inflammation is a major contributor to the pathogenesis of various renal diseases, including acute kidney injury (AKI). Although RNA modifications have been implicated in regulating kidney inflammation, their precise roles rem<em>\1</em>n largely unknown. Here, we show that kidney inflammation and injury were associated with elevated RNA 5-methylcytosine (m5C) modific...</div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Menon P</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41917158/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Dong YH, Xie SS, Sun S, Ren Y, Yang Q et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41871257/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -143,23 +181,26 @@
   <div class="paper-card" id="paper2">
     <div class="card-header">
       <div class="card-num">2</div>
-      <div class="card-journal-badge">Nat. Genet.</div>
-      <span class="importance-label imp-medium">Nat Genet</span>
+      <div class="card-journal-badge">Nat. Med.</div>
+      <span class="importance-label cns-top">Nat Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Systematic analysis of snRNA genes reveals frequent RNU2-2 variants in dominant and recessive developmental and epileptic encephalopathies.</div>
+      <div class="paper-title-en">An atlas to navigate environmental factors and health.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Leitão E, Santini A, Cogne B, Essid M, Athanasiadou M et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 N/A</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 30</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Small nuclear RNAs (snRNAs) are essential components of the spliceosome. De novo variants in snRNA genes RNU4-2 (ReNU syndrome), RNU5B-1 and RNU2-2 have been linked to dominant neurodevelopmental disorders (NDDs), revealing a large unexpected contribution of noncoding RNA genes to genetic diseases. Here, through international collaborations, we analyze systematically 200 potentially functional snR...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Leitão E, Santini A, Cogne B, Essid M, Athanasiadou M et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912934/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">N/A</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912811/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -167,23 +208,26 @@
   <div class="paper-card" id="paper3">
     <div class="card-header">
       <div class="card-num">3</div>
-      <div class="card-journal-badge">Cell Rep.</div>
-      <span class="importance-label imp-normal">Cell Rep</span>
+      <div class="card-journal-badge">Nat. Methods</div>
+      <span class="importance-label cns-major">Nat Methods</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Characterization of functional human-specific regulatory elements in prefrontal cortical cells.</div>
+      <div class="paper-title-en">Next-gen micropillars for investigating oligodendrocyte myelination.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Jin B, Zhu L, Chang H, Wei Y, Tang Y et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Mei F, Chan JR</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 30</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Understanding how human-specific cis-regulatory elements (CREs) drive gene expression in the adult br<em>ai</em>n rem<em>ai</em>ns elusive. Here, we profile the prefrontal cortex (PFC) of adult human, macaque, and mouse using single-nucleus transcriptomic (106,266 cells) and genome-wide chromatin accessibility (212,099 cells) assays, showing human-specific gene expression and chromatin accessibility. We find that h...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Jin B, Zhu L, Chang H, Wei Y, Tang Y et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41920741/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Mei F, Chan JR</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912800/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -191,23 +235,26 @@
   <div class="paper-card" id="paper4">
     <div class="card-header">
       <div class="card-num">4</div>
-      <div class="card-journal-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
-      <span class="importance-label imp-normal">Proc Natl Acad Sci U S A</span>
+      <div class="card-journal-badge">Nature</div>
+      <span class="importance-label cns-top">Nature</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">The archaeal roots of eukaryotic life.</div>
+      <div class="paper-title-en">Pre-assembly of biomolecular condensate seeds drives RSV replication.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> De Anda V, Appler KE, Aguilar-Pine E, Aitolo GL, Halverson GP et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Ratnayake D, Galloux M, Boersma S, Noerenberg M, Sizun C et ...</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Resolving the biological and geological events that led to the origin of eukaryotes is an ongoing challenge in biology. A major step in the evolution of complex cellular life was the merger between an ancestral host cell and a bacterium (that became the mitochondrion) some two billion years ago. Recently, metagen<em>omics</em> has enabled the reconstruction of a broad diversity of genomes, referred to as t...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">During infection, many RNA viruses, including respiratory syncytial virus (RSV), form specialized biomolecular condensates, viral factories (VFs), where viral transcription and replication occur</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">De Anda V, Appler KE, Aguilar-Pine E, Aitolo GL, Halverson G...</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41824493/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Ratnayake D, Galloux M, Boersma S, Noerenberg M, Sizun C et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41606345/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -215,23 +262,26 @@
   <div class="paper-card" id="paper5">
     <div class="card-header">
       <div class="card-num">5</div>
-      <div class="card-journal-badge">Immunity</div>
-      <span class="importance-label imp-medium">Immunity</span>
+      <div class="card-journal-badge">Gut</div>
+      <span class="importance-label cns-major">Gut</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Perinatal infection elicits clonally restricted T follicular helper cell responses that drive antibody-mediated viral control.</div>
+      <div class="paper-title-en">Selenoprotein P deficiency drives hepatocellular carcinoma progression via induction of neutrophil senescence and immunosuppressive microenvironment.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Martin K, Reuther P, Geier F, Marx AF, Abreu-Mota T et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 Jiao J, Song L, Xu S, Xue Y, Liao Y et al.</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr 1</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Perinatal infection often results in viral persistence, as observed for hepatitis B virus in humans. Commonly held concepts suggest that persistence is associated with immunotolerance, but this f<em>ai</em>ls to predict the emergence of antiviral antibodies and eventual viral load control. Studying perinatal lymphocytic choriomeningitis virus (LCMV) infection, the prototypic mouse model of neonatal antivir...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">The hepatocellular carcinoma (HCC) immune microenvironment is heavily influenced by immunosuppressive neutrophils, yet the mechanisms driving their senescence-associated reprogramming rem<em>\1</em>n elusive. | To elucidate the role of Selenoprotein P (Sepp1)-mediated selenium metabolism in driving the accumulation and immunosuppressive function of senescent-like neutrophils in HCC, and its impact on tumou...</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Martin K, Reuther P, Geier F, Marx AF, Abreu-Mota T et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41916319/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Jiao J, Song L, Xu S, Xue Y, Liao Y et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922101/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -239,23 +289,26 @@
   <div class="paper-card" id="paper6">
     <div class="card-header">
       <div class="card-num">6</div>
-      <div class="card-journal-badge">Nature</div>
-      <span class="importance-label imp-high">Nature</span>
+      <div class="card-journal-badge">Nat. Microbiol.</div>
+      <span class="importance-label cns-major">Nat Microbiol</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Pancreatic-targeted lipid nanoparticles based on organ capsule filtration.</div>
+      <div class="paper-title-en">Conserved pathway for homarine catabolism in environmental bacteria.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Lei J, Yang K, Cao W, Qi S, Du X et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Apr</span>
+        <span class="meta-item">👤 Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Fi...</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 30</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Achieving pancreatic-targeted delivery marks a breakthrough in treating pancreatic diseases, yet precise delivery rem<em>ai</em>ns challenging</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">Homarine (N-methylpicolinic acid) is a ubiquitous marine metabolite produced by phytoplankton and noted for its infochemical properties among marine animals, yet its microbial degradation pathways are uncharacterized. Here we identify a conserved operon (homABCDER) that mediates homarine catabolism in bacteria using comparative transcriptomics, muta<em>\1</em>sis and targeted knockouts. Phylo<em>\1</em>tic and ...</div>
       </div>
+      <div class="tags"><span class="tag">omics</span></div>
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Lei J, Yang K, Cao W, Qi S, Du X et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41741655/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Finch AH et ...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912647/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -263,19 +316,26 @@
   <div class="paper-card" id="paper7">
     <div class="card-header">
       <div class="card-num">7</div>
-      <div class="card-journal-badge">Nat. Methods</div>
-      <span class="importance-label imp-normal">Nat Methods</span>
+      <div class="card-journal-badge">Nat. Cell Biol.</div>
+      <span class="importance-label cns-sub">Nat Cell Biol</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Assessing uncertainty of sequence representations generated by protein language models.</div>
+      <div class="paper-title-en">Mosaic gastruloids reveal a temporal restriction for developmental cell competition.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> N/A</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Apr 1</span>
+        <span class="meta-item">👤 Frenster JD, Babin S, Casani-Galdon P, Josende-Garcia JB, Pa...</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr 1</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text">Selective elimination of suboptimal cells is critical for the developmental integrity of early mammalian embryogenesis. Cell competition is a non-autonomous quality control in which 'winner' cells outcompete viable but suboptimal 'loser' cells based on fitness differences. Here we investigate cell competition dynamics using mos<em>\1</em>c mouse gastruloids, a 3D embryonic stem cell-based model of gastrula...</div>
+      </div>
+      <div class="tags"><span class="tag">AI</span></div>
     </div>
     <div class="card-footer">
-      <div class="footer-authors">N/A</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922572/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Frenster JD, Babin S, Casani-Galdon P, Josende-Garcia JB, Pascual-Mas ...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922518/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -283,23 +343,26 @@
   <div class="paper-card" id="paper8">
     <div class="card-header">
       <div class="card-num">8</div>
-      <div class="card-journal-badge">Nat. Microbiol.</div>
-      <span class="importance-label imp-medium">Nat Microbiol</span>
+      <div class="card-journal-badge">Sci. Transl. Med.</div>
+      <span class="importance-label cns-major">Sci Transl Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Chikungunya virus persists in joint-associated macrophages and promotes chronic disease in mice.</div>
+      <div class="paper-title-en">Changing practice and policy for patients with early pregnancy loss.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Zarrella KM, Sheridan RM, Ware BC, Davenport BJ, da Silva MOL et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Apr 1</span>
+        <span class="meta-item">👤 Schreiber CA</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Arthritogenic alphaviruses, including chikungunya virus (CHIKV), Mayaro virus and Ross River virus, cause long-lasting musculoskeletal p<em>ai</em>n and inflammation. However, the mechanisms driving chronic disease rem<em>ai</em>n unclear. Here, we used single-cell RNA sequencing, spatial transcriptomics and flow cytometry to investigate joint-associated tissues in alphavirus-infected mice at a late stage of infect...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">Translational science helps to address the unmet need in early pregnancy loss care.</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Zarrella KM, Sheridan RM, Ware BC, Davenport BJ, da Silva MO...</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922840/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Schreiber CA</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41920964/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -307,23 +370,26 @@
   <div class="paper-card" id="paper9">
     <div class="card-header">
       <div class="card-num">9</div>
-      <div class="card-journal-badge">Nat. Biotechnol.</div>
-      <span class="importance-label imp-high">Nat Biotechnol</span>
+      <div class="card-journal-badge">Cell Rep.</div>
+      <span class="importance-label cns-sub">Cell Rep</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Mirror-enhanced 4Pi-SMLM with one objective enables isotropic nanoscale imaging.</div>
+      <div class="paper-title-en">Targeting systemic and tumor metabolic balances with ketogenic diets enhance efficacy of therapy in FLT3-ITD acute myeloid leukemia.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Yu Z, Zheng B, Zhan Y, Li S, Wang X et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Goupille L, Boudet A, Lauture L, Sahal A, Gautier-Renard G e...</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 28</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Dual-objective 4Pi single-molecule localization microscopy (4Pi-SMLM) offers isotropic nanoscale resolution; however, its broader adoption is limited by instrumental complexity and stringent alignment requirements. Here we introduce mirror-enhanced 4Pi-SMLM (me4Pi-SMLM), a single-objective configuration that uses mirror-based retroreflection of the illumination beam to generate phase-tunable inter...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">FMS-like tyrosine kinase 3 (FLT3) mutations in acute myeloid leukemia (AML) are associated with adverse prognosis. FLT3 inhibitors (FLT3i) improve therapeutic response; however, diverse resistance mechanisms, such as adaptations in lipid metabolism, have been identified. We hypothesized that a lipid-rich ketogenic diet (KD) might alter both host and <em>\1</em>al lipid metabolism, enhancing responses to...</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Yu Z, Zheng B, Zhan Y, Li S, Wang X et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41917463/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Goupille L, Boudet A, Lauture L, Sahal A, Gautier-Renard G et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41904949/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -331,19 +397,26 @@
   <div class="paper-card" id="paper10">
     <div class="card-header">
       <div class="card-num">10</div>
-      <div class="card-journal-badge">N. Engl. J. Med.</div>
-      <span class="importance-label imp-high">N Engl J Med</span>
+      <div class="card-journal-badge">Nat. Microbiol.</div>
+      <span class="importance-label cns-major">Nat Microbiol</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Sirolimus-Eluting Technology for the Treatment of Peripheral Artery Disease.</div>
+      <div class="paper-title-en">Retraction Note: MAVS is a sensor of fumarate during antiviral immunity.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Armstrong EJ</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 Min Y, O'Neill LAJ</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr 1</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Armstrong EJ</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41911009/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Min Y, O'Neill LAJ</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922841/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -351,23 +424,26 @@
   <div class="paper-card" id="paper11">
     <div class="card-header">
       <div class="card-num">11</div>
-      <div class="card-journal-badge">Nat. Med.</div>
-      <span class="importance-label imp-high">Nat Med</span>
+      <div class="card-journal-badge">Nat. Neurosci.</div>
+      <span class="importance-label cns-major">Nat Neurosci</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">A deep joint-learning proteomics model for diagnosis of six conditions associated with dementia.</div>
+      <div class="paper-title-en">Neuroimmune interferon signals sustain arthritis pain.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> An L, Pichet Binette A, Hristovska I, Vilkaite G, Xiao Y et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Staurengo-Ferrari L, Wong C, Chiu IM</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 30</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Co-pathology is a common feature of neurodegenerative diseases that complicates diagnosis, treatment and clinical management. However, sensitive, specific and scalable biomarkers for in vivo pathological diagnosis are not av<em>ai</em>lable for most neurodegenerative neuropathologies. Here we present Proteomics-based Artificial Intelligence for Dementia Diagnosis (Prot<em>AI</em>De-Dx), a deep joint-learning model ...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
       </div>
+      <div class="tags"><span class="tag">AI</span></div>
     </div>
     <div class="card-footer">
-      <div class="footer-authors">An L, Pichet Binette A, Hristovska I, Vilkaite G, Xiao Y et ...</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41917159/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Staurengo-Ferrari L, Wong C, Chiu IM</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912663/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -375,23 +451,26 @@
   <div class="paper-card" id="paper12">
     <div class="card-header">
       <div class="card-num">12</div>
-      <div class="card-journal-badge">Nat. Biotechnol.</div>
-      <span class="importance-label imp-high">Nat Biotechnol</span>
+      <div class="card-journal-badge">Nat. Neurosci.</div>
+      <span class="importance-label cns-major">Nat Neurosci</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Scalable single-cell total RNA sequencing unifies coding and noncoding transcriptomics.</div>
+      <div class="paper-title-en">Entorhinal cortex represents task-relevant remote locations independently of CA1.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Isakova A, Liu DD, Cvijović I, Sinha R, Eastman AE et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 31</span>
+        <span class="meta-item">👤 Aery Jones EA, Low IIC, Cho FS, Giocomo LM</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr 1</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Current <em>single-cell</em> RNA atlases largely capture polyadenylated transcripts while missing critical regulatory layers from noncoding RNA. To address this, we develop a generalizable framework that adapts total RNA profiling for use in standard droplet-based platforms and captures a broad complement of coding and noncoding RNAs using a unified pipeline. Applying this approach to the developing human ...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">Neurons can collectively represent the current sensory experience during exploration or remote experiences during immobility. Remote representations can reflect learned associations and support learning. Neurons in medial entorhinal cortex (MEC) represent the animal's current location during movement, but little is known about MEC representations during immobility. We recorded hundreds of neurons ...</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Isakova A, Liu DD, Cvijović I, Sinha R, Eastman AE et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41917462/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Aery Jones EA, Low IIC, Cho FS, Giocomo LM</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922514/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -399,23 +478,26 @@
   <div class="paper-card" id="paper13">
     <div class="card-header">
       <div class="card-num">13</div>
-      <div class="card-journal-badge">Nat. Immunol.</div>
-      <span class="importance-label imp-medium">Nat Immunol</span>
+      <div class="card-journal-badge">Cell Rep.</div>
+      <span class="importance-label cns-sub">Cell Rep</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Tissue-specific clonal selection and differentiation of CD4⁺ T cells during infection.</div>
+      <div class="paper-title-en">Glymphatic influx is negatively correlated with cerebral blood volume in male mice.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Parsa R, Assis HC, de Castro TBR, Lima Dos Reis G, Sushil A et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Apr</span>
+        <span class="meta-item">👤 Li J, Liu X, Bo B, Pei M, Zhang K et al.</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 28</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Pathogen-specific CD4⁺ T cells expand and contract during infection, generating memory clones that shape subsequent immune responses. How distinct tissue environments influence differentiation and clonal selection of polyclonal T cells rem<em>ai</em>ns unclear. Here we develop Tracking Recently Activated Cell Kinetics (TRACK) mice, a dual-recombinase fate-mapping system enabling the spatial and temporal la...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">The glymphatic system clears br<em>\1</em>n waste via cerebrospinal fluid (CSF) influx along perivascular spaces. While vasomotion (0.1-0.3 Hz vessel diameter oscillations) is a known driver of perivascular transport, it is unclear whether slower, tonic vascular changes-reflected by macroscopic cerebral blood volume (CBV)-also influence glymphatic function. Using multimodal mouse MRI, we quantify glymphati...</div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Parsa R, Assis HC, de Castro TBR, Lima Dos Reis G, Sushil A ...</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41786978/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Li J, Liu X, Bo B, Pei M, Zhang K et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41904953/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -423,23 +505,26 @@
   <div class="paper-card" id="paper14">
     <div class="card-header">
       <div class="card-num">14</div>
-      <div class="card-journal-badge">Dev. Cell</div>
-      <span class="importance-label imp-normal">Dev Cell</span>
+      <div class="card-journal-badge">Nat. Med.</div>
+      <span class="importance-label cns-top">Nat Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Host-transposon mutualism supports regeneration in planarians.</div>
+      <div class="paper-title-en">A deep joint-learning proteomics model for diagnosis of six conditions associated with dementia.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Lee HL, Poulet A, Allikka Parambil S, van Wolfswinkel JC</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 An L, Pichet Binette A, Hristovska I, Vilkaite G, Xiao Y et ...</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 31</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">Transposons make up a significant fraction of eukaryotic genomes. They are commonly viewed as selfish elements that are detrimental to their hosts, and they are prime targets of specialized host defenses that constr<em>ai</em>n their expansion. Mutualistic interactions, in which elements co-exist and benefit each other, have so far not been found between transposable elements and eukaryote hosts. Here, we ...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text">Co-pathology is a common feature of neurodegenerative diseases that complicates diagnosis, treatment and clinical management. However, sensitive, specific and scalable biomarkers for in vivo pathological diagnosis are not av<em>\1</em>lable for most neurodegenerative neuropathologies. Here we present Proteomics-based Artificial Intelligence for Dementia Diagnosis (Prot<em>\1</em>De-Dx), a deep joint-learning model ...</div>
       </div>
+      <div class="tags"><span class="tag">omics</span></div>
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Lee HL, Poulet A, Allikka Parambil S, van Wolfswinkel JC</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41916287/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">An L, Pichet Binette A, Hristovska I, Vilkaite G, Xiao Y et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41917159/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -447,23 +532,26 @@
   <div class="paper-card" id="paper15">
     <div class="card-header">
       <div class="card-num">15</div>
-      <div class="card-journal-badge">Cell Rep.</div>
-      <span class="importance-label imp-normal">Cell Rep</span>
+      <div class="card-journal-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
+      <span class="importance-label cns-sub">Proc Natl Acad Sci U S A</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Sexual dimorphism shapes renal metabolic adaptation to a ketogenic diet.</div>
+      <div class="paper-title-en">How to revive science in America.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Kelly ME, Hoffner LA, Ramirez CB, Anica AL, Kim J et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 28</span>
+        <span class="meta-item">👤 Fineberg HV</span>
+      </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 31</span>
       </div>
       <div class="section-block">
-        <span class="section-label">摘要</span>
-        <div class="section-text">While kidneys are essential for m<em>ai</em>nt<em>ai</em>ning systemic metabolic homeostasis and exhibit sexual dimorphism, the effects of sex and environmental factors, such as diet, on renal metabolism rem<em>ai</em>n unclear. Using kidney-specific arteriovenous (AV) metabolomics, in vivo isotope tracing, and transcriptomics, we discover profound sex differences in kidney metabolic reprogramming under ketogenic diet (KD) ...</div>
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
       </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Kelly ME, Hoffner LA, Ramirez CB, Anica AL, Kim J et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41904948/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Fineberg HV</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41886377/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -471,19 +559,26 @@
   <div class="paper-card" id="paper16">
     <div class="card-header">
       <div class="card-num">16</div>
-      <div class="card-journal-badge">Cell Rep.</div>
-      <span class="importance-label imp-normal">Cell Rep</span>
+      <div class="card-journal-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
+      <span class="importance-label cns-sub">Proc Natl Acad Sci U S A</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Phage-related symbiosis and antagonism shape gut ecosystem dynamics in Lachnospiraceae and Bacteroidaceae.</div>
+      <div class="paper-title-en">Alternative splicing rewires banana aroma biosynthesis.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Zhao Y, Li J, Han K, Chen L, Zhuang Q et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 Jozwiak A</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 31</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Zhao Y, Li J, Han K, Chen L, Zhuang Q et al.</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41915473/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Jozwiak A</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41871259/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -491,19 +586,26 @@
   <div class="paper-card" id="paper17">
     <div class="card-header">
       <div class="card-num">17</div>
-      <div class="card-journal-badge">N. Engl. J. Med.</div>
-      <span class="importance-label imp-high">N Engl J Med</span>
+      <div class="card-journal-badge">Cell Rep.</div>
+      <span class="importance-label cns-sub">Cell Rep</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Left Atrial Appendage Closure - Should Recommendations Be Expanded?</div>
+      <div class="paper-title-en">Regulation of neuronal invasion of small cell lung cancer by STMN2/β-alanine-controlled metabolic reprogramming.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Marcus GM</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 28</span>
+        <span class="meta-item">👤 Zhou Y, Zhong R, Zhang Y, Shurin MR, Shurin GV et al.</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 28</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Marcus GM</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41910329/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Zhou Y, Zhong R, Zhang Y, Shurin MR, Shurin GV et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41904954/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -511,19 +613,26 @@
   <div class="paper-card" id="paper18">
     <div class="card-header">
       <div class="card-num">18</div>
-      <div class="card-journal-badge">Nat. Microbiol.</div>
-      <span class="importance-label imp-medium">Nat Microbiol</span>
+      <div class="card-journal-badge">Nat. Med.</div>
+      <span class="importance-label cns-top">Nat Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Conserved pathway for homarine catabolism in environmental bacteria.</div>
+      <div class="paper-title-en">Deleterious coding variation associated with autism is shared across ancestries.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Finch AH et al.</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 Natividad Avila M, Jung S, Satterstrom FK, Fu JM, Levy T et ...</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Mar 30</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Fi...</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912647/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Natividad Avila M, Jung S, Satterstrom FK, Fu JM, Levy T et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912808/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -531,19 +640,26 @@
   <div class="paper-card" id="paper19">
     <div class="card-header">
       <div class="card-num">19</div>
-      <div class="card-journal-badge">Nat. Immunol.</div>
-      <span class="importance-label imp-medium">Nat Immunol</span>
+      <div class="card-journal-badge">J. Exp. Med.</div>
+      <span class="importance-label cns-sub">J Exp Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">Pyruvate-mediated PTM.</div>
+      <div class="paper-title-en">Inhibitory receptor agonists: Emerging strategies in immune modulation.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Staicu I</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Apr</span>
+        <span class="meta-item">👤 Adam KR, Suhail A, Kuchroo VK, Vignali DAA</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr 6</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Staicu I</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922611/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Adam KR, Suhail A, Kuchroo VK, Vignali DAA</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41915422/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="section-divider"></div>
@@ -551,19 +667,26 @@
   <div class="paper-card" id="paper20">
     <div class="card-header">
       <div class="card-num">20</div>
-      <div class="card-journal-badge">N. Engl. J. Med.</div>
-      <span class="importance-label imp-high">N Engl J Med</span>
+      <div class="card-journal-badge">Sci. Transl. Med.</div>
+      <span class="importance-label cns-major">Sci Transl Med</span>
     </div>
     <div class="card-body">
-      <div class="paper-title-en">IVUS - A Zigzag Path to Success.</div>
+      <div class="paper-title-en">E-MOTIVE: Helping to combat severe maternal bleeding during childbirth.</div>
       <div class="paper-meta">
-        <span class="meta-item"><span class="icon">👤</span> Kastrati A</span>
-        <span class="meta-item"><span class="icon">📅</span> 2026 Mar 30</span>
+        <span class="meta-item">👤 Coomarasamy A</span>
       </div>
+      <div class="paper-meta" style="margin-top:4px">
+        <span class="meta-item">📅 2026 Apr</span>
+      </div>
+      <div class="section-block">
+        <div class="section-label">摘要</div>
+        <div class="section-text"></div>
+      </div>
+      
     </div>
     <div class="card-footer">
-      <div class="footer-authors">Kastrati A</div>
-      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41911014/" target="_blank">🔗 PubMed</a>
+      <div class="footer-authors">Coomarasamy A</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41920969/" target="_blank">🔗 PubMed</a>
     </div>
   </div>
   <div class="footer">
