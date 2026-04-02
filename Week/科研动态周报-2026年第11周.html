@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科研动态周报 | 第11期</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe4ec 50%, #ffd4e5 100%);
+            min-height: 100vh;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Banner */
+        .banner {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 50%, #ffa6c4 100%);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(255, 107, 157, 0.3);
+        }
+
+        .banner h1 {
+            color: white;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .banner .subtitle {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.1em;
+        }
+
+        .banner .date {
+            color: rgba(255,255,255,0.85);
+            font-size: 0.95em;
+            margin-top: 15px;
+        }
+
+        /* Issue Navigation */
+        .issue-nav {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .issue-nav a {
+            color: #ff6b9d;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .issue-nav a:hover {
+            background: #fff0f5;
+        }
+
+        .issue-nav .current {
+            color: #e83e8c;
+            font-weight: 700;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.15);
+        }
+
+        .toc h2 {
+            color: #ff6b9d;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffe4ec;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ffe4ec;
+        }
+
+        .toc li:last-child {
+            border-bottom: none;
+        }
+
+        .toc a {
+            color: #5a5a5a;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .toc a:hover {
+            color: #ff6b9d;
+        }
+
+        .toc .category {
+            font-weight: 600;
+            color: #e83e8c;
+            margin-right: 10px;
+        }
+
+        /* Section */
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(255, 107, 157, 0.15);
+        }
+
+        .section-title {
+            color: #ff6b9d;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #ff6b9d;
+            display: inline-block;
+        }
+
+        /* Paper Cards */
+        .paper-card {
+            background: linear-gradient(135deg, #fffbfd 0%, #fff0f5 100%);
+            border: 1px solid #ffe4ec;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.2);
+        }
+
+        .paper-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .paper-title {
+            color: #d63384;
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .paper-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .paper-meta .source {
+            background: #ff6b9d;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .paper-meta .category-tag {
+            background: #e83e8c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+
+        .paper-abstract {
+            background: rgba(255, 107, 157, 0.08);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 0.92em;
+            color: #5a5a5a;
+        }
+
+        .paper-highlights {
+            margin-bottom: 12px;
+        }
+
+        .paper-highlights h4 {
+            color: #ff6b9d;
+            font-size: 0.9em;
+            margin-bottom: 6px;
+        }
+
+        .paper-highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .paper-highlights li {
+            padding: 3px 0;
+            font-size: 0.88em;
+            color: #666;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .paper-highlights li::before {
+            content: "•";
+            color: #ff6b9d;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .paper-method {
+            background: #f8f9fa;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.88em;
+            color: #666;
+            margin-bottom: 12px;
+            border-left: 3px solid #ff6b9d;
+        }
+
+        .paper-findings {
+            background: rgba(232, 62, 140, 0.08);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.88em;
+            color: #5a5a5a;
+            margin-bottom: 12px;
+        }
+
+        .paper-findings strong {
+            color: #d63384;
+        }
+
+        .paper-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .paper-tags span {
+            background: linear-gradient(135deg, #ffe4ec 0%, #ffd4e5 100%);
+            color: #d63384;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 500;
+        }
+
+        /* Editor Comments */
+        .editor-comment {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+            border: 2px solid #ff6b9d;
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 20px;
+        }
+
+        .editor-comment h4 {
+            color: #d63384;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        .editor-comment p {
+            font-size: 0.92em;
+            color: #5a5a5a;
+        }
+
+        /* Trends Summary */
+        .trends {
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+            border-radius: 15px;
+            padding: 30px;
+            color: white;
+        }
+
+        .trends h2 {
+            color: white;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .trends ul {
+            list-style: none;
+        }
+
+        .trends li {
+            padding: 10px 0;
+            font-size: 1.05em;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .trends li::before {
+            content: "🔬";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .footer a {
+            color: #ff6b9d;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .banner h1 {
+                font-size: 1.6em;
+            }
+
+            .issue-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .paper-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Banner -->
+        <div class="banner">
+            <h1>🧬 科研动态周报</h1>
+            <div class="subtitle">第11期 | 2026年第11周精选</div>
+            <div class="date">2026年3月9-15日 | 第11期</div>
+        </div>
+
+        <!-- Issue Navigation -->
+        <div class="issue-nav">
+            <a href="科研动态周报-2026年第12周.html">← 下一期</a>
+            <span class="current">第11期 (2026-03-09 至 2026-03-15)</span>
+            <a href="#">上一期 →</a>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>📋 本期目录</h2>
+            <ul>
+                <li><span class="category">技术类</span> <a href="#tech">新工具、新方法、新算法 (6篇)</a></li>
+                <li><span class="category">研究类</span> <a href="#research">原创研究、临床研究 (7篇)</a></li>
+                <li><span class="category">趋势总结</span> <a href="#trends">本周研究趋势分析</a></li>
+            </ul>
+        </div>
+
+        <!-- 技术类 -->
+        <div class="section" id="tech">
+            <h2 class="section-title">🔧 技术类 (6篇)</h2>
+
+            <!-- Paper 1 -->
+            <div class="paper-card">
+                <div class="paper-title">INSTALL: A Scalable Genome Writing Technology</div>
+                <div class="paper-meta">
+                    <span class="source">Nature</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>INSTALL是一种可扩展的基因组写入技术，能够实现千碱基级别的基因组精确写入，为合成生物学和基因组工程提供了全新的工具平台。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>千碱基级精确基因组写入</li>
+                        <li>可扩展技术平台</li>
+                        <li>突破性合成生物学工具</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>基因组写入技术 + 合成生物学工程</div>
+                <div class="paper-findings"><strong>主要发现：</strong>实现大片段基因组的精确写入与编辑</div>
+                <div class="paper-tags">
+                    <span>合成生物学</span><span>基因组工程</span><span>基因组写入</span><span>技术</span>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="paper-card">
+                <div class="paper-title">Semipermeable Capsules for High-Throughput Single-Cell Multi-Omic Analysis</div>
+                <div class="paper-meta">
+                    <span class="source">Science</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>半透膜胶囊技术用于高通量单细胞多组学分析，能够同时捕获单个细胞的多种组学信息，大幅提升单细胞研究的通量和精度。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>高通量单细胞多组学</li>
+                        <li>半透膜胶囊创新设计</li>
+                        <li>同时捕获多组学信息</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>半透膜胶囊 + 单细胞多组学测序</div>
+                <div class="paper-findings"><strong>主要发现：</strong>提供高通量单细胞多组学分析新范式</div>
+                <div class="paper-tags">
+                    <span>单细胞</span><span>多组学</span><span>高通量</span><span>技术</span>
+                </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="paper-card">
+                <div class="paper-title">CAGEs: Multi-Step Genomic Analysis Using Spatially Separated Compartments</div>
+                <div class="paper-meta">
+                    <span class="source">Science</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>CAGEs是一种使用空间分离隔室进行多步基因组分析的技术，通过创新的空间设计实现复杂的基因组操作和分析流程。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>空间分离隔室设计</li>
+                        <li>多步基因组分析流程</li>
+                        <li>创新空间基因组技术</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>空间分离隔室 + 多步基因组分析</div>
+                <div class="paper-findings"><strong>主要发现：</strong>实现复杂基因组操作的空间化解决方案</div>
+                <div class="paper-tags">
+                    <span>基因组学</span><span>空间技术</span><span>分析工具</span><span>技术</span>
+                </div>
+            </div>
+
+            <!-- Paper 4 -->
+            <div class="paper-card">
+                <div class="paper-title">AlphaFold 3-Guided Discovery of Bacteriophage Proteins Inhibiting Bacterial Transcription</div>
+                <div class="paper-meta">
+                    <span class="source">Cell Reports</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>使用AlphaFold 3蛋白质结构预测技术指导发现抑制细菌转录的噬菌体蛋白，展示了AI结构预测在微生物研究中的强大应用潜力。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>AlphaFold 3结构预测应用</li>
+                        <li>噬菌体蛋白功能发现</li>
+                        <li>细菌转录抑制机制</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>AlphaFold 3结构预测 + 噬菌体蛋白筛选</div>
+                <div class="paper-findings"><strong>主要发现：</strong>发现抑制细菌转录的新型噬菌体蛋白</div>
+                <div class="paper-tags">
+                    <span>AI</span><span>AlphaFold</span><span>噬菌体</span><span>细菌转录</span>
+                </div>
+            </div>
+
+            <!-- Paper 5 -->
+            <div class="paper-card">
+                <div class="paper-title">pKAKA: Protein Language Model for Kinase Variant Prediction</div>
+                <div class="paper-meta">
+                    <span class="source">Journal of Genetics and Genomics</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>pKAKA是一种蛋白质语言模型，专门用于激酶变异预测，能够准确预测激酶突变对功能和疾病的影响，为精准医疗提供新工具。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>激酶特异性语言模型</li>
+                        <li>变异预测高精度</li>
+                        <li>精准医疗应用</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>蛋白质语言模型 + 激酶变异预测</div>
+                <div class="paper-findings"><strong>主要发现：</strong>实现激酶变异的准确预测与功能影响评估</div>
+                <div class="paper-tags">
+                    <span>AI</span><span>蛋白质语言模型</span><span>激酶</span><span>变异预测</span>
+                </div>
+            </div>
+
+            <!-- Paper 6 -->
+            <div class="paper-card">
+                <div class="paper-title">MNGE: Multi-Target Non-Specific Genome Engineering</div>
+                <div class="paper-meta">
+                    <span class="source">Advanced Science</span>
+                    <span class="category-tag">技术类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>MNGE是一种多靶向非特异性基因组工程技术，能够同时对多个基因组位点进行编辑，突破传统CRISPR技术的限制。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>多靶向基因组编辑</li>
+                        <li>非特异性编辑策略</li>
+                        <li>突破传统技术限制</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>多靶向编辑 + 非特异性基因组工程</div>
+                <div class="paper-findings"><strong>主要发现：</strong>实现多个基因组位点的同步高效编辑</div>
+                <div class="paper-tags">
+                    <span>基因组工程</span><span>CRISPR</span><span>多靶向</span><span>技术</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 研究类 -->
+        <div class="section" id="research">
+            <h2 class="section-title">🔬 研究类 (7篇)</h2>
+
+            <!-- Paper 1 -->
+            <div class="paper-card">
+                <div class="paper-title">CCR5 Base Editing in Hematopoietic Stem Cells Confers Resistance to HIV</div>
+                <div class="paper-meta">
+                    <span class="source">Molecular Therapy</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>在造血干细胞中进行CCR5碱基编辑，赋予细胞对HIV病毒的抵抗力，为HIV治疗提供新的基因编辑策略。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>CCR5碱基编辑</li>
+                        <li>造血干细胞基因编辑</li>
+                        <li>HIV抗性机制</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>碱基编辑 + 造血干细胞移植</div>
+                <div class="paper-findings"><strong>主要发现：</strong>CCR5编辑赋予造血干细胞HIV抗性</div>
+                <div class="paper-tags">
+                    <span>HIV</span><span>基因编辑</span><span>碱基编辑</span><span>免疫学</span>
+                </div>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="paper-card">
+                <div class="paper-title">Single-Cell eQTL Mapping Reveals Cell Type-Specific Genetic Regulation in Lung Cancer</div>
+                <div class="paper-meta">
+                    <span class="source">Cell Genomics</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>单细胞eQTL定位揭示肺癌中细胞类型特异性的遗传调控，深入解析不同细胞类型的基因表达调控机制。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>单细胞分辨率eQTL</li>
+                        <li>肺癌遗传调控图谱</li>
+                        <li>细胞类型特异性分析</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>单细胞RNA测序 + eQTL定位</div>
+                <div class="paper-findings"><strong>主要发现：</strong>揭示肺癌细胞类型特异性的遗传调控网络</div>
+                <div class="paper-tags">
+                    <span>单细胞</span><span>肺癌</span><span>eQTL</span><span>遗传调控</span>
+                </div>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="paper-card">
+                <div class="paper-title">Microbiome as Biomarker for CAR-T Therapy Outcomes</div>
+                <div class="paper-meta">
+                    <span class="source">Blood Advances</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>微生物组作为CAR-T治疗结局的生物标志物，研究发现特定微生物组特征与CAR-T治疗效果相关，为个性化治疗提供指导。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>微生物组预测CAR-T疗效</li>
+                        <li>个性化治疗指导</li>
+                        <li>新型生物标志物</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>微生物组测序 + CAR-T治疗随访</div>
+                <div class="paper-findings"><strong>主要发现：</strong>微生物组特征可作为CAR-T治疗预后生物标志物</div>
+                <div class="paper-tags">
+                    <span>微生物组</span><span>CAR-T</span><span>免疫治疗</span><span>生物标志物</span>
+                </div>
+            </div>
+
+            <!-- Paper 4 -->
+            <div class="paper-card">
+                <div class="paper-title">Armored Macrophage-Targeted CAR-T Reprograms Tumor Microenvironment</div>
+                <div class="paper-meta">
+                    <span class="source">Cancer Cell</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>装甲巨噬细胞靶向CAR-T细胞重塑肿瘤微环境，通过靶向肿瘤相关巨噬细胞，打破免疫抑制性肿瘤微环境。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>靶向巨噬细胞的CAR-T</li>
+                        <li>肿瘤微环境重塑</li>
+                        <li>突破免疫抑制</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>装甲CAR-T设计 + 肿瘤微环境分析</div>
+                <div class="paper-findings"><strong>主要发现：</strong>靶向巨噬细胞的CAR-T能有效重塑肿瘤微环境</div>
+                <div class="paper-tags">
+                    <span>CAR-T</span><span>巨噬细胞</span><span>肿瘤微环境</span><span>免疫治疗</span>
+                </div>
+            </div>
+
+            <!-- Paper 5 -->
+            <div class="paper-card">
+                <div class="paper-title">Lymph Node Colonization Induces Immunosuppressive Tissue Remodeling</div>
+                <div class="paper-meta">
+                    <span class="source">Cancer Cell</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>淋巴结定植诱导免疫抑制性组织重塑，揭示肿瘤转移早期阶段的免疫逃逸机制，为预防转移提供新靶点。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>淋巴结转移机制</li>
+                        <li>免疫抑制性重塑</li>
+                        <li>早期转移靶点</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>淋巴结转移模型 + 组织重塑分析</div>
+                <div class="paper-findings"><strong>主要发现：</strong>淋巴结定植诱导免疫抑制性组织重塑促进转移</div>
+                <div class="paper-tags">
+                    <span>癌症转移</span><span>淋巴结</span><span>免疫抑制</span><span>肿瘤微环境</span>
+                </div>
+            </div>
+
+            <!-- Paper 6 -->
+            <div class="paper-card">
+                <div class="paper-title">Cell Type-Specific Transposon Demethylation and TAD Remodeling</div>
+                <div class="paper-meta">
+                    <span class="source">Cell</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>细胞类型特异性转座子去甲基化与TAD重塑研究，揭示表观遗传调控的三维基因组组织新机制。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>转座子去甲基化</li>
+                        <li>TAD结构重塑</li>
+                        <li>三维基因组调控</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>转座子分析 + TAD测序</div>
+                <div class="paper-findings"><strong>主要发现：</strong>细胞类型特异性转座子去甲基化驱动TAD重塑</div>
+                <div class="paper-tags">
+                    <span>表观遗传</span><span>TAD</span><span>转座子</span><span>三维基因组</span>
+                </div>
+            </div>
+
+            <!-- Paper 7 -->
+            <div class="paper-card">
+                <div class="paper-title">Palmitoylation of KAT2A Promotes Breast Cancer Lung Metastasis</div>
+                <div class="paper-meta">
+                    <span class="source">Nature Cell Biology</span>
+                    <span class="category-tag">研究类</span>
+                </div>
+                <div class="paper-abstract">
+                    <strong>摘要翻译：</strong>KAT2A的棕榈酰化调控促进乳腺癌肺转移，发现KAT2A蛋白棕榈酰化修饰在乳腺癌转移中的关键作用。
+                </div>
+                <div class="paper-highlights">
+                    <h4>亮点：</h4>
+                    <ul>
+                        <li>KAT2A棕榈酰化</li>
+                        <li>乳腺癌肺转移</li>
+                        <li>蛋白质修饰调控</li>
+                    </ul>
+                </div>
+                <div class="paper-method"><strong>方法：</strong>蛋白质修饰分析 + 转移模型</div>
+                <div class="paper-findings"><strong>主要发现：</strong>KAT2A棕榈酰化促进乳腺癌向肺部转移</div>
+                <div class="paper-tags">
+                    <span>乳腺癌</span><span>转移</span><span>棕榈酰化</span><span>KAT2A</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 趋势总结 -->
+        <div class="trends" id="trends">
+            <h2>📈 本周研究趋势总结</h2>
+            <ul>
+                <li><strong>AI与蛋白质研究深度融合：</strong>AlphaFold 3和蛋白质语言模型（pKAKA）等AI技术在蛋白质结构预测、功能分析和变异预测中发挥重要作用</li>
+                <li><strong>单细胞多组学技术突破：</strong>半透膜胶囊技术和单细胞eQTL定位等技术推动单细胞研究向更高通量、更深层次发展</li>
+                <li><strong>CAR-T免疫治疗创新：</strong>装甲巨噬细胞靶向CAR-T、微生物组生物标志物等研究为CAR-T治疗提供新的优化策略和疗效预测方法</li>
+                <li><strong>基因组工程技术革新：</strong>INSTALL基因组写入技术、MNGE多靶向编辑等突破性技术为合成生物学和基因治疗提供强大工具</li>
+                <li><strong>肿瘤微环境与转移机制：</strong>淋巴结定植、KAT2A棕榈酰化等研究深入解析肿瘤微环境和转移调控机制</li>
+                <li><strong>表观遗传与三维基因组：</strong>转座子去甲基化、TAD重塑等研究揭示表观遗传调控的新层面</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>由 AI 驱动 | 数据来源：BioRxiv, MedRxiv, PubMed</p>
+            <p>Generated on 2026-04-01</p>
+        </div>
+    </div>
+</body>
+</html>
