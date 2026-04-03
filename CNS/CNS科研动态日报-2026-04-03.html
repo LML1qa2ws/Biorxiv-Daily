@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CNS科研动态日报 · 2026-04-03</title>
+  <style>
+    :root {
+      --primary:    #BE185D;
+      --accent:     #EC4899;
+      --accent2:    #F472B6;
+      --bg:         #F5F7FA;
+      --card:       #FFFFFF;
+      --text:       #2D3748;
+      --muted:      #718096;
+      --border:     #E2E8F0;
+      --tag-bg:     #FDF2F8;
+      --tag-color:  #BE185D;
+      --highlights: #FFF5F5;
+      --radius:     10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      background: #F5F7FA;
+      color: #2D3748;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .page-wrap { max-width: 720px; margin: 0 auto; background: #FFFFFF; }
+    .brand-banner {
+      background: linear-gradient(135deg, #BE185D 0%, #EC4899 100%);
+      padding: 28px 24px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-banner::before {
+      content: "";
+      position: absolute; top: -30px; right: -30px;
+      width: 180px; height: 180px; border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+    }
+    .brand-banner::after {
+      content: "";
+      position: absolute; bottom: -40px; left: -20px;
+      width: 140px; height: 140px; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+    .brand-name { font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 2px; position: relative; z-index: 1; }
+    .brand-sub { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 4px; letter-spacing: 1px; position: relative; z-index: 1; }
+    .brand-tag { display: inline-block; margin-top: 10px; padding: 3px 12px; border: 1px solid rgba(255,255,255,0.35); border-radius: 20px; font-size: 11px; color: rgba(255,255,255,0.8); position: relative; z-index: 1; }
+    .issue-bar { background: #F7F9FC; border-bottom: 1px solid #E2E8F0; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #718096; }
+    .issue-bar .issue-no { font-weight: 700; color: #BE185D; }
+    .date-section { padding: 20px 24px 10px; border-bottom: 2px solid #BE185D; }
+    .date-section h2 { font-size: 18px; font-weight: 700; color: #BE185D; }
+    .date-section .date-line { font-size: 12px; color: #718096; margin-top: 4px; }
+    .stats-bar { display: flex; border-bottom: 1px solid #E2E8F0; }
+    .stat-item { flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid #E2E8F0; }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 22px; font-weight: 700; color: #BE185D; }
+    .stat-label { font-size: 11px; color: #718096; margin-top: 2px; }
+    .toc { margin: 0 24px; padding: 14px 18px; background: #FDF2F8; border-left: 4px solid #BE185D; border-radius: 0 10px 10px 0; margin-top: 16px; }
+    .toc-title { font-size: 12px; font-weight: 700; color: #BE185D; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+    .toc ol { padding-left: 18px; }
+    .toc li { font-size: 13px; color: #2D3748; line-height: 2; }
+    .toc li a { color: #BE185D; text-decoration: none; }
+    .toc li a:hover { text-decoration: underline; }
+    .section-divider { height: 1px; background: #BE185D; margin: 24px 24px 0; opacity: 0.2; }
+    .paper-card { margin: 20px 24px; border: 1px solid #E2E8F0; border-radius: 10px; overflow: hidden; background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+    .card-header { background: #BE185D; padding: 10px 16px; display: flex; align-items: center; gap: 10px; }
+    .card-num { width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.2); color: #fff; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .card-journal-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 12px; white-space: nowrap; }
+    .card-if-badge { background: #F472B6; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; white-space: nowrap; }
+    .card-body { padding: 18px 18px 14px; }
+    .paper-title-zh { font-size: 15px; font-weight: 700; color: #2D3748; margin-bottom: 6px; }
+    .paper-title-en { font-size: 12px; color: #718096; font-style: italic; margin-bottom: 12px; line-height: 1.5; }
+    .paper-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .meta-item { font-size: 12px; color: #718096; display: flex; align-items: center; gap: 3px; }
+    .meta-item .icon { font-size: 13px; }
+    .highlights { background: #FFF5F5; border: 1px solid #FECACA; border-radius: 8px; padding: 12px 16px; margin-bottom: 14px; }
+    .highlights-title { font-size: 12px; font-weight: 700; color: #991B1B; margin-bottom: 8px; display: flex; align-items: center; gap: 5px; }
+    .highlights ul { padding-left: 0; list-style: none; }
+    .highlights li { font-size: 13.5px; color: #78350F; padding-left: 16px; position: relative; line-height: 1.8; }
+    .highlights li::before { content: "▶"; position: absolute; left: 0; font-size: 9px; top: 5px; color: #EC4899; }
+    .section-block { margin-bottom: 14px; }
+    .section-label { display: inline-block; font-size: 11px; font-weight: 700; color: #BE185D; background: #FDF2F8; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px; letter-spacing: 0.5px; }
+    .section-text { font-size: 14px; color: #2D3748; line-height: 1.9; }
+    .section-text strong { color: #BE185D; font-weight: 600; }
+    .section-text em { color: #EC4899; font-style: normal; font-weight: 600; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .tag-blue  { background: #EFF6FF; color: #1E3A8A; }
+    .tag-green { background: #F0FDF4; color: #166534; }
+    .tag-red   { background: #FFF5F5; color: #991B1B; }
+    .tag-purple{ background: #FAF5FF; color: #6B21A8; }
+    .tag-orange{ background: #FFFAF0; color: #9A3412; }
+    .card-footer { border-top: 1px solid #E2E8F0; padding: 10px 18px; display: flex; justify-content: space-between; align-items: center; background: #FAFBFC; }
+    .footer-authors { font-size: 12px; color: #718096; flex: 1; }
+    .doi-link { font-size: 12px; color: #BE185D; text-decoration: none; font-weight: 600; white-space: nowrap; margin-left: 12px; }
+    .doi-link:hover { text-decoration: underline; }
+    .importance-label { font-size: 11px; padding: 2px 8px; border-radius: 12px; font-weight: 700; white-space: nowrap; }
+    .imp-high { background: #FEE2E2; color: #991B1B; }
+    .imp-medium { background: #FEF3C7; color: #92400E; }
+    .imp-normal { background: #DBEAFE; color: #1E40AF; }
+    .journal-stats { margin: 12px 24px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .journal-badge { background: #FDF2F8; color: #BE185D; font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+    .trend-section { margin: 20px 24px; background: #FDF2F8; border: 1px solid #FBCFE8; border-radius: 10px; padding: 18px 20px; }
+    .trend-title { font-size: 14px; font-weight: 700; color: #BE185D; margin-bottom: 12px; display: flex; align-items: center; gap: 6px; }
+    .trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .trend-item { background: rgba(255,255,255,0.7); border-radius: 8px; padding: 10px 14px; border: 1px solid #FECDD3; }
+    .trend-item-title { font-size: 12px; font-weight: 700; color: #BE185D; margin-bottom: 4px; }
+    .trend-item-desc { font-size: 12px; color: #2D3748; line-height: 1.6; }
+    .footer { background: linear-gradient(135deg, #BE185D 0%, #EC4899 100%); padding: 24px; text-align: center; }
+    .footer-logo { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .footer-desc { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.8; }
+    .footer-copy { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.4); }
+    @media (max-width: 480px) { .brand-name { font-size: 18px; } .paper-card { margin: 16px 12px; } .toc { margin: 16px 12px 0; } .section-divider { margin: 20px 12px 0; } .trend-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部品牌 Banner -->
+  <div class="brand-banner">
+    <div class="brand-name">🌸 CNS科研动态日报</div>
+    <div class="brand-sub">CNS & Major Journals Daily</div>
+    <div class="brand-tag">🌸 Cell · Nature · Science 及其大子刊 · 每日精选</div>
+  </div>
+
+  <!-- 期号导航条 -->
+  <div class="issue-bar">
+    <span class="issue-no">CNS 日报</span>
+    <span>2026-04-03 · 共 12 篇</span>
+  </div>
+
+  <!-- 日期标题 -->
+  <div class="date-section">
+    <h2>CNS科研动态日报 · 2026-04-03</h2>
+    <div class="date-line">数据来源：PubMed | CNS及大子刊 | 每日更新</div>
+  </div>
+
+  <!-- 统计条 -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">12</div>
+      <div class="stat-label">论文总数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10</div>
+      <div class="stat-label">覆盖期刊</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">最多篇期刊</div>
+    </div>
+  </div>
+
+  <!-- 目录 -->
+  <div class="toc">
+    <div class="toc-title">本期目录</div>
+    <ol>
+      <li><a href="#paper1">Phages communicate across species to shape microbial ecosystems....</a></li>
+      <li><a href="#paper2">Concurrent L1 retrotransposition events promote reciprocal translocati...</a></li>
+      <li><a href="#paper3">Tau catalyzes amyloid-β aggregation and toxicity in a polymorph-depend...</a></li>
+      <li><a href="#paper4">Conserved pathway for homarine catabolism in environmental bacteria....</a></li>
+      <li><a href="#paper5">Mosaic gastruloids reveal a temporal restriction for developmental cel...</a></li>
+      <li><a href="#paper6">Selenoprotein P deficiency drives hepatocellular carcinoma progression...</a></li>
+      <li><a href="#paper7">Unveiling the molecular architecture of T cells and immune synapses wi...</a></li>
+      <li><a href="#paper8">Site-specific methylation of SRSF2(P95H) by SETD2 inhibits MDSC-mediat...</a></li>
+      <li><a href="#paper9">Pre-assembly of biomolecular condensate seeds drives RSV replication....</a></li>
+      <li><a href="#paper10">Cured by blood....</a></li>
+    </ol>
+  </div>
+
+  <!-- 期刊分布 -->
+  <div class="journal-stats">
+    <span style="font-size:11px;font-weight:700;color:#BE185D;margin-right:8px">期刊分布：</span>
+    <span class="journal-badge">Cell 2篇</span><span class="journal-badge">Science 2篇</span><span class="journal-badge">Proc. Natl. Acad. Sci. U.S.A. 1篇</span><span class="journal-badge">Nat. Microbiol. 1篇</span><span class="journal-badge">Nat. Cell Biol. 1篇</span><span class="journal-badge">Gut 1篇</span><span class="journal-badge">Cell Rep. 1篇</span><span class="journal-badge">Sci. Transl. Med. 1篇</span><span class="journal-badge">Nature 1篇</span><span class="journal-badge">Nat. Med. 1篇</span>
+  </div>
+
+  <div class="section-divider"></div>
+
+
+  <!-- ========== 文献卡片 #1 ========== -->
+  <div class="paper-card" id="paper1">
+    <div class="card-header">
+      <div class="card-num">1</div>
+      <div class="card-journal-badge">Cell</div>
+      <div class="card-if-badge">Cell</div>
+      <span class="importance-label imp-high">★★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Cell · 2026 Mar 31</div>
+      <div class="paper-title-en">Phages communicate across species to shape microbial ecosystems.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Gallego-Del-Sol F, Sin D, Chmielowska C, Mancheño-Bonillo J, Li Y et al.</span>
+      </div>
+      <div class="highlights">
+        <div class="highlights-title">⭐ 关键发现</div>
+        <ul>
+          <li>涉及领域：AI</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">Arbitrium 是一种通信系统，可帮助噬菌体通过分泌的肽来决定裂解和溶源。在该系统中，任意通讯肽 (<em>Ai</em>mP) 与其同源任意受体 (<em>Ai</em>mR) 结合，抑制 <em>ai</em>mX（溶原性负调节因子）表达，促进溶原性。假设每个 <em>Ai</em>mR 只响应其自己的 <em>Ai</em>mP。在这里，我们通过演示仲裁系统之间的交叉通信来挑战这一观点。使用原型任意噬菌体，我们证明 <em>Ai</em>mP 肽可以结合并抑制非同源 <em>Ai</em>mR 受体，促进溶源并减少原噬菌体诱导。结构和生化分析揭示了保守的受体特征，允许交叉识别非同源肽，同时保留对同源伴侣的识别。在混合溶源培养物中，这些相互作用改变了诱导结果，强调了它们的生态意义。扩展到感染环境，我们证明串扰有利于具有兼容系统的细胞中传入噬菌体的溶源。这些发现表明，噬菌体通过肽信号传导参与跨物种通讯，以意想不到的方式重塑微生物群落。</div>
+      </div>
+      <div class="tags"><span class="tag tag-purple">AI</span><span class="tag tag-blue">Cell</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Gallego-Del-Sol F, Sin D, Chmielowska C, Mancheño-Bonillo J, Li Y et a...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41923642/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #2 ========== -->
+  <div class="paper-card" id="paper2">
+    <div class="card-header">
+      <div class="card-num">2</div>
+      <div class="card-journal-badge">Science</div>
+      <div class="card-if-badge">Science</div>
+      <span class="importance-label imp-high">★★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Science · 2026 Apr 2</div>
+      <div class="paper-title-en">Concurrent L1 retrotransposition events promote reciprocal translocations in human tumorigenesis.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Zumalave S, Santamarina M, P Espasandín N, Zamora J, Garcia-Souto D et al.</span>
+      </div>
+      <div class="highlights">
+        <div class="highlights-title">⭐ 关键发现</div>
+        <ul>
+          <li>涉及领域：肿瘤</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">LINE-1 (L1) 逆转录转座在人类癌症中产生体细胞基因组变异，但短读长测序限制了我们对其结构后果和动态的理解。使用长读长测序，我们分析了 10 个具有极高逆转录转座活性的肿瘤，其中包含 6000 多个体细胞事件。我们发现，L1 介导的相互易位频繁发生，通常是由非同源染色体上两个并发的 L1 逆转录转座事件驱动的。使用涵盖低至高 L1 活性的独立肿瘤队列，我们​​估计逆转录转座子介导的重排以每 60 个体细胞逆转录转座中发生一个事件的频率发生。分子计时分析表明这些事件发生在肿瘤发生的早期，从而确定 L1 活性是染色体不稳定的早期驱动因素。我们的研究结果表明，L1 对某些肿瘤的癌症基因组进化做出了重大贡献。</div>
+      </div>
+      <div class="tags"><span class="tag tag-red">tumor</span><span class="tag tag-blue">Science</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Zumalave S, Santamarina M, P Espasandín N, Zamora J, Garcia-Souto D et...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41747018/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #3 ========== -->
+  <div class="paper-card" id="paper3">
+    <div class="card-header">
+      <div class="card-num">3</div>
+      <div class="card-journal-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
+      <div class="card-if-badge">Proc. Natl. Acad. Sci. U.S.A.</div>
+      <span class="importance-label imp-normal">★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Proc Natl Acad Sci U S A · 2026 Mar 31</div>
+      <div class="paper-title-en">Tau catalyzes amyloid-β aggregation and toxicity in a polymorph-dependent manner.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Mosconi M, Leonardi C, Armour-Garb Z, Rocutto B, Beeg M et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">淀粉样蛋白之间的相互作用正在成为神经退行性疾病的关键驱动因素。其中，在阿尔茨海默病 (AD) 和严重形式的慢性创伤性脑病 (CTE) 中，tau 蛋白和淀粉样蛋白-β (Aβ) 的共沉积会导致临床结果恶化和疾病进展。尽管这种异型相互作用很重要，但其潜在的分子机制已被证明具有挑战性。在这里，我们结合体外重建和体内模型研究了 Aβ 和 tau 之间的直接相互作用。我们发现，特征性 AD 配对螺旋丝 (PHF) 和 CTE 折叠以折叠特异性方式和类酶动力学催化 Aβ42 的初级成核。特别是，CTE 原纤维表现出最高的催化活性并限制 Aβ42 多态性，表明模板效应。此外，PHF 和 CTE tau 原纤维会增加 SH-SY5Y 神经母细胞瘤细胞和转基因细胞中 Aβ42 的毒性。</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Proc. Natl. Acad. Sci. U.S.A.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Mosconi M, Leonardi C, Armour-Garb Z, Rocutto B, Beeg M et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41880569/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #4 ========== -->
+  <div class="paper-card" id="paper4">
+    <div class="card-header">
+      <div class="card-num">4</div>
+      <div class="card-journal-badge">Nat. Microbiol.</div>
+      <div class="card-if-badge">Nat. Microbiol.</div>
+      <span class="importance-label imp-medium">★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Nat Microbiol · 2026 Mar 30</div>
+      <div class="paper-title-en">Conserved pathway for homarine catabolism in environmental bacteria.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Finch AH et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">Homarine（N-甲基吡啶甲酸）是浮游植物产生的一种普遍存在的海洋代谢物，因其在海洋动物中的信息化学特性而闻名，但其微生物降解途径尚不清楚。在这里，我们通过比较转录组学、诱变和靶向敲除，鉴定了一个保守操纵子（homABCDER），它介导细菌中的高胺分解代谢。系统发育和基因组分析表明，该操纵子分布在丰富的细菌进化枝中，包括沿海富营养菌（例如红细菌目）和公海寡营养菌（例如 SAR11、SAR116）以及来自非海洋环境的基因组。高分辨率质谱分析表明，N-甲基谷氨酸和谷氨酸是模型和自然系统中白马碱的关键代谢产物，N-甲基谷氨酸脱氢酶催化它们的转化。宏转录组学显示 hom 基因的响应性和原位表达与 Homarine 的可用性相关。这些发现揭示了天然碱降解的遗传和代谢基础，建立了其生态相关性，并强调了天然碱作为一种多功能生长底物，通过谷氨酸进入多种海洋细菌的中央代谢。</div>
+      </div>
+      <div class="tags"><span class="tag tag-green">bacteria</span><span class="tag tag-blue">Nat. Microbiol.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Ferrer-González FX, Heal KR, Sacks JS, Romero-Maysonet Y, Finch AH et ...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912647/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #5 ========== -->
+  <div class="paper-card" id="paper5">
+    <div class="card-header">
+      <div class="card-num">5</div>
+      <div class="card-journal-badge">Nat. Cell Biol.</div>
+      <div class="card-if-badge">Nat. Cell Biol.</div>
+      <span class="importance-label imp-normal">★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Nat Cell Biol · 2026 Apr 1</div>
+      <div class="paper-title-en">Mosaic gastruloids reveal a temporal restriction for developmental cell competition.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Frenster JD, Babin S, Casani-Galdon P, Josende-Garcia JB, Pascual-Mas P et al.</span>
+      </div>
+      <div class="highlights">
+        <div class="highlights-title">⭐ 关键发现</div>
+        <ul>
+          <li>涉及领域：AI</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">选择性消除次优细胞对于早期哺乳动物胚胎发生的发育完整性至关重要。细胞竞争是一种非自主的质量控制，其中“获胜者”细胞根据适应度差异击败可行但次优的“失败者”细胞。在这里，我们使用嵌合小鼠原肠胚（一种基于 3D 胚胎干细胞的原肠胚形成模型）研究细胞竞争动态。仅引入两个 Trp53 缺陷的超级竞争细胞就足以通过线粒体凋亡损害邻近野生型细胞的生长。竞争严格限制在启动多能性和早期原肠胚形成之间的发育过渡阶段，并涉及多能性退出的基因调控网络。来自发育阶段转移细胞的异时性原肠胚、表观原肠胚和动态 p53 降解决定子表明，获胜者和失败者都必须处于这个允许阶段，在此期间，急性相对 p53 蛋白水平决定竞争结果。这些发现增进了我们对细胞适应性评估的理解，并将原肠胚建立为强大的 3D 模型，用于研究哺乳动物胚胎发生中发育阶段特定的细胞竞争。</div>
+      </div>
+      <div class="tags"><span class="tag tag-purple">AI</span><span class="tag tag-blue">Nat. Cell Biol.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Frenster JD, Babin S, Casani-Galdon P, Josende-Garcia JB, Pascual-Mas ...</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922518/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #6 ========== -->
+  <div class="paper-card" id="paper6">
+    <div class="card-header">
+      <div class="card-num">6</div>
+      <div class="card-journal-badge">Gut</div>
+      <div class="card-if-badge">Gut</div>
+      <span class="importance-label imp-medium">★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Gut · 2026 Apr 1</div>
+      <div class="paper-title-en">Selenoprotein P deficiency drives hepatocellular carcinoma progression via induction of neutrophil senescence and immunosuppressive microenvironment.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Jiao J, Song L, Xu S, Xue Y, Liao Y et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">肝细胞癌（HCC）免疫微环境受到免疫抑制性中性粒细胞的严重影响，但驱动其衰老相关重编程的机制仍然难以捉摸。 |阐明硒蛋白 P (Sepp1) 介导的硒代谢在驱动肝癌中衰老样中性粒细胞积累和免疫抑制功能中的作用，及其对肿​​瘤免疫逃避的影响。 |我们在 HCC 小鼠模型中进行了综合单细胞 RNA 测序分析，结合功能、代谢和表观遗传学分析来表征中性粒细胞亚群，并剖析将 Sepp1 和硒代谢与中性粒细胞衰老相关重编程和肿瘤进展联系起来的调控途径。 |我们发现了一个独特的衰老样肿瘤浸润性中性粒细胞亚群，其特征是Sepp1的肝耗竭、Cdkn1a、S100a8/9和Vegfa升高。肿瘤源性 Sepp1 的缺失会损害 Lrp8 介导的转运对硒的吸收，从而抑制细胞内硒代谢和硒化氢的产生。这导致 S-腺苷甲硫氨酸积累，并增加赖氨酸 4 组蛋白修饰三甲基化的组蛋白 H3 蛋白，驱动衰老染色质景观。补充硒逆转了这些影响，恢复了 Sepp1 的表达，减少了中性粒细胞衰老相关的重编程，并重振了抗肿瘤免疫力。此外，硒与抗程序性细胞死亡疗法1具有协同作用</div>
+      </div>
+      <div class="tags"><span class="tag tag-purple">protein</span><span class="tag tag-blue">Gut</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Jiao J, Song L, Xu S, Xue Y, Liao Y et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41922101/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #7 ========== -->
+  <div class="paper-card" id="paper7">
+    <div class="card-header">
+      <div class="card-num">7</div>
+      <div class="card-journal-badge">Cell Rep.</div>
+      <div class="card-if-badge">Cell Rep.</div>
+      <span class="importance-label imp-normal">★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Cell Rep · 2026 Apr 1</div>
+      <div class="paper-title-en">Unveiling the molecular architecture of T cells and immune synapses with cryo-expansion microscopy.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Lemaître F, Mercey O, Mean I, Paulin E, Dutoit V et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">细胞毒性 T 细胞杀伤是在免疫突触处执行的，其纳米级组织是功能的基础，但在天然状态下仍然难以解决。在这里，我们应用冷冻膨胀显微镜 (cryo-ExM) 来可视化人类 T 细胞突触和细胞毒性细胞器的近乎天然的三维结构。 Cryo-ExM 以高保真度保留肌动蛋白、微管、膜和细膜突起，从而能够对突触形态发生进行体积定量。我们在活化的 T 细胞下方发现了一种依赖于粘附的圆顶状膜结构，该结构在 ICAM-1 参与时崩溃，将突触拓扑结构与粘附线索联系起来。 Cryo-ExM 进一步解析原代人 CD4 和 CD8 T 细胞中的完整裂解颗粒，揭示单核和多核超微结构、空间组织以及穿孔素和颗粒酶负载。使用组织适应扩展显微镜，我们绘制了 FFPE 人脑肿瘤中肿瘤浸润 T 细胞中细胞毒性颗粒的含量。这些数据共同建立了人类 T 细胞细胞毒性的近乎天然的结构框架以及连接细胞模型和临床组织的成像工作流程。</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Cell Rep.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Lemaître F, Mercey O, Mean I, Paulin E, Dutoit V et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41926287/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #8 ========== -->
+  <div class="paper-card" id="paper8">
+    <div class="card-header">
+      <div class="card-num">8</div>
+      <div class="card-journal-badge">Sci. Transl. Med.</div>
+      <div class="card-if-badge">Sci. Transl. Med.</div>
+      <span class="importance-label imp-medium">★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Sci Transl Med · 2026 Apr</div>
+      <div class="paper-title-en">Site-specific methylation of SRSF2(P95H) by SETD2 inhibits MDSC-mediated proinflammatory niche formation in mouse models of myelodysplastic syndrome.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Li ZJ, Zhao MY, Wang R, Liu N, Hu CL et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">携带 SRSF2（富含丝氨酸和精氨酸的剪接因子 2）突变的骨髓增生异常综合征 (MDS) 患者表现出不良预后和异常炎症激活，这凸显了对治疗的迫切需要。在这里，我们揭示了低信使RNA表达</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Sci. Transl. Med.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Li ZJ, Zhao MY, Wang R, Liu N, Hu CL et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41920970/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #9 ========== -->
+  <div class="paper-card" id="paper9">
+    <div class="card-header">
+      <div class="card-num">9</div>
+      <div class="card-journal-badge">Nature</div>
+      <div class="card-if-badge">Nature</div>
+      <span class="importance-label imp-high">★★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Nature · 2026 Apr</div>
+      <div class="paper-title-en">Pre-assembly of biomolecular condensate seeds drives RSV replication.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Ratnayake D, Galloux M, Boersma S, Noerenberg M, Sizun C et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">在感染过程中，许多 RNA 病毒，包括呼吸道合胞病毒 (RSV)，会形成专门的生物分子凝聚物、病毒工厂 (VF)，病毒转录和复制发生在其中</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Nature</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Ratnayake D, Galloux M, Boersma S, Noerenberg M, Sizun C et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41606345/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #10 ========== -->
+  <div class="paper-card" id="paper10">
+    <div class="card-header">
+      <div class="card-num">10</div>
+      <div class="card-journal-badge">Science</div>
+      <div class="card-if-badge">Science</div>
+      <span class="importance-label imp-high">★★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Science · 2026 Apr 2</div>
+      <div class="paper-title-en">Cured by blood.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Antognazza MR, Lanzani G</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">光敏半导体聚合物是通过血液蛋白催化剂在活体动物体内合成的。</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Science</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Antognazza MR, Lanzani G</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41926603/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #11 ========== -->
+  <div class="paper-card" id="paper11">
+    <div class="card-header">
+      <div class="card-num">11</div>
+      <div class="card-journal-badge">Nat. Med.</div>
+      <div class="card-if-badge">Nat. Med.</div>
+      <span class="importance-label imp-medium">★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Nat Med · 2026 Mar 30</div>
+      <div class="paper-title-en">Deleterious coding variation associated with autism is shared across ancestries.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Natividad Avila M, Jung S, Satterstrom FK, Fu JM, Levy T et al.</span>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">过去十年，在识别基因方面取得了显着进展，当这些基因受到有害编码变异的影响时，这些基因极有可能导致自闭症谱系障碍 (ASD)、智力障碍和其他相关发育障碍。然而，大多数潜在的基因发现工作都集中在欧洲血统的个体上，限制了对不同人群遗传责任的了解。为了帮助解决这个问题，拉丁美洲祖先自闭症基因组学 (GALA) 联盟成立了，在这里提出了拉丁美洲个体自闭症最大规模的测序研究（n > 15,000，包括 4,717 名患有 ASD 诊断的参与者）。我们鉴定了 35 个全基因组显着（错误发现率<0.05）的自闭症相关基因，与欧洲队列的发现有很大重叠，并且高度受限的基因在人群中显示出一致的信号。结果为新兴（例如，MARK2、YWHAG、PACS1、RERE、SPEN、GSE1、GLS、TNPO3 和 ANKRD17）和已确定的自闭症基因以及针对不同背景个体中有害变异的基因检测方法的实用性提供了支持；结果还表明，持续需要更具包容性的基因研究和测试。我们得出的结论是，自闭症的生物学特性在不同人群中是一致的，没有可检测到的血统影响。</div>
+      </div>
+      <div class="tags"><span class="tag tag-blue">Nat. Med.</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Natividad Avila M, Jung S, Satterstrom FK, Fu JM, Levy T et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41912808/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+  <div class="section-divider"></div>
+
+  <!-- ========== 文献卡片 #12 ========== -->
+  <div class="paper-card" id="paper12">
+    <div class="card-header">
+      <div class="card-num">12</div>
+      <div class="card-journal-badge">Cell</div>
+      <div class="card-if-badge">Cell</div>
+      <span class="importance-label imp-high">★★★★★</span>
+    </div>
+    <div class="card-body">
+      <div class="paper-title-zh">Cell · 2026 Mar 31</div>
+      <div class="paper-title-en">A 3D morphogenetic blueprint for metastatic outgrowth in breast cancer.</div>
+      <div class="paper-meta">
+        <span class="meta-item"><span class="icon">👤</span> Caire R, Bordo R, Zanconato F, Panciera T, Audoux E et al.</span>
+      </div>
+      <div class="highlights">
+        <div class="highlights-title">⭐ 关键发现</div>
+        <ul>
+          <li>涉及领域：癌症</li>
+        </ul>
+      </div>
+      <div class="section-block">
+        <span class="section-label">📝 中文摘要</span>
+        <div class="section-text">支持转移生长的组织水平过程仍不清楚。我们将人类乳腺癌中的单细胞 RNA 测序、空间转录组学和人工智能支持的 3D 成像与小鼠的功能研究相结合，揭示了巨转移扩张所必需的 3D 形态发生过程。巨转移瘤普遍激活转移性小梁形态发生 (MTM) 基因表达程序，该程序重新部署发育分支形态发生，将巨转移瘤构建为上皮索的 3D 小梁网格。 MTM</div>
+      </div>
+      <div class="tags"><span class="tag tag-red">cancer</span><span class="tag tag-blue">Cell</span></div>
+    </div>
+    <div class="card-footer">
+      <div class="footer-authors">Caire R, Bordo R, Zanconato F, Panciera T, Audoux E et al.</div>
+      <a class="doi-link" href="https://pubmed.ncbi.nlm.nih.gov/41923644/" target="_blank">🔗 PubMed →</a>
+    </div>
+  </div>
+
+  <!-- 趋势总结 -->
+  <div class="trend-section">
+    <div class="trend-title">📊 本周趋势总结</div>
+    <div class="trend-grid">
+      <div class="trend-item">
+        <div class="trend-item-title">期刊分布</div>
+        <div class="trend-item-desc">本期以 <strong>Cell</strong 密度最高 | 共覆盖 <strong>10</strong 种期刊 | 热门主题：<em>gene</em> · <em>tumor</em> · <em>AI</em></div>
+      </div>
+      <div class="trend-item">
+        <div class="trend-item-title">研究热点</div>
+        <div class="trend-item-desc">CNS及大子刊聚焦生命科学前沿突破，单细胞、CRISPR、AI驱动生物医学研究快速发展</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">🌸 CNS科研动态日报</div>
+    <div class="footer-desc">聚焦CNS及大子刊 · 每日更新<br/>数据来源：PubMed · 仅供科研参考</div>
+    <div class="footer-copy">© 2026 CNS科研动态日报 · 每日精选</div>
+  </div>
+</div>
+</body>
+</html>
