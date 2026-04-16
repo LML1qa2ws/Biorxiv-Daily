@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>预印本科研动态日报 · 第010期 · 2026-04-16</title>
+  <style>
+    :root {
+      --primary:    #1A5F3C;
+      --accent:     #E84545;
+      --accent2:    #F59E0B;
+      --bg:         #F5F7FA;
+      --card:       #FFFFFF;
+      --text:       #2D3748;
+      --muted:      #718096;
+      --border:     #E2E8F0;
+      --tag-bg:     #EBF8F1;
+      --tag-color:  #1A5F3C;
+      --radius:     10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      background: #F5F7FA;
+      color: #2D3748;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #FFFFFF;
+    }
+    /* Banner */
+    .brand-banner {
+      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
+      padding: 28px 24px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-banner::before {
+      content: "";
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .brand-banner::after {
+      content: "";
+      position: absolute;
+      bottom: -40px; left: -20px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .brand-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 4px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      position: relative;
+      z-index: 1;
+    }
+    /* Issue bar */
+    .issue-bar {
+      background: #F7F9FC;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #718096;
+    }
+    .issue-bar .issue-no {
+      font-weight: 600;
+      color: #1A5F3C;
+    }
+    /* Date section */
+    .date-section {
+      padding: 20px 24px 10px;
+      border-bottom: 2px solid #1A5F3C;
+    }
+    .date-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .date-meta {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+    }
+    /* Stats bar */
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px 8px;
+      border-right: 1px solid #E2E8F0;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: #718096;
+      margin-top: 2px;
+    }
+    /* TOC */
+    .toc-section {
+      padding: 16px 24px;
+      background: #F7FDF9;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .toc-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1A5F3C;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .toc-cat {
+      margin-bottom: 6px;
+    }
+    .toc-cat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2D3748;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .toc-items {
+      display: inline;
+      font-size: 12px;
+      color: #718096;
+    }
+    /* Category header */
+    .cat-header {
+      padding: 14px 24px 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #E2E8F0;
+      margin-top: 8px;
+    }
+    .cat-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .cat-icon.review { background: #FEF3C7; }
+    .cat-icon.research { background: #EBF8F1; }
+    .cat-icon.tech { background: #EBF4FF; }
+    .cat-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .cat-count {
+      font-size: 12px;
+      color: #718096;
+      margin-left: auto;
+    }
+    /* Paper card */
+    .paper-card {
+      margin: 12px 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .card-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid #F0F4F8;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .card-num {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 6px;
+      background: #1A5F3C;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-title-wrap { flex: 1; }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A2733;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .card-title a:hover { color: #1A5F3C; text-decoration: underline; }
+    .card-meta {
+      font-size: 11px;
+      color: #718096;
+    }
+    .card-meta span { margin-right: 8px; }
+    .card-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .badge-biorxiv { background: #E0F2FE; color: #0369A1; }
+    .badge-medrxiv { background: #FEF9C3; color: #92400E; }
+    .card-body { padding: 12px 16px; }
+    /* Highlight box */
+    .highlight-box {
+      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+      border-left: 3px solid #1A5F3C;
+      border-radius: 0 6px 6px 0;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: #1A5F3C;
+      font-weight: 600;
+    }
+    /* Abstract */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1A5F3C;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      margin-top: 10px;
+    }
+    .abstract-text {
+      font-size: 13px;
+      color: #4A5568;
+      line-height: 1.7;
+    }
+    /* Key findings */
+    .findings-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .findings-list li {
+      font-size: 13px;
+      color: #4A5568;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .findings-list li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: #1A5F3C;
+      font-size: 9px;
+      top: 6px;
+    }
+    /* Tags */
+    .tags-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 12px;
+      background: #EBF8F1;
+      color: #1A5F3C;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    /* Method row */
+    .method-row {
+      background: #F8FAFC;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #4A5568;
+      margin-top: 8px;
+    }
+    .method-label {
+      font-weight: 700;
+      color: #1A5F3C;
+      margin-right: 6px;
+    }
+    /* Trend summary */
+    .trend-section {
+      margin: 16px;
+      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
+      border-radius: 10px;
+      padding: 20px;
+      color: #fff;
+    }
+    .trend-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .trend-item {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      align-items: flex-start;
+    }
+    .trend-dot {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .trend-text { font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; }
+    .trend-text strong { color: #A7F3D0; }
+    /* Footer */
+    .footer {
+      padding: 16px 24px;
+      text-align: center;
+      font-size: 11px;
+      color: #718096;
+      border-top: 1px solid #E2E8F0;
+      background: #F7F9FC;
+    }
+    .footer a { color: #1A5F3C; text-decoration: none; }
+    /* Divider */
+    hr.divider {
+      border: none;
+      border-top: 1px dashed #E2E8F0;
+      margin: 4px 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Brand Banner -->
+  <div class="brand-banner">
+    <div class="brand-name">预印本科研动态日报</div>
+    <div class="brand-sub">bioRxiv · medRxiv · 全学科精选</div>
+    <div class="brand-tag">Preprint Daily · 科研最前沿</div>
+  </div>
+
+  <!-- Issue Bar -->
+  <div class="issue-bar">
+    <div><span class="issue-no">第 010 期</span> &nbsp;|&nbsp; 2026年04月16日 星期四</div>
+    <div>数据来源：bioRxiv + medRxiv</div>
+  </div>
+
+  <!-- Date Section -->
+  <div class="date-section">
+    <div class="date-title">2026-04-16 科研动态精选</div>
+    <div class="date-meta">覆盖学科：微生物学 · 免疫学 · 癌症生物学 · 生物信息学 · 神经科学 · 遗传学 · 组学技术 · 神经病学 · 蛋白质组学</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-label">精选文献</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">综述类</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">研究类</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">技术/工具</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">9+</div>
+      <div class="stat-label">涵盖学科</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc-section">
+    <div class="toc-title">本期目录</div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">📖 综述类</span>
+      <span class="toc-items">TDP-43蛋白病HDAC抑制与联合治疗研究</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">🔬 研究类</span>
+      <span class="toc-items">贝叶斯高效编码 · B细胞蛋白质组 · 脑相位相干网络 · 空间细胞器组学 · 帕金森病连接组 · 淋巴结转移预测</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">⚙️ 技术类</span>
+      <span class="toc-items">TSvelo RNA速度分析 · LM-QASAS抗体库BCR分析</span>
+    </div>
+  </div>
+
+  <!-- ========== 综述类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon review">📖</div>
+    <div class="cat-name">综述类</div>
+    <div class="cat-count">1篇</div>
+  </div>
+
+  <!-- Paper 001 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">01</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.12.15.628528v3" target="_blank">
+            HDAC抑制单独或联合Arimoclomol对TDP-43蛋白病的影响
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Effects of lysine deacetylation inhibition alone or in combination with arimoclomol on TDP-43 proteinopathy</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Scozzari S. et al.</span>
+          <span>通讯：Valentina Bonetto</span>
+          <span>2026-04-14</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：首次系统性证实HDAC抑制可恢复TDP-43定位，联合热休克蛋白诱导剂Arimoclomol具有协同神经保护作用，为ALS/FTD治疗提供新策略。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        TDP-43胞质内包涵体是肌萎缩侧索硬化症(ALS)和额颞叶痴呆(FTD)的主要病理特征。本研究探索赖氨酸乙酰化稳态恢复对TDP-43蛋白病的影响，发现HDAC抑制剂Vorinostat/SAHA可逆转TDP-43错误定位。联合Arimoclomol(热休克蛋白共诱导剂)可维持神经保护效果，为这类致命神经退行性疾病提供潜在联合治疗方案。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>HDAC抑制剂SAHA在体外TDP-43蛋白病细胞模型中逆转TDP-43错误定位</li>
+        <li>在ALS患者外周血单个核细胞中验证了SAHA对TDP-43定位的改善作用</li>
+        <li>Thy1-hTDP-43转基因小鼠中，SAHA延迟TDP-43病理 onset，减少神经退行性变和神经炎症</li>
+        <li>SAHA与Arimoclomol联合治疗可持续维持神经保护效果，显示出协同作用</li>
+        <li>联合治疗显著增强外周组织中tubulin乙酰化，减少坐骨神经中磷酸化TDP-43积累</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>体外细胞模型 + ALS患者PBMC验证 + Thy1-hTDP-43转基因小鼠模型
+      </div>
+      <div class="tags-row">
+        <span class="tag">TDP-43</span>
+        <span class="tag">ALS</span>
+        <span class="tag">HDAC抑制</span>
+        <span class="tag">神经退行性疾病</span>
+        <span class="tag">联合治疗</span>
+        <span class="tag">蛋白质稳态</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 研究类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon research">🔬</div>
+    <div class="cat-name">研究类</div>
+    <div class="cat-count">5篇</div>
+  </div>
+
+  <!-- Paper 002 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">02</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/178418v5" target="_blank">
+            贝叶斯高效编码：感知系统设计原则的统一理论框架
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Bayesian Efficient Coding</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Park I.M., Pillow J.W.</span>
+          <span>通讯：Jonathan W. Pillow (Princeton)</span>
+          <span>2026-04-12</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：统一贝叶斯大脑假说与高效编码假说，提出covtropy新型损失函数家族，重新诠释经典果蝇视觉实验40年结论。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        经典高效编码理论认为神经元优化以最大化环境信息，而贝叶斯大脑假说关注大脑如何整合感觉和先验信息进行贝叶斯推断。本研究首次明确提出贝叶斯高效编码的统一形式化框架，通过四个基本要素定义最优感觉编码：刺激先验分布、编码模型、容量约束和损失函数。经典信息最大化编码作为后验熵损失的特殊情况出现，而替代损失函数给出与信息最大化截然不同的解。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>提出covtropy——一类由单一指数参数化的后验函数损失族，连接信息论与决策论目标</li>
+        <li>经典高效编码在低噪声条件下优选的输入去相关，在惩罚大误差的目标下反而不利</li>
+        <li>重新分析Laughlin 1981年果蝇大单极细胞对比度编码数据，发现用最小Lp重建误差(p=1/2)比信息最大化更好地解释测量响应非线性</li>
+        <li>推翻40年来将果蝇实验作为信息最大化教科书案例的经典解释</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>理论建模 + 贝叶斯框架 + 历史实验数据重分析
+      </div>
+      <div class="tags-row">
+        <span class="tag">神经科学</span>
+        <span class="tag">贝叶斯推断</span>
+        <span class="tag">高效编码</span>
+        <span class="tag">感觉系统</span>
+        <span class="tag">计算神经科学</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper 003 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">03</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.12.19.629506v2" target="_blank">
+            B细胞激活的蛋白质组图谱及其受mTORC1、MYC和铁的调控
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">A proteomic map of B cell activation and its shaping by mTORC1, MYC and iron</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>James O. et al.</span>
+          <span>通讯：Andrew JM Howden (Dundee)</span>
+          <span>2026-04-03</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：高分辨率定量蛋白质组学首次系统绘制B细胞激活全程蛋白质动态变化图谱，揭示代谢检查点mTORC1和转录因子MYC在蛋白质组重塑中的关键驱动作用。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        B细胞通过BCR、CD40和IL4受体激活诱导显著的蛋白质组重塑，24小时内细胞总蛋白质量增加5倍。本研究使用高分辨率定量质谱分析>7500种蛋白的细胞拷贝数，揭示支持B细胞激活的代谢机器、营养和氨基酸转运蛋白的全面变化。同时解析mTORC1、MYC和铁在B细胞蛋白质组重塑和蛋白生产中的调控作用。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>B细胞激活24小时内总蛋白质量增加5倍，涉及广泛的蛋白质组重构</li>
+        <li>代谢检查点mTORC1控制激活诱导的B细胞生长，抑制后损害氨基酸转运蛋白表达</li>
+        <li>mTORC1活性调控转录因子MYC和转铁蛋白受体CD71的表达</li>
+        <li>阻断MYC活性在许多方面模拟mTORC1抑制，包括损害的CD71表达</li>
+        <li>限制铁 availability during B细胞激活损害细胞生长和蛋白质合成</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>高分辨率定量质谱 + B细胞激活时间序列 + mTORC1/MYC/铁调控分析
+      </div>
+      <div class="tags-row">
+        <span class="tag">免疫学</span>
+        <span class="tag">蛋白质组学</span>
+        <span class="tag">B细胞激活</span>
+        <span class="tag">mTORC1</span>
+        <span class="tag">MYC</span>
+        <span class="tag">铁代谢</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper 004 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">04</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.11.15.623830v4" target="_blank">
+            揭示人脑动态相位相干网络
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Uncovering dynamic human brain phase coherence networks</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Olsen A.S. et al.</span>
+          <span>通讯：Anders S Olsen (DTU)</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：创新性相位建模方法直接捕捉大脑信号相位，首次在完整相位相干网络中研究大规模同步动态模式，为理解大脑协调通信提供新视角。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        复杂认知功能依赖分布式脑区之间的协调通信，但捕捉这些随时间演变的动态交互仍然具有挑战性。传统功能性脑连接分析主要依赖信号幅度的相关性，对噪声和头动伪影敏感。本研究引入混合建模方法，聚焦大脑信号的相位，直接研究脑相位相干网络的完整大规模同步动态模式。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>提出复杂角度中心高斯混合模型，提供分析大脑相位相互作用的原理性方法</li>
+        <li>在fMRI数据中识别出反复出现的脑-wide同步活动状态</li>
+        <li>这些状态可靠地区分认知任务，并在未见个体间泛化</li>
+        <li>训练时无需任何任务标签，模型自动发现功能性同步模式</li>
+        <li>建模信号相位为研究大脑同步动态提供清晰且信息丰富的新视角</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>复杂角度中心高斯混合模型 + fMRI动态相位分析 + 无监督状态识别
+      </div>
+      <div class="tags-row">
+        <span class="tag">神经科学</span>
+        <span class="tag">fMRI</span>
+        <span class="tag">相位相干</span>
+        <span class="tag">功能连接</span>
+        <span class="tag">脑网络</span>
+        <span class="tag">认知任务</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper 005 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">05</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.12.06.627285v2" target="_blank">
+            空间细胞器组学图谱绘制组织中细胞状态多样性和代谢适应性
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Spatial Organellomics Maps Cell State Diversity and Metabolic Adaptation in Tissues</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Adhikari R. et al.</span>
+          <span>通讯：Daniel Feliciano (Janelia/HHMI)</span>
+          <span>2026-04-09</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：空间细胞器组学(sOrganellomics)整合自动化分割与机器学习，基于多细胞器特征分类和空间定位细胞状态，首次揭示肝细胞形成混合社区而非经典分级区带模式。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        细胞状态多样性驱动组织适应性、修复和疾病弹性，但当前大多数方法依赖转录组分析，往往忽略嵌入细胞器结构中的功能信息——这些是细胞代谢和应激的关键指标。本研究引入空间细胞器组学(sOrganellomics)，一种整合自动化分割与机器学习的成像工作流程，基于多细胞器特征分类和空间定位细胞状态。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>跨代谢特化器官的多细胞器特征可区分器官特异性细胞身份</li>
+        <li>首次揭示肝细胞组织新模式：不同肝细胞状态形成混合社区而非经典均质分级区带</li>
+        <li>营养应激破坏这种混合社区模式</li>
+        <li>活体成像进一步将禁食相关结构重塑与线粒体膜电位和能量异质性变化联系起来</li>
+        <li>细胞器结构作为可扩展的功能性细胞状态多样性读数，可绘制代谢转换和早期疾病进程</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>自动化细胞器分割 + 机器学习分类 + 空间映射 + 活体成像
+      </div>
+      <div class="tags-row">
+        <span class="tag">空间组学</span>
+        <span class="tag">细胞器组学</span>
+        <span class="tag">代谢适应</span>
+        <span class="tag">肝细胞</span>
+        <span class="tag">单细胞</span>
+        <span class="tag">活体成像</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper 006 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">06</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.03.31.26349811v1" target="_blank">
+            帕金森病MRgFUS丘脑毁损术后持久震颤控制的结构功能连接组学特征
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Structural and Functional Connectomic Signatures of Durable Tremor Control After MRgFUS Thalamotomy in Parkinsons Disease</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Krauss J. et al.</span>
+          <span>通讯：Jonas Krauss (Bonn)</span>
+          <span>2026-04-02</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：首次定义持久震颤抑制的连接组学基质，确定关键结构和功能靶点，为MRgFUS治疗震颤型帕金森病提供个体化、网络引导的精准定位策略。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        磁共振引导聚焦超声(MRgFUS)丘脑毁损术是治疗震颤的既定热消融疗法。虽然特发性震颤疗效接近脑深部刺激，但震颤型帕金森病(TDPD)疗效往往较不持久，30-50%病例报告震颤复发。先前与病变大小或年龄的关联仅为描述性，无法解释解剖学上相似的病变为何产生不同的长期结局。
+      </div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>持久震颤控制与更强的初级运动区(M1)、初级体感区(S1)和辅助运动区功能连接相关</li>
+        <li>复发与更强的小脑运动和联合区连接相关</li>
+        <li>最优病变汇聚于腹侧中间核、腹侧 oralis核和 ventro caudalis核的三角界面</li>
+        <li>与更好结局相关的神经纤维向后投射至S1，M1界定前部功能边界</li>
+        <li>结构指纹强调后部感觉运动区作为关键治疗输出</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>回顾性结构/功能连接分析 + 规范性连接组 + MRgFUS丘脑毁损术
+      </div>
+      <div class="tags-row">
+        <span class="tag">神经科学</span>
+        <span class="tag">帕金森病</span>
+        <span class="tag">MRgFUS</span>
+        <span class="tag">连接组学</span>
+        <span class="tag">震颤控制</span>
+        <span class="tag">精准医疗</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== 技术类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon tech">⚙️</div>
+    <div class="cat-name">技术类</div>
+    <div class="cat-count">2篇</div>
+  </div>
+
+  <!-- Paper 007 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">07</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.12.24.630058v4" target="_blank">
+            TSvelo：基于基因调控、转录和剪接级联模型的综合RNA速度分析框架
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">TSvelo: Comprehensive RNA velocity by modeling cascade of gene regulation, transcription and splicing</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Li J. et al.</span>
+          <span>通讯：Ye Yuan (CAS)</span>
+          <span>2026-04-14</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：TSvelo使用可解释性神经ODE建模转录-未剪接-剪接3D动力学，统一推断跨基因共享的潜在时间，在六个scRNA-seq数据集上展现优越性能。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        RNA速度方法通过单细胞RNA测序(scRNA-seq)数据建模剪接过程来拟合基因动态和推断细胞命运。然而，由于剪接时间尺度短、数据噪声高和复杂性大，现有RNA速度方法往往无法精确捕获单个基因和单细胞的复杂速度动态。本研究提出TSvelo，一个综合RNA速度数学框架，使用高度可解释的神经常微分方程(ODE)建模基因调控、转录和剪接的级联过程。
+      </div>
+      <div class="section-label">主要创新</div>
+      <ul class="findings-list">
+        <li>精确捕获所有基因的转录-未剪接-剪接3D同时动态</li>
+        <li>推断跨基因在单细胞内共享的统一潜在时间</li>
+        <li>可应用于多谱系数据集</li>
+        <li>在6个scRNA-seq数据集(包括2个多谱系)上验证了优越性</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>神经常微分方程(ODE) + 转录-剪接动力学建模 + 多谱系scRNA-seq分析
+      </div>
+      <div class="tags-row">
+        <span class="tag">生物信息学</span>
+        <span class="tag">RNA速度</span>
+        <span class="tag">单细胞</span>
+        <span class="tag">神经ODE</span>
+        <span class="tag">细胞命运预测</span>
+        <span class="tag">scRNA-seq</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Paper 008 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">08</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.03.31.26349834v1" target="_blank">
+            LM-QASAS：利用抗体语言模型无参考识别BCR库中抗原特异性序列
+          </a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">LM-QASAS: Reference-free identification of antigen-specific sequences from the BCR repertoire using antibody language models</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Masuda G. et al.</span>
+          <span>通讯：Yohei Funakoshi (Kobe)</span>
+          <span>2026-04-01</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">
+        亮点：LM-QASAS首创无参考BCR序列分析方法，使用抗体语言模型高维语义嵌入识别功能性收敛序列簇，在SARS-CoV-2 mRNA疫苗接种者中以>90%纯度富集 spike特异性序列。
+      </div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">
+        B细胞受体(BCR)库作为免疫事件的历史记录。然而从这个庞大数据集中破译抗原特异性序列仍然具有挑战性，特别是对于缺乏先验知识的新发病原体。虽然时间序列分析方法如QASAS已被证明在追踪免疫反应方面有效，但它们依赖现有抗体数据库，限制了其在新兴疾病中的应用。
+      </div>
+      <div class="section-label">主要创新</div>
+      <ul class="findings-list">
+        <li>将序列映射到高维语义嵌入空间，识别功能收敛的序列簇</li>
+        <li>在SARS-CoV-2 mRNA疫苗接种者中识别spike特异性序列，纯度>90%</li>
+        <li>显著优于基于简单序列同一性或丰度的方法</li>
+        <li>留一法交叉验证证明可准确重建未见个体的免疫动态</li>
+        <li>为新兴威胁的体液免疫监测提供快速、高精度平台</li>
+      </ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>抗体语言模型 + 时间序列BCR库分析 + 语义嵌入聚类 + SARS-CoV-2 mRNA疫苗验证
+      </div>
+      <div class="tags-row">
+        <span class="tag">免疫学</span>
+        <span class="tag">BCR库</span>
+        <span class="tag">抗体语言模型</span>
+        <span class="tag">抗原特异性</span>
+        <span class="tag">mRNA疫苗</span>
+        <span class="tag">SARS-CoV-2</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trend Summary -->
+  <div class="trend-section">
+    <div class="trend-title">📊 本期趋势观察</div>
+    <div class="trend-item">
+      <div class="trend-dot">1</div>
+      <div class="trend-text"><strong>神经退行性疾病治疗新靶点：</strong>TDP-43蛋白病研究推动HDAC抑制剂联合热休克蛋白诱导剂的协同治疗策略；帕金森病连接组学研究为MRgFUS精准定位提供理论依据。</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-dot">2</div>
+      <div class="trend-text"><strong>空间与多组学融合：</strong>空间细胞器组学(sOrganellomics)创新性整合细胞器形态与空间位置信息，揭示组织中细胞状态分布新模式；B细胞蛋白质组图谱为免疫应答研究提供系统资源。</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-dot">3</div>
+      <div class="trend-text"><strong>AI赋能生物数据分析：</strong>TSvelo利用神经ODE精确建模RNA动态；LM-QASAS通过抗体语言模型突破BCR分析的无参考瓶颈；贝叶斯高效编码框架为感知计算提供统一理论。</div>
+    </div>
+    <div class="trend-item">
+      <div class="trend-dot">4</div>
+      <div class="trend-text"><strong>计算神经科学深化：</strong>相位相干网络分析超越传统幅度相关方法，直接捕捉大脑动态同步模式；贝叶斯框架统一高效编码与贝叶斯推断假说。</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>📅 本期编辑：2026年04月16日 | 数据来源：bioRxiv & medRxiv</p>
+    <p>🔍 覆盖领域：神经科学 · 免疫学 · 生物信息学 · 细胞生物学 · 蛋白质组学 · 临床医学</p>
+    <p style="margin-top:8px;">🌐 访问 <a href="https://www.biorxiv.org" target="_blank">bioRxiv.org</a> · <a href="https://www.medrxiv.org" target="_blank">medRxiv.org</a> 获取更多预印本</p>
+  </div>
+
+</div>
+</body>
+</html>
