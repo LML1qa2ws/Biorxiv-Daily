@@ -31,7 +31,6 @@
       margin: 0 auto;
       background: #FFFFFF;
     }
-    /* Banner */
     .brand-banner {
       background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
       padding: 28px 24px 22px;
@@ -82,7 +81,6 @@
       position: relative;
       z-index: 1;
     }
-    /* Issue bar */
     .issue-bar {
       background: #F7F9FC;
       border-bottom: 1px solid #E2E8F0;
@@ -93,105 +91,38 @@
       font-size: 12px;
       color: #718096;
     }
-    .issue-bar .issue-no {
-      font-weight: 600;
-      color: #1A5F3C;
-    }
-    /* Date section */
+    .issue-bar .issue-no { font-weight: 600; color: #1A5F3C; }
     .date-section {
       padding: 20px 24px 10px;
       border-bottom: 2px solid #1A5F3C;
     }
-    .date-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .date-meta {
-      font-size: 12px;
-      color: #718096;
-      margin-top: 4px;
-    }
-    /* Stats bar */
-    .stats-bar {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      padding: 12px 8px;
-      border-right: 1px solid #E2E8F0;
-    }
+    .date-title { font-size: 18px; font-weight: 700; color: #1A5F3C; }
+    .date-meta { font-size: 12px; color: #718096; margin-top: 4px; }
+    .stats-bar { display: flex; gap: 0; border-bottom: 1px solid #E2E8F0; }
+    .stat-item { flex: 1; text-align: center; padding: 12px 8px; border-right: 1px solid #E2E8F0; }
     .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .stat-label {
-      font-size: 11px;
-      color: #718096;
-      margin-top: 2px;
-    }
-    /* TOC */
+    .stat-num { font-size: 22px; font-weight: 700; color: #1A5F3C; }
+    .stat-label { font-size: 11px; color: #718096; margin-top: 2px; }
     .toc-section {
       padding: 16px 24px;
       background: #F7FDF9;
       border-bottom: 1px solid #E2E8F0;
     }
-    .toc-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1A5F3C;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-    .toc-cat {
-      margin-bottom: 6px;
-    }
-    .toc-cat-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: #2D3748;
-      display: inline-block;
-      margin-right: 8px;
-    }
-    .toc-items {
-      display: inline;
-      font-size: 12px;
-      color: #718096;
-    }
-    /* Category header */
+    .toc-title { font-size: 13px; font-weight: 700; color: #1A5F3C; margin-bottom: 8px; letter-spacing: 1px; }
+    .toc-cat { margin-bottom: 6px; }
+    .toc-cat-label { font-size: 12px; font-weight: 600; color: #2D3748; display: inline-block; margin-right: 8px; }
+    .toc-items { display: inline; font-size: 12px; color: #718096; }
     .cat-header {
       padding: 14px 24px 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #E2E8F0;
-      margin-top: 8px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid #E2E8F0; margin-top: 8px;
     }
-    .cat-icon {
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-    }
+    .cat-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; }
     .cat-icon.review { background: #FEF3C7; }
     .cat-icon.research { background: #EBF8F1; }
     .cat-icon.tech { background: #EBF4FF; }
-    .cat-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .cat-count {
-      font-size: 12px;
-      color: #718096;
-      margin-left: auto;
-    }
-    /* Paper card */
+    .cat-name { font-size: 15px; font-weight: 700; color: #1A5F3C; }
+    .cat-count { font-size: 12px; color: #718096; margin-left: auto; }
     .paper-card {
       margin: 12px 16px;
       background: #FFFFFF;
@@ -203,50 +134,27 @@
     .card-header {
       padding: 14px 16px 10px;
       border-bottom: 1px solid #F0F4F8;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
+      display: flex; align-items: flex-start; gap: 10px;
     }
     .card-num {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 6px;
-      background: #1A5F3C;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
+      flex-shrink: 0; width: 24px; height: 24px;
+      border-radius: 6px; background: #1A5F3C; color: #fff;
+      font-size: 12px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
     }
     .card-title-wrap { flex: 1; }
-    .card-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1A2733;
-      line-height: 1.5;
-      margin-bottom: 4px;
-    }
-    .card-title a {
-      color: inherit;
-      text-decoration: none;
-    }
+    .card-title { font-size: 14px; font-weight: 700; color: #1A2733; line-height: 1.5; margin-bottom: 4px; }
+    .card-title a { color: inherit; text-decoration: none; }
     .card-title a:hover { color: #1A5F3C; text-decoration: underline; }
-    .card-meta {
-      font-size: 11px;
-      color: #718096;
-    }
+    .card-meta { font-size: 11px; color: #718096; }
     .card-meta span { margin-right: 8px; }
     .card-badge {
-      display: inline-block;
-      padding: 1px 7px;
-      border-radius: 10px;
-      font-size: 10px;
-      font-weight: 600;
-      margin-right: 4px;
+      display: inline-block; padding: 1px 7px; border-radius: 10px;
+      font-size: 10px; font-weight: 600; margin-right: 4px;
     }
     .badge-biorxiv { background: #E0F2FE; color: #0369A1; }
     .badge-medrxiv { background: #FEF9C3; color: #92400E; }
     .card-body { padding: 12px 16px; }
-    /* Highlight box */
     .highlight-box {
       background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
       border-left: 3px solid #1A5F3C;
@@ -257,120 +165,52 @@
       color: #1A5F3C;
       font-weight: 600;
     }
-    /* Abstract */
     .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #1A5F3C;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-      margin-top: 10px;
+      font-size: 11px; font-weight: 700; color: #1A5F3C;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 4px; margin-top: 10px;
     }
-    .abstract-text {
-      font-size: 13px;
-      color: #4A5568;
-      line-height: 1.7;
-    }
-    /* Key findings */
-    .findings-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+    .abstract-text { font-size: 13px; color: #4A5568; line-height: 1.7; }
+    .findings-list { list-style: none; padding: 0; margin: 0; }
     .findings-list li {
-      font-size: 13px;
-      color: #4A5568;
-      padding: 3px 0 3px 16px;
-      position: relative;
-      line-height: 1.6;
+      font-size: 13px; color: #4A5568;
+      padding: 3px 0 3px 16px; position: relative; line-height: 1.6;
     }
     .findings-list li::before {
-      content: "▶";
-      position: absolute;
-      left: 0;
-      color: #1A5F3C;
-      font-size: 9px;
-      top: 6px;
+      content: "▶"; position: absolute; left: 0;
+      color: #1A5F3C; font-size: 9px; top: 6px;
     }
-    /* Tags */
-    .tags-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
+    .tags-row { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
     .tag {
-      display: inline-block;
-      padding: 2px 9px;
-      border-radius: 12px;
-      background: #EBF8F1;
-      color: #1A5F3C;
-      font-size: 11px;
-      font-weight: 500;
+      display: inline-block; padding: 2px 9px; border-radius: 12px;
+      background: #EBF8F1; color: #1A5F3C; font-size: 11px; font-weight: 500;
     }
-    /* Method row */
     .method-row {
-      background: #F8FAFC;
-      border-radius: 6px;
-      padding: 8px 10px;
-      font-size: 12px;
-      color: #4A5568;
-      margin-top: 8px;
+      background: #F8FAFC; border-radius: 6px; padding: 8px 10px;
+      font-size: 12px; color: #4A5568; margin-top: 8px;
     }
-    .method-label {
-      font-weight: 700;
-      color: #1A5F3C;
-      margin-right: 6px;
-    }
-    /* Trend summary */
+    .method-label { font-weight: 700; color: #1A5F3C; margin-right: 6px; }
     .trend-section {
       margin: 16px;
       background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
+      border-radius: 10px; padding: 20px; color: #fff;
     }
-    .trend-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-    .trend-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      align-items: flex-start;
-    }
+    .trend-title { font-size: 15px; font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; }
+    .trend-item { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
     .trend-dot {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      font-size: 11px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
+      flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(255,255,255,0.2); font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; margin-top: 2px;
     }
     .trend-text { font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; }
     .trend-text strong { color: #A7F3D0; }
-    /* Footer */
     .footer {
-      padding: 16px 24px;
-      text-align: center;
-      font-size: 11px;
-      color: #718096;
-      border-top: 1px solid #E2E8F0;
-      background: #F7F9FC;
+      padding: 16px 24px; text-align: center; font-size: 11px;
+      color: #718096; border-top: 1px solid #E2E8F0; background: #F7F9FC;
     }
     .footer a { color: #1A5F3C; text-decoration: none; }
-    /* Divider */
-    hr.divider {
-      border: none;
-      border-top: 1px dashed #E2E8F0;
-      margin: 4px 16px;
-    }
+    hr.divider { border: none; border-top: 1px dashed #E2E8F0; margin: 4px 16px; }
+
   </style>
 </head>
 <body>
@@ -392,29 +232,29 @@
   <!-- Date Section -->
   <div class="date-section">
     <div class="date-title">2026-04-17 科研动态精选</div>
-    <div class="date-meta">覆盖学科：微生物组学 · 肿瘤学 · 微生物学 · 神经科学 · 空间组学 · 单细胞组学 · 表观遗传 · 免疫学 · 生物信息学</div>
+    <div class="date-meta">覆盖学科：微生物学 · 生物信息学 · 癌症生物学 · 系统生物学 · 神经病学 · 免疫学</div>
   </div>
 
   <!-- Stats -->
   <div class="stats-bar">
     <div class="stat-item">
-      <div class="stat-num">8</div>
+      <div class="stat-num">10</div>
       <div class="stat-label">精选文献</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">1</div>
+      <div class="stat-num">0</div>
       <div class="stat-label">综述类</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">6</div>
+      <div class="stat-num">8</div>
       <div class="stat-label">研究类</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">1</div>
+      <div class="stat-num">2</div>
       <div class="stat-label">技术/工具</div>
     </div>
     <div class="stat-item">
-      <div class="stat-num">9+</div>
+      <div class="stat-num">6+</div>
       <div class="stat-label">涵盖学科</div>
     </div>
   </div>
@@ -423,373 +263,253 @@
   <div class="toc-section">
     <div class="toc-title">本期目录</div>
     <div class="toc-cat">
-      <span class="toc-cat-label">📖 综述类</span>
-      <span class="toc-items">肿瘤免疫治疗中表观遗传调控的系统综述</span>
-    </div>
-    <div class="toc-cat">
       <span class="toc-cat-label">🔬 研究类</span>
-      <span class="toc-items">肠道微生物组与免疫疗效 · 空间转录组解析肿瘤微环境 · 阿尔茨海默神经炎症 · 微生物组深度学习预测 · 肠脑轴代谢调控 · 胶质母细胞瘤单细胞图谱</span>
+      <span class="toc-items">Gut microbiome composition and predicted functions · Fiber Formulation-Dependent Modulation of Gut Micr · Cell fusion reprograms tumor cells and promotes RU · EML4-ALK Fusion Rewires Transcriptomic, miRNA, and</span>
     </div>
     <div class="toc-cat">
       <span class="toc-cat-label">⚙️ 技术类</span>
-      <span class="toc-items">scMOFA单细胞多组学整合分析工具</span>
+      <span class="toc-items">A residual-ratio framework for auditing transcript · MICRON learns outcome-associated representations o</span>
     </div>
   </div>
 
+  <!-- Papers -->
   <!-- ========== 综述类 ========== -->
   <div class="cat-header">
     <div class="cat-icon review">📖</div>
     <div class="cat-name">综述类</div>
-    <div class="cat-count">1篇</div>
+    <div class="cat-count">0篇</div>
   </div>
-
-  <!-- Paper 001 -->
-  <div class="paper-card">
-    <div class="card-header">
-      <div class="card-num">01</div>
-      <div class="card-title-wrap">
-        <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.15.598321v1" target="_blank">
-            肿瘤免疫治疗中的表观遗传调控：机制、挑战与未来方向
-          </a>
-        </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Epigenetic regulation in cancer immunotherapy: mechanisms, challenges, and future directions</div>
-        <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Chen R. et al.</span>
-          <span>通讯：Luo H. (SYSU)</span>
-          <span>2026-04-17</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="highlight-box">
-        亮点：系统性综述表观遗传调控如何重塑肿瘤免疫微环境，梳理DNA甲基化、组蛋白修饰和染色质重塑在免疫检查点治疗中的分子机制，为克服免疫耐药提供新靶点。
-      </div>
-      <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        肿瘤免疫治疗彻底改变了癌症治疗格局，但原发性和获得性耐药仍是重大挑战。表观遗传调控作为基因表达的关键上层控制者，深刻影响肿瘤细胞的免疫原性和免疫微环境。本综述系统梳理DNA甲基化、组蛋白修饰（乙酰化/甲基化）、染色质重塑和非编码RNA在免疫检查点抑制剂疗效中的角色，并讨论EZH2、HDAC、DNMT等表观遗传酶作为联合治疗靶点的临床前和临床证据。
-      </div>
-      <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>肿瘤新抗原呈递与表观遗传沉默密切相关，DNMTi可逆转免疫沉默恢复肿瘤免疫原性</li>
-        <li>HDAC抑制剂联合PD-1/PD-L1抑制剂在多个临床前模型中显示协同抗肿瘤效果</li>
-        <li>EZH2过表达与多种肿瘤免疫逃逸相关，EZH2i可增强CD8+ T细胞浸润和干扰素响应</li>
-        <li>ATRX/DAXX缺失通过调节逆转录转座子促进免疫感知，为合成致死提供新策略</li>
-        <li>表观遗传年龄加速与免疫治疗不良预后相关，可作为预测生物标志物</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>系统性文献综述 + 多数据库整合分析 + 临床数据Meta分析
-      </div>
-      <div class="tags-row">
-        <span class="tag">表观遗传</span>
-        <span class="tag">肿瘤免疫</span>
-        <span class="tag">免疫检查点</span>
-        <span class="tag">EZH2</span>
-        <span class="tag">HDAC</span>
-        <span class="tag">耐药机制</span>
-      </div>
-    </div>
+  <div style="padding:20px 24px;color:#718096;font-size:13px;">
+    本期暂无综述类论文收录。生命科学领域预印本持续更新中，欢迎持续关注。
   </div>
 
   <!-- ========== 研究类 ========== -->
   <div class="cat-header">
     <div class="cat-icon research">🔬</div>
     <div class="cat-name">研究类</div>
-    <div class="cat-count">6篇</div>
+    <div class="cat-count">8篇</div>
   </div>
 
-  <!-- Paper 002 -->
+  <!-- Paper 01 -->
   <div class="paper-card">
     <div class="card-header">
-      <div class="card-num">02</div>
+      <div class="card-num">01</div>
       <div class="card-title-wrap">
         <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.14.597842v1" target="_blank">
-            肠道微生物组特征预测PD-1抑制剂治疗晚期黑色素瘤的疗效反应
-          </a>
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.15.718572v1" target="_blank">Gut microbiome composition and predicted functions relate to growth and behavior in a Japa</a>
         </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Gut microbiome signatures predict anti-PD-1 therapy response in advanced melanoma patients</div>
         <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Liu W. et al.</span>
-          <span>通讯：Wang J. (PUMCH)</span>
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Ichikawa, S., Shimura, A. et al.</span>
+          <span>通讯：Yasuhito Shimada</span>
           <span>2026-04-16</span>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="highlight-box">
-        亮点：基于多中心黑色素瘤队列，首次建立肠道微生物组-代谢组联合预测模型，可提前识别PD-1治疗无反应者（AUC=0.89），为微生物组干预联合免疫治疗提供依据。
-      </div>
+      <div class="highlight-box">亮点：日本学龄前儿童横断面研究揭示肠道菌群组成与行为发育的关联模式，为理解菌群-肠-脑轴在神经发育中的作用提供社区队列证据。</div>
       <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        肠道微生物组已被证实影响肿瘤免疫治疗疗效，但预测模型的临床转化仍不成熟。本研究纳入5个中心共387例晚期黑色素瘤患者，采集治疗前粪便样本进行宏基因组测序和非靶向代谢组学分析，构建并验证微生物组-代谢组联合预测模型，以识别对PD-1抑制剂原发耐药的高风险患者。
-      </div>
+      <div class="abstract-text">Early childhood is a period of rapid brain maturation and gut microbiome assembly, when emerging behavioral difficulties can shape later mental health and learning trajectories. Microbiota-gut-brain communication has been implicated in neurodevelopment through microbial metabolites and immune signaling...</div>
       <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>应答者肠道中Akkermansia muciniphila和Faecalibacterium prausnitzii丰度显著更高</li>
-        <li>微生物组-代谢组联合模型预测疗效AUC达0.89，显著优于单一组学模型</li>
-        <li>短链脂肪酸代谢通路富集与治疗应答强相关，可能是关键介质</li>
-        <li>次级胆汁酸代谢异常与耐药相关，提示肠肝轴在免疫响应中的作用</li>
-        <li>无反应者肠道炎症特征显著，表现为屏障损伤和内毒素血症标志物升高</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>宏基因组测序 + 非靶向代谢组学 + 多中心黑色素瘤队列（n=387）
-      </div>
-      <div class="tags-row">
-        <span class="tag">微生物组学</span>
-        <span class="tag">肿瘤免疫</span>
-        <span class="tag">PD-1抑制剂</span>
-        <span class="tag">黑色素瘤</span>
-        <span class="tag">代谢组学</span>
-        <span class="tag">精准医疗</span>
-      </div>
+      <ul class="findings-list"><li>内部化行为域与高炎症潜在特征和核苷酸生物合成升高相关</li><li>躯体主诉和退缩行为与呼吸/发酵活性降低相关</li><li>睡眠相关困难显示最广泛的预测功能足迹</li><li>外化域与细胞膜和碳水化合物重塑通路相关</li><li>年龄/身高/体重追踪肠道菌群典型成熟轨迹</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>横断面社区队列 + 16S rRNA测序 + PICRUSt2功能预测 + 行为评估量表</div>
+      <div class="tags-row"><span class="tag">肠道菌群</span><span class="tag">免疫治疗</span></div>
     </div>
   </div>
 
-  <!-- Paper 003 -->
-  <div class="paper-card">
-    <div class="card-header">
-      <div class="card-num">03</div>
-      <div class="card-title-wrap">
-        <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.15.598112v1" target="_blank">
-            空间分辨转录组学解析非小细胞肺癌肿瘤微环境异质性和免疫逃避机制
-          </a>
-        </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Spatial transcriptomics reveals tumor microenvironment heterogeneity and immune evasion mechanisms in non-small cell lung cancer</div>
-        <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Zhang Y. et al.</span>
-          <span>通讯：Li X. (CAMC)</span>
-          <span>2026-04-15</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="highlight-box">
-        亮点：利用10x Visium和CosMx空间分子成像技术，系统绘制NSCLC空间细胞图谱，揭示肿瘤核心区与边缘区免疫细胞空间分布差异及免疫逃避的空间转录组学机制。
-      </div>
-      <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        肿瘤微环境（TME）的空间异质性是理解免疫治疗耐药的关键。本研究联合10x Visium空间转录组学和CosMx单细胞空间分子成像技术，对来自87例非小细胞肺癌（NSCLC）患者的肿瘤样本进行高分辨率空间分析，系统表征肿瘤核心区、边界区和间质区的细胞组成、基因表达和空间交互模式的差异。
-      </div>
-      <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>肿瘤核心区以M2型肿瘤相关巨噬细胞（TAM）为主，边缘区CD8+ T细胞浸润更高但处于耗竭状态</li>
-        <li>空间邻近分析发现CXCL12+ CAF与PD-1+耗竭T细胞的空间共定位是免疫逃避的关键特征</li>
-        <li>干扰素信号通路在应答者肿瘤边缘区显著激活，与更好的免疫治疗结局相关</li>
-        <li>鉴定出空间特异性的三级淋巴结构（TLS）亚型，成熟TLS与更好的预后相关</li>
-        <li>空间免疫排斥评分（SPIES）可独立预测患者总生存期（C-index=0.72）</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>10x Visium空间转录组 + CosMx单细胞空间成像 + 87例NSCLC患者样本
-      </div>
-      <div class="tags-row">
-        <span class="tag">空间组学</span>
-        <span class="tag">单细胞组学</span>
-        <span class="tag">肿瘤微环境</span>
-        <span class="tag">非小细胞肺癌</span>
-        <span class="tag">免疫逃避</span>
-        <span class="tag">空间转录组</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- Paper 004 -->
+  <!-- Paper 04 -->
   <div class="paper-card">
     <div class="card-header">
       <div class="card-num">04</div>
       <div class="card-title-wrap">
         <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.16.598523v1" target="_blank">
-            抑制小胶质细胞TREM2-SYK信号通路缓解阿尔茨海默病神经炎症和突触损伤
-          </a>
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.718214v1" target="_blank">Fiber Formulation-Dependent Modulation of Gut Microbial Metabolism in Parkinsons Disease</a>
         </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Inhibition of microglial TREM2-SYK signaling pathway alleviates neuroinflammation and synaptic damage in Alzheimer's disease</div>
         <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Wang Q. et al.</span>
-          <span>通讯：Zhou N. (Fudan)</span>
-          <span>2026-04-16</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="highlight-box">
-        亮点：揭示TREM2-SYK信号轴在AD小胶质细胞活化中的核心作用，开发特异性小分子抑制剂并在5xFAD小鼠模型中验证其逆转神经炎症和保护认知功能的效果。
-      </div>
-      <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        小胶质细胞是阿尔茨海默病（AD）神经免疫调节的核心参与者。TREM2作为关键的脂质感知受体，其变体与AD风险密切相关。本研究深入探索TREM2下游SYK信号通路在AD发病机制中的作用，开发小分子TREM2-SYK轴抑制剂，并在多种AD动物模型中评估其治疗潜力。
-      </div>
-      <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>AD患者死后脑组织和5xFAD小鼠模型中，TREM2-SYK信号通路显著过度激活</li>
-        <li>选择性SYK抑制剂处理5xFAD小鼠12周后， amyloid-β沉积减少约47%</li>
-        <li>小胶质细胞从促炎（M1）向神经保护表型（M2）转换，IL-1β和TNF-α显著降低</li>
-        <li>突触前体蛋白（synaptophysin）和PSD-95水平恢复，空间学习和记忆显著改善</li>
-        <li>血脑屏障完整性改善，外周免疫细胞浸润减少</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>5xFAD转基因小鼠模型 + 小分子SYK抑制剂 + 单细胞RNA-seq + 电生理记录
-      </div>
-      <div class="tags-row">
-        <span class="tag">神经科学</span>
-        <span class="tag">阿尔茨海默病</span>
-        <span class="tag">小胶质细胞</span>
-        <span class="tag">TREM2</span>
-        <span class="tag">神经炎症</span>
-        <span class="tag">SYK信号通路</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Paper 005 -->
-  <div class="paper-card">
-    <div class="card-header">
-      <div class="card-num">05</div>
-      <div class="card-title-wrap">
-        <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.13.597654v1" target="_blank">
-            MetaDeep-Transformer：基于深度学习的微生物组功能预测和新型代谢通路发现
-          </a>
-        </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">MetaDeep-Transformer: Deep learning-based functional prediction of the microbiome and discovery of novel metabolic pathways</div>
-        <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Kim S. et al.</span>
-          <span>通讯：Park D.H. (SNU)</span>
-          <span>2026-04-13</span>
-        </div>
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="highlight-box">
-        亮点：MetaDeep-Transformer创新性地将Transformer架构应用于微生物组功能预测，在17个独立队列（>50,000样本）中验证，新发现3条与代谢综合征相关的肠道微生物代谢通路。
-      </div>
-      <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        从宏基因组测序数据中准确预测微生物组功能仍是挑战。本研究提出MetaDeep-Transformer，一个基于Transformer架构的深度学习框架，能够从物种丰度矩阵直接预测微生物组功能潜力（包括酶、代谢通路和生物合成基因簇）。模型在大规模多样化数据集上训练，并在17个独立验证队列中进行泛化性能评估。
-      </div>
-      <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>MetaDeep-Transformer在代谢通路预测上F1达0.91，显著优于现有方法（MetaPhlAn4、PICRUSt2）</li>
-        <li>模型可泛化至不同地理来源和疾病背景的队列（AUC范围0.85-0.94）</li>
-        <li>通过迁移学习从数据丰富的队列迁移到数据稀缺的队列，性能损失<5%</li>
-        <li>新发现3条与代谢综合征显著相关的微生物代谢通路，已通过体外培养实验验证</li>
-        <li>可预测未知酶的潜在功能，为功能宏基因组学提供计算假设</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>Transformer深度学习 + 宏基因组功能预测 + 17个独立验证队列（n>50,000）+ 体外培养验证
-      </div>
-      <div class="tags-row">
-        <span class="tag">微生物组学</span>
-        <span class="tag">深度学习</span>
-        <span class="tag">Transformer</span>
-        <span class="tag">宏基因组</span>
-        <span class="tag">代谢通路</span>
-        <span class="tag">生物信息学</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Paper 006 -->
-  <div class="paper-card">
-    <div class="card-header">
-      <div class="card-num">06</div>
-      <div class="card-title-wrap">
-        <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.14.597901v1" target="_blank">
-            肠脑轴失调驱动帕金森病的分子机制：肠道屏障破损-迷走神经-α-突触核蛋白病理级联
-          </a>
-        </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Gut-brain axis dysfunction in Parkinson's disease: intestinal barrier breach, vagal nerve传导 and alpha-synuclein pathology cascade</div>
-        <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Santos G. et al.</span>
-          <span>通讯：Braak H. (Ulm)</span>
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Todd, O. A., Vu, L. D. et al.</span>
+          <span>通讯：Olivia Adele Todd</span>
           <span>2026-04-14</span>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="highlight-box">
-        亮点：在多个PD动物模型和患者样本中，系统证实肠漏→TLR4激活→迷走神经逆行传导→αSyn病理扩散的完整分子链路，为"肠道起源说"提供最完整的功能证据。
-      </div>
+      <div class="highlight-box">亮点：SIFR技术平台证实配方纤维复杂度决定微生物代谢参与度，多纤维组合使短链脂肪酸产量翻倍，为帕金森病肠道干预提供精准配方依据。</div>
       <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        帕金森病（PD）的"肠道起源"假说认为α-突触核蛋白（αSyn）病理从肠道通过迷走神经逆行传播至大脑，但完整的分子链路尚未完全阐明。本研究利用MPTP诱导的PD小鼠模型、αSyn过表达大鼠模型和PD患者配对肠道-脑组织样本，系统追踪从肠屏障损伤到中枢αSyn病理的完整信号级联。
-      </div>
+      <div class="abstract-text">Parkinsons disease (PD) is associated with altered gut-brain signaling, including microbial dysbiosis, intestinal inflammation, and reduced short-chain fatty acid (SCFA) production...</div>
       <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>PD患者和模型动物均显示肠道屏障完整性破坏，表现为ZO-1和claudin-5下调</li>
-        <li>肠漏导致内毒素（LPS）入血，激活肠道神经元和免疫细胞的TLR4/NF-κB通路</li>
-        <li>αSyn在肠神经元中错误折叠后，沿迷走神经逆行运输至迷走神经背核</li>
-        <li>迷走神经切断术完全阻止了肠道来源的αSyn向中枢扩散</li>
-        <li>微生物组移植改善肠道屏障和运动症状，提示肠脑轴作为治疗靶点的潜力</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>MPTP小鼠模型 + αSyn过表达大鼠 + 患者配对肠道-脑组织样本 + 迷走神经切断实验
-      </div>
-      <div class="tags-row">
-        <span class="tag">微生物组学</span>
-        <span class="tag">神经科学</span>
-        <span class="tag">帕金森病</span>
-        <span class="tag">肠脑轴</span>
-        <span class="tag">α-突触核蛋白</span>
-        <span class="tag">迷走神经</span>
-      </div>
+      <ul class="findings-list"><li>多纤维组合使SCFA产量增加约2倍(p=0.001)</li><li>微生物生物量增加约1.5倍(p=0.0007)</li><li>富集纤维响应分类群，协调代谢物转变</li><li>体外发酵研究具有向临床转化的相关性</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>SIFR体外肠道发酵平台 + SCFA定量 + 微生物组16S分析 + 代谢组学</div>
+      <div class="tags-row"><span class="tag">肠道菌群</span><span class="tag">帕金森病</span><span class="tag">微生物代谢</span></div>
     </div>
   </div>
 
-  <!-- Paper 007 -->
+
+  <!-- Paper 05 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">05</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.12.717781v1" target="_blank">Cell fusion reprograms tumor cells and promotes RUNX1-mediated invasion and dissemination </a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Anderson, A. N., Queitsch, K. et al.</span>
+          <span>通讯：Melissa H. Wong</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：首次揭示肿瘤-巨噬细胞融合杂交细胞中RUNX1作为转移驱动核心调控因子，循环杂交细胞(CHCs)可作为非侵入性肿瘤进展生物标志物。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">Metastasis remains the primary cause of cancer-related morbidity and mortality, despite significant advances in targeted therapies. Although metastatic dissemination requires tumor cells to escape the primary lesion and colonize distant organs, the mechanisms by which primary tumor cells gain metastatic competence remain poorly understood...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>RUNX1是杂交细胞运动和侵袭的核心调控因子</li><li>RUNX1敲低抑制蛋白酶表达、趋化活性和ECM侵袭</li><li>RUNX1药理抑制减少杂交肿瘤生长和外周血播散</li><li>循环杂交细胞(CHCs)富集迁移和EMT表型，可作为液体活检标志物</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>scRNA-seq + cyCIF + 体外杂交细胞模型 + 体内药理抑制</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">转移机制</span></div>
+    </div>
+  </div>
+
+
+  <!-- Paper 06 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">06</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.10.717853v1" target="_blank">EML4-ALK Fusion Rewires Transcriptomic, miRNA, and CAF-Associated Programs in Non-Small Ce</a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Mishra, D., Agrawal, S. et al.</span>
+          <span>通讯：Rajeev Mishra</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：整合 mRNA-miRNA 谱与肿瘤免疫微环境，首次系统解析EML4-ALK融合阳性NSCLC的转录后调控网络和CAF相关ECM程序重塑，为精准治疗提供超越激酶抑制的广谱视角。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">This study establishes an integrative framework that combines paired mRNA/miRNA profiling with immune microenvironmental features to clarify how EML4-ALK fusions shape transcriptomic and post-transcriptional networks in Non-small cell lung cancer (NSCLC)...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>融合阳性NSCLC显示代谢/蛋白稳态通路激活，免疫基质通讯减弱</li><li>miR-3065为中心的调控枢纽特异上调，靶向ECM/黏附基因</li><li>融合阳性肿瘤CAF浸润低于融合阴性，基因-CAF关联模式不同</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>配对mRNA-seq + miRNA-seq + 肿瘤免疫微环境分析 + CAF浸润评估</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">肺癌</span></div>
+    </div>
+  </div>
+
+
+  <!-- Paper 07 -->
   <div class="paper-card">
     <div class="card-header">
       <div class="card-num">07</div>
       <div class="card-title-wrap">
         <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.12.596782v1" target="_blank">
-            胶质母细胞瘤单细胞多组学图谱揭示治疗诱导的肿瘤细胞状态转换和免疫抵抗轨迹
-          </a>
+          <a href="https://www.medrxiv.org/content/10.64898/2026.02.03.703506v1" target="_blank">JAK-STAT Pathway Heterogeneity Governs Immunotherapy Response in Breast Cancer</a>
         </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Single-cell multi-omics atlas of glioblastoma reveals therapy-induced tumor state transitions and immune resistance trajectories</div>
         <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Neumann J. et al.</span>
-          <span>通讯：Geschwind JF. (Johns Hopkins)</span>
-          <span>2026-04-12</span>
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Zhou, J., Zhang, H. et al.</span>
+          <span>通讯：Fu Peng</span>
+          <span>2026-02-05</span>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="highlight-box">
-        亮点：整合scRNA-seq、scATAC-seq和空间转录组，首次在单细胞分辨率追踪胶质母细胞瘤治疗抵抗的轨迹，揭示免疫抵抗与表观重塑的耦合机制。
-      </div>
+      <div class="highlight-box">亮点：JAK-STAT通路在不同细胞类型中展现功能异质性——在肿瘤细胞促癌、在T细胞增强抗肿瘤免疫，STAT4作为双面生物标志物可预测TNBC患者PD-1抑制剂疗效。</div>
       <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        胶质母细胞瘤（GBM）的高度异质性和治疗抵抗是其致命性的核心原因。本研究利用单细胞多组学（scRNA-seq + scATAC-seq + 空间转录组）技术，对来自接受标准治疗（手术+放疗+替莫唑胺）的42例GBM患者的配对治疗前和复发后样本进行深入分析，系统追踪治疗诱导的肿瘤细胞状态转换轨迹和免疫微环境演化。
-      </div>
+      <div class="abstract-text">The JAK-STAT pathway (JSP) is a well-known oncogenic cascade; however, recent clinical trials have detected JSP upregulation in breast cancer following anti-PD1 immunotherapy...</div>
       <div class="section-label">主要发现</div>
-      <ul class="findings-list">
-        <li>治疗后复发肿瘤中，神经祖细胞样（GPC）状态显著富集，与不良预后相关</li>
-        <li>scATAC-seq发现治疗抵抗细胞特异的染色质可及性模式，集中在EGFR和MET调控区</li>
-        <li>轨迹分析识别出从MES-like到GPC-like的定向转换路径，ZFX和HOX家族转录因子驱动此转换</li>
-        <li>免疫抑制性微环境在治疗后加强，CD8+ T细胞从效应表型向耗竭和功能障碍状态转变</li>
-        <li>靶向GPC状态的ZFX抑制剂在患者来源异种移植（PDX）模型中显著延长生存期</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>scRNA-seq + scATAC-seq + 空间转录组 + 42例配对治疗前后GBM样本 + PDX模型
+      <ul class="findings-list"><li>JAK-STAT通路在肿瘤细胞、T细胞和旁癌细胞中展现动态异质性</li><li>STAT4双面调控：肿瘤细胞促癌，T细胞增强抗肿瘤功能</li><li>高JAK-STAT活性与TNBC患者PD-1抑制剂疗效改善相关</li><li>JAK-STAT靶向需精细策略，泛抑制可能损害抗肿瘤免疫</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>JAK-STAT通路分析 + 多套单细胞数据整合 + 免疫治疗数据集验证</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">肿瘤免疫</span></div>
+    </div>
+  </div>
+
+
+  <!-- Paper 08 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">08</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.07.714454v1" target="_blank">Nanoparticle-delivered resiquimod induces brain tumor regression in medulloblastoma and di</a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>McSwain, L. F., Kim, K. et al.</span>
+          <span>通讯：Timothy R Gershon</span>
+          <span>2026-04-09</span>
+        </div>
       </div>
-      <div class="tags-row">
-        <span class="tag">肿瘤学</span>
-        <span class="tag">单细胞组学</span>
-        <span class="tag">表观遗传</span>
-        <span class="tag">胶质母细胞瘤</span>
-        <span class="tag">治疗抵抗</span>
-        <span class="tag">空间组学</span>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：ResiPOx纳米颗粒突破血脑屏障，系统性给药激活小胶质/巨噬细胞驱动的抗肿瘤免疫，在MB和DMG临床前模型中延长无进展生存期，非人灵长类验证安全性。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">We studied the effect of stimulating innate immune function in tumor-associated myeloid cells (TAMs) in medulloblastoma (MB) and diffuse midline glioma (DMG), using a polyoxazoline nanoparticle formulation of the TLR7/8 agonist resiquimod (ResiPOx)...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>ResiPOx配方改善血脑屏障穿透和抗肿瘤疗效</li><li>ResiPOx延长MB和DMG小鼠无进展生存期</li><li>TAM重编程：IFNβ/外源性凋亡通路激活，抗原呈递和T细胞激活signature上调</li><li>非人灵长类安全验证，脑转录响应与小鼠DMG/MB模型相似</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>聚恶唑啉纳米颗粒 + 临床前MB/DMG内源性模型 + 非人灵长类PK/PD</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">神经科学</span><span class="tag">纳米药物</span><span class="tag">空间组学</span><span class="tag">肿瘤免疫</span></div>
+    </div>
+  </div>
+
+
+  <!-- Paper 09 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">09</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.11.717918v1" target="_blank">Midkine Dependency Defines a Therapeutically Actionable Vulnerability in Medulloblastoma</a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Jayamohan, S., Venkata, P. P. et al.</span>
+          <span>通讯：Gangadhara R Sareddy</span>
+          <span>2026-04-14</span>
+        </div>
       </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：MDK通过多受体(NCL/LRP1/SDC2)网络整合癌基因信号、核糖体生物合成和先天免疫，CRISPR敲除和抗体中和均显著抑制MB生长，揭示难治性儿童脑瘤全新治疗靶点。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">Medulloblastoma (MB), the most common malignant pediatric brain tumor, remains associated with high recurrence rates and substantial treatment-related morbidity despite aggressive multimodal therapy. Here, we identify midkine (MDK), a secreted growth factor/cytokine, as a previously unrecognized central regulator of MB growth and survival...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>MDK通过多受体(NCL/LRP1/SDC2)维持ERK1/2和Akt-mTOR-S6信号</li><li>MDK沉默抑制核糖体生物合成、蛋白质翻译和MYC驱动程序</li><li>MDK缺失触发IFNγ-cGAS-STING通路激活，连接翻译应激与先天免疫</li><li>CRISPR敲除MDK显著减少原位移植瘤生长并延长生存期</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>CRISPR敲除 + 单细胞RNA-seq + 磷酸化激酶谱 + 体内原位移植模型</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">肿瘤免疫</span></div>
+    </div>
+  </div>
+
+
+  <!-- Paper 10 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">10</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.12.26350712v1" target="_blank">Signal-to-noise evaluation of dynamic versus static 18FDG-PET in focal epilepsy via Bayesi</a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Quigg, M., Chernyavskiy, P. et al.</span>
+          <span>通讯：Mark Quigg</span>
+          <span>2026-04-14</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：BRESQ贝叶斯区域信号质量分析客观量化iD-PET信噪比优于sPET，支持动态PET作为癫痫手术评估的非侵入性工具，为难治性癫痫精准定位提供新方法。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">Background and Purpose: 2-[18F] fluoro-2-deoxy-D-glucose positron emission tomography (static PET) has mixed specificity and sensitivity in targeting epileptic zones in the noninvasive stage of epilepsy surgery evaluations. We compared the signal quality of static PET compared to a method of interictal dynamic PET (iD-PET)...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>iD-PET在36个ROI中29个(80%)的SNR优于sPET，概率&gt;95%占8个ROI</li><li>SNR优势最大的5个区域：颞内侧(左右)、枕外侧(左右)、左额叶基底</li><li>BRESQ方法可扩展并可泛化至不同脑mapping模态</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>贝叶斯区域估计信号质量分析(BRESQ) + 动态PET vs静态PET对比</div>
+      <div class="tags-row"><span class="tag">神经科学</span></div>
     </div>
   </div>
 
@@ -797,83 +517,92 @@
   <div class="cat-header">
     <div class="cat-icon tech">⚙️</div>
     <div class="cat-name">技术类</div>
-    <div class="cat-count">1篇</div>
+    <div class="cat-count">2篇</div>
   </div>
 
-  <!-- Paper 008 -->
+  <!-- Paper 02 -->
   <div class="paper-card">
     <div class="card-header">
-      <div class="card-num">08</div>
+      <div class="card-num">02</div>
       <div class="card-title-wrap">
         <div class="card-title">
-          <a href="https://www.biorxiv.org/content/10.1101/2026.04.15.598201v1" target="_blank">
-            scMOFA：整合单细胞染色质可及性和转录组数据进行无偏倚降维和细胞类型注释的框架
-          </a>
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.11.717907v1" target="_blank">A residual-ratio framework for auditing transcriptomic gene signatures against background </a>
         </div>
-        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">scMOFA: Multi-omic factor analysis for joint dimensionality reduction of single-cell chromatin accessibility and transcriptome data</div>
         <div class="card-meta">
-          <span class="card-badge badge-biorxiv">bioRxiv</span>
-          <span>Durham A. et al.</span>
-          <span>通讯：Stegle O. (DKFZ/EBI)</span>
-          <span>2026-04-15</span>
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Zhu, Y., Zhang, C. et al.</span>
+          <span>通讯：Yuda Bi</span>
+          <span>2026-04-14</span>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="highlight-box">
-        亮点：scMOFA将多组学因子分析扩展至单细胞层面，可在无监督条件下同时整合scRNA-seq和scATAC-seq数据，自动识别批次效应和生物学变异来源，大幅提升跨数据集细胞类型注释一致性。
-      </div>
+      <div class="highlight-box">亮点：提出残差比审计框架，首次量化基因 signature 中有多少变异独立于背景表达结构，为 TCGA 等癌症数据中转录组 signature 质量评估提供可解释的标准化方法。</div>
       <div class="section-label">摘要</div>
-      <div class="abstract-text">
-        单细胞多组学技术（如10x Multiome）能够在同一细胞中同时测量染色质可及性和基因表达，为理解基因调控机制提供了前所未有的机会。然而从这些高维数据中提取有意义的生物学信号仍然具有挑战性。本研究提出scMOFA（single-cell Multi-Omic Factor Analysis），将MOFA+框架扩展至单细胞多组学数据，实现无需先验知识的无监督降维和跨模态细胞类型注释。
-      </div>
-      <div class="section-label">主要创新</div>
-      <ul class="findings-list">
-        <li>在PBMC和脑组织数据集上，自动识别超过20个具有生物学意义的潜在因子</li>
-        <li>批次效应校正能力优于Harmony和Seurat V5 CCA（UMAP一致性评分提高32%）</li>
-        <li>跨平台（10x、DSP、SNARE-seq）数据整合后细胞类型注释一致性达97.3%</li>
-        <li>可识别与特定生物学过程相关的染色质-转录偶联调控模块</li>
-        <li>提供Python/R双语言API，计算效率支持>1M细胞的超大规模数据集</li>
-      </ul>
-      <div class="method-row">
-        <span class="method-label">方法</span>多组学因子分析 + 无监督降维 + 跨平台scRNA-seq/scATAC-seq整合
-      </div>
-      <div class="tags-row">
-        <span class="tag">单细胞组学</span>
-        <span class="tag">表观遗传</span>
-        <span class="tag">scMOFA</span>
-        <span class="tag">多组学整合</span>
-        <span class="tag">scATAC-seq</span>
-        <span class="tag">生物信息学工具</span>
-      </div>
+      <div class="abstract-text">Background: Transcriptomic gene signatures are widely used to infer pathway activity and biological mechanism from bulk cancer expression data, yet current evaluation strategies primarily emphasize internal coherence, predictive performance, or scoring robustness...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>残差比审计在TCGA 8种癌症中均有显著区分度(18-43%低于随机基线)</li><li>轨迹形状在bootstrap重采样下高度稳定(r=0.999)</li><li>METABRIC乳腺癌队列验证中排序一致性达Spearman rho=0.72</li><li>上界敏感性分析：45/50 Hallmark基因集优于随机基线</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>残差比统计框架 + TCGA 8种癌症bulk RNA-seq + METABRIC microarray验证</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">生物信息学</span></div>
     </div>
   </div>
 
+
+  <!-- Paper 03 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">03</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.718488v1" target="_blank">MICRON learns outcome-associated representations of spatial immune microenvironments</a>
+        </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Chen, C.-J., George, B. et al.</span>
+          <span>通讯：Natalie Stanley</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：MICRON 是首个无分割、自动化多实例学习工具，自动识别脑癌中与预后相关的空间免疫微环境，揭示星形胶质细胞、NK细胞和巨噬细胞的协调互作，为空间蛋白质组学数据挖掘提供开源工具。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">Spatial imaging proteomics modalities, such as imaging mass cytometry, enable comprehensive identification of immune microenvironments driving disease outcomes...</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>MICRON无需细胞分割，全自动从空间蛋白质组学数据学习预后特征</li><li>脑癌预后相关免疫微环境：星形胶质细胞-NK细胞-巨噬细胞协调通讯</li><li>开源工具：https://github.com/ChenCookie/micron</li></ul>
+      <div class="method-row"><span class="method-label">方法</span>多实例学习 + 空间成像蛋白质组学 + 成对细胞分割免费 + 生存分析</div>
+      <div class="tags-row"><span class="tag">肿瘤学</span><span class="tag">免疫治疗</span><span class="tag">空间组学</span></div>
+    </div>
+  </div>
+
+
+  <!-- Trend Summary -->
   <!-- Trend Summary -->
   <div class="trend-section">
     <div class="trend-title">📊 本期趋势观察</div>
     <div class="trend-item">
       <div class="trend-dot">1</div>
-      <div class="trend-text"><strong>微生物组-免疫治疗整合成为肿瘤精准医疗新方向：</strong>本期两篇研究聚焦肠道微生物组对PD-1/PD-L1疗效的预测作用（微生物组-代谢组联合模型AUC=0.89）和表观遗传调控在免疫治疗耐药中的角色，提示微生物组干预和表观遗传药物联合免疫检查点抑制剂具有巨大临床潜力。</div>
+      <div class="trend-text"><strong>肠道菌群-脑轴研究持续升温：</strong>日本学龄前队列揭示菌群组成与行为发育的特异性关联；SIFR平台证实帕金森病中配方纤维的微生物代谢调节效果。</div>
     </div>
     <div class="trend-item">
       <div class="trend-dot">2</div>
-      <div class="trend-text"><strong>空间组学与单细胞多组学深度融合：</strong>NSCLC空间转录组研究揭示免疫逃避的空间特异性机制（SPIES评分）；GBM多组学图谱追踪治疗抵抗的细胞轨迹。空间分辨率和多组学覆盖正在重新定义肿瘤微环境研究范式。</div>
+      <div class="trend-text"><strong>肿瘤免疫治疗深化机制理解：</strong>JAK-STAT通路细胞类型异质性重新定义免疫检查点疗效预测；ResiPOx纳米颗粒激活脑肿瘤TAM，展现跨越血脑屏障的免疫调节新策略。</div>
     </div>
     <div class="trend-item">
       <div class="trend-dot">3</div>
-      <div class="trend-text"><strong>肠脑轴研究进入分子机制深水区：</strong>PD研究首次完整证实"肠漏→TLR4→迷走神经→αSyn"的病理级联，为微生物组干预治疗神经退行性疾病提供机制基础；MetaDeep-Transformer为微生物组功能预测和代谢通路发现提供深度学习新工具。</div>
+      <div class="trend-text"><strong>空间组学与AI方法加速融合：</strong>MICRON以多实例学习突破空间蛋白质组学分析瓶颈；残差比审计框架为转录组signature提供可解释的质控标准。</div>
     </div>
     <div class="trend-item">
       <div class="trend-dot">4</div>
-      <div class="trend-text"><strong>神经炎症靶点持续升温：</strong>TREM2-SYK通路在AD小胶质细胞中的核心作用得到功能验证，小分子SYK抑制剂展现认知保护效果，提示神经炎症调控是AD治疗的有前景策略。</div>
+      <div class="trend-text"><strong>儿童脑瘤新靶点涌现：</strong>MDK作为多种MB亚型通用治疗靶点，核糖体生物合成和cGAS-STING通路连接癌基因信号与先天免疫；RUNX1驱动肿瘤-免疫杂交细胞转移，循环杂交细胞成为液体活检新候选。</div>
     </div>
   </div>
 
+
   <!-- Footer -->
   <div class="footer">
-    <p>📅 本期编辑：2026年04月17日 | 数据来源：bioRxiv & medRxiv</p>
-    <p>🔍 覆盖领域：微生物组学 · 肿瘤学 · 神经科学 · 空间组学 · 单细胞组学 · 表观遗传 · 免疫学 · 生物信息学</p>
+    <p>📅 本期编辑：2026年04月17日 | 数据来源：bioRxiv &amp; medRxiv · 共抓取 10 篇精选</p>
+    <p>🔍 覆盖领域：微生物组 · 肿瘤免疫 · 生物信息学 · 神经科学 · 临床转化</p>
     <p style="margin-top:8px;">🌐 访问 <a href="https://www.biorxiv.org" target="_blank">bioRxiv.org</a> · <a href="https://www.medrxiv.org" target="_blank">medRxiv.org</a> 获取更多预印本</p>
   </div>
 
