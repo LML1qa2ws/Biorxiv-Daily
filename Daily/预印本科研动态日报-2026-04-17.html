@@ -26,10 +26,9 @@
     .stat-num{font-size:22px;font-weight:700;color:#1A5F3C}
     .stat-label{font-size:11px;color:#718096;margin-top:2px}
     .toc-section{padding:16px 24px;background:#F7FDF9;border-bottom:1px solid #E2E8F0}
-    .toc-title{font-size:13px;font-weight:700;color:#1A5F3C;margin-bottom:8px;letter-spacing:1px}
-    .toc-cat{margin-bottom:6px}
-    .toc-cat-label{font-size:12px;font-weight:600;color:#2D3748;display:inline-block;margin-right:8px}
-    .toc-items{display:inline;font-size:12px;color:#718096}
+    .toc-title{font-size:13px;font-weight:700;color:#1A5F3C;margin-bottom:10px;letter-spacing:1px}
+    .toc-item{display:block;font-size:13px;color:#2D3748;padding:4px 0 4px 8px;text-decoration:none;border-left:2px solid transparent;transition:all .15s;line-height:1.5;margin-bottom:2px}
+    .toc-item:hover{color:#1A5F3C;border-left-color:#1A5F3C;background:#F0FDF4;padding-left:12px;text-decoration:underline}
     .cat-header{padding:14px 24px 6px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #E2E8F0;margin-top:8px}
     .cat-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px}
     .cat-icon.review{background:#FEF3C7}.cat-icon.research{background:#EBF8F1}.cat-icon.tech{background:#EBF4FF}
@@ -86,36 +85,30 @@
   </div>
   <div class="stats-bar">
     <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">精选文献</div></div>
-    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">综述类</div></div>
     <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">研究类</div></div>
     <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">技术/工具</div></div>
     <div class="stat-item"><div class="stat-num">6+</div><div class="stat-label">涵盖学科</div></div>
   </div>
   <div class="toc-section">
     <div class="toc-title">本期目录</div>
-    <div class="toc-cat">
-      <span class="toc-cat-label">🔬 研究类</span>
-      <span class="toc-items">日本学龄前队列研究：肠道菌群组成及预测功能与生长发育及行为的相关性 · 配方纤维依赖性调节帕金森病患者肠道微生物代谢 · 细胞融合重编程肿瘤细胞并促进RUNX1介导的结直肠癌侵袭与远处播散 · EML4-ALK融合重塑非小细胞肺癌转录组、miRNA及CAF相关程序 · JAK-STAT通路异质性调控乳腺癌免疫治疗疗效 · 纳米颗粒递送Resiquimod通过中断旁分泌生长支持并激活髓系免疫信号与吞噬作用诱导髓母细胞瘤和弥漫性中线胶质瘤消退 · Midkine依赖性定义髓母细胞瘤中可靶向的治疗脆弱点 · 基于贝叶斯区域信号质量分析的动态与静态¹⁸F-FDG-PET在局灶性癫痫中的信噪比评估</span>
-    </div>
-    <div class="toc-cat">
-      <span class="toc-cat-label">⚙️ 技术类</span>
-      <span class="toc-items">残差比框架：针对背景表达结构对转录组基因Signature进行质量审计 · MICRON：学习与预后相关的空间免疫微环境表征</span>
-    </div>
+      <a class="toc-item" href="#paper-01">01. 日本学龄前队列研究：肠道菌群组成及预测功能与生长发育及行为的相关性</a>
+      <a class="toc-item" href="#paper-02">02. 配方纤维依赖性调节帕金森病患者肠道微生物代谢</a>
+      <a class="toc-item" href="#paper-03">03. 细胞融合重编程肿瘤细胞并促进RUNX1介导的结直肠癌侵袭与远处播散</a>
+      <a class="toc-item" href="#paper-04">04. EML4-ALK融合重塑非小细胞肺癌转录组、miRNA及CAF相关程序</a>
+      <a class="toc-item" href="#paper-05">05. JAK-STAT通路异质性调控乳腺癌免疫治疗疗效</a>
+      <a class="toc-item" href="#paper-06">06. 纳米颗粒递送Resiquimod通过中断旁分泌生长支持并激活髓系免疫信号与吞噬作用诱导髓母细胞瘤和弥漫性中线胶质瘤消退</a>
+      <a class="toc-item" href="#paper-07">07. Midkine依赖性定义髓母细胞瘤中可靶向的治疗脆弱点</a>
+      <a class="toc-item" href="#paper-08">08. 基于贝叶斯区域信号质量分析的动态与静态¹⁸F-FDG-PET在局灶性癫痫中的信噪比评估</a>
+      <a class="toc-item" href="#paper-09">09. 残差比框架：针对背景表达结构对转录组基因Signature进行质量审计</a>
+      <a class="toc-item" href="#paper-10">10. MICRON：学习与预后相关的空间免疫微环境表征</a>
   </div>
-  <div class="cat-header">
-    <div class="cat-icon review">📖</div>
-    <div class="cat-name">综述类</div>
-    <div class="cat-count">0篇</div>
-  </div>
-  <div style="padding:20px 24px;color:#718096;font-size:13px;">本期暂无综述类论文收录。</div>
-
   <div class="cat-header">
     <div class="cat-icon research">🔬</div>
     <div class="cat-name">研究类</div>
     <div class="cat-count">8篇</div>
   </div>
   <!-- Paper 01 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-01">
     <div class="card-header">
       <div class="card-num">01</div>
       <div class="card-title-wrap">
@@ -143,7 +136,7 @@
   </div>
 
   <!-- Paper 04 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-04">
     <div class="card-header">
       <div class="card-num">04</div>
       <div class="card-title-wrap">
@@ -171,7 +164,7 @@
   </div>
 
   <!-- Paper 05 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-05">
     <div class="card-header">
       <div class="card-num">05</div>
       <div class="card-title-wrap">
@@ -199,7 +192,7 @@
   </div>
 
   <!-- Paper 06 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-06">
     <div class="card-header">
       <div class="card-num">06</div>
       <div class="card-title-wrap">
@@ -227,7 +220,7 @@
   </div>
 
   <!-- Paper 07 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-07">
     <div class="card-header">
       <div class="card-num">07</div>
       <div class="card-title-wrap">
@@ -255,7 +248,7 @@
   </div>
 
   <!-- Paper 08 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-08">
     <div class="card-header">
       <div class="card-num">08</div>
       <div class="card-title-wrap">
@@ -289,7 +282,7 @@ ResiPOx is a brain-penetrant immunomodulatory therapeutic that reshapes the immu
   </div>
 
   <!-- Paper 09 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-09">
     <div class="card-header">
       <div class="card-num">09</div>
       <div class="card-title-wrap">
@@ -317,7 +310,7 @@ ResiPOx is a brain-penetrant immunomodulatory therapeutic that reshapes the immu
   </div>
 
   <!-- Paper 10 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-10">
     <div class="card-header">
       <div class="card-num">10</div>
       <div class="card-title-wrap">
@@ -350,7 +343,7 @@ ResiPOx is a brain-penetrant immunomodulatory therapeutic that reshapes the immu
     <div class="cat-count">2篇</div>
   </div>
   <!-- Paper 02 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-02">
     <div class="card-header">
       <div class="card-num">02</div>
       <div class="card-title-wrap">
@@ -378,7 +371,7 @@ ResiPOx is a brain-penetrant immunomodulatory therapeutic that reshapes the immu
   </div>
 
   <!-- Paper 03 -->
-  <div class="paper-card">
+  <div class="paper-card" id="paper-03">
     <div class="card-header">
       <div class="card-num">03</div>
       <div class="card-title-wrap">
