@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CD8+ T细胞与肿瘤免疫研究综述</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #222;
+    background: #f5f7fa;
+    padding: 40px 20px;
+  }
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+    overflow: hidden;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a5276, #2874a6, #3498db);
+    color: #fff;
+    padding: 48px 48px 40px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
+  }
+  .header .meta {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 2;
+  }
+  .toc {
+    padding: 32px 48px;
+    background: #f0f4f8;
+    border-bottom: 1px solid #dde4ec;
+  }
+  .toc h2 { font-size: 16px; color: #1a5276; margin-bottom: 12px; }
+  .toc ol { padding-left: 20px; color: #34495e; font-size: 14px; }
+  .toc li { margin: 6px 0; }
+  .toc a { color: #2874a6; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .content { padding: 40px 48px; }
+  h2 {
+    font-size: 20px;
+    color: #fff;
+    background: linear-gradient(90deg, #1a5276, #3498db);
+    padding: 10px 20px;
+    border-radius: 6px;
+    margin: 36px 0 20px;
+  }
+  h3 {
+    font-size: 17px;
+    color: #1a5276;
+    border-left: 4px solid #3498db;
+    padding-left: 12px;
+    margin: 24px 0 14px;
+  }
+  h4 {
+    font-size: 15px;
+    color: #2c3e50;
+    margin: 18px 0 10px;
+  }
+  p { margin: 10px 0; color: #34495e; }
+  ul, ol { padding-left: 24px; color: #34495e; margin: 8px 0; }
+  li { margin: 5px 0; }
+  blockquote {
+    background: #eaf4fb;
+    border-left: 4px solid #3498db;
+    padding: 12px 18px;
+    margin: 14px 0;
+    border-radius: 0 6px 6px 0;
+    color: #566573;
+    font-size: 14px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  th {
+    background: #1a5276;
+    color: #fff;
+    padding: 11px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #e8edf2;
+    color: #2c3e50;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #f4f8fb; }
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, #d6eaf8 60%);
+    padding: 0 3px;
+  }
+  .tag {
+    display: inline-block;
+    background: #e8f4fd;
+    color: #1a5276;
+    border-radius: 20px;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-right: 4px;
+  }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #95a5a6;
+    font-size: 13px;
+    border-top: 1px solid #eef2f5;
+  }
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .header, .content { padding: 24px 20px; }
+    .toc { padding: 20px 24px; }
+    h2 { font-size: 17px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>CD8+ T细胞与肿瘤免疫研究综述</h1>
+  <div class="meta">
+    <strong>汇报人</strong>：冼筱莹 &nbsp;|&nbsp;
+    <strong>指导老师</strong>：乔涵教授 &nbsp;|&nbsp;
+    <strong>日期</strong>：2026年4月17日
+  </div>
+</div>
+
+<div class="toc">
+  <h2>目录</h2>
+  <ol>
+    <li><a href="#sec1">CD8+ T细胞的命名体系</a></li>
+    <li><a href="#sec2">肿瘤微环境中的CD8+ T细胞亚群</a></li>
+    <li><a href="#sec3">外源性代谢物对CD8+ T细胞的调控</a></li>
+    <li><a href="#sec4">内源性因子对CD8+ T细胞的调控</a></li>
+    <li><a href="#sec5">行为及其他因素对CD8+ T细胞的影响</a></li>
+    <li><a href="#sec6">总结</a></li>
+  </ol>
+</div>
+
+<div class="content">
+
+<h2 id="sec1">1. CD8+ T细胞的命名体系</h2>
+
+<h3>1.1 历史演进</h3>
+<p>CD8+ T细胞的命名经历了多次演变：</p>
+<ul>
+  <li><strong>20世纪60年代</strong>：淋巴细胞首次被分为B细胞和T细胞两个亚组。</li>
+  <li><strong>1970年代</strong>：根据CD4或CD8共受体（TCR）的表达，将淋巴细胞分为CD4+ T细胞和CD8+ T细胞。</li>
+  <li><strong>1990年代</strong>：出现了Th1、Th2、Treg、Th9、Th17和滤泡辅助T细胞等更细致的分类。</li>
+  <li><strong>2020年</strong>：加拿大Keystone T细胞记忆会提出T细胞命名三大建议，其中包括"模块化命名法"。</li>
+</ul>
+
+<h3>1.2 传统命名法</h3>
+<p>传统命名法将T细胞归入固定、理想化的亚群类别，如TCM（中枢记忆T细胞）、TRM（组织驻留记忆T细胞）、Tpex（干性样耗竭祖细胞）、Ttex（终末耗竭T细胞）等。</p>
+<p><strong>缺点</strong>：命名模糊笼统，无法体现细胞异质性；亚群数量有限，难以覆盖新发现的细胞状态。</p>
+
+<h3>1.3 模块化命名法（2020年）</h3>
+<p>模块化命名法通过组合谱系、功能、迁移、分化状态、抗原状态等生物学属性来描述细胞，采用<span class="highlight">"谱系→迁移→分化→抗原"</span>的模块顺序命名。</p>
+<ul>
+  <li><strong>S</strong>（SLO-homing）：次级淋巴器官归巢型</li>
+  <li><strong>D</strong>（Disseminating）：全身播散型</li>
+  <li><strong>U</strong>（Unknown migration）：迁移特性未知</li>
+</ul>
+<blockquote>参考文献：<em>Nature Reviews Immunology</em>, 2025 — "Guidelines for T cell nomenclature"</blockquote>
+
+<h2 id="sec2">2. 肿瘤微环境中的CD8+ T细胞亚群</h2>
+
+<p>肿瘤微环境（TME）中的CD8+ T细胞呈现高度异质性，主要亚群如下：</p>
+
+<table>
+  <tr><th>亚群</th><th>全称</th><th>关键转录因子/表面标志物</th><th>功能特征</th></tr>
+  <tr><td>TCM</td><td>中枢记忆T细胞</td><td>CD62L<sup>hi</sup> CD44<sup>hi</sup></td><td>自我更新能力强</td></tr>
+  <tr><td>TRM</td><td>组织驻留记忆T细胞</td><td>—</td><td>驻留肿瘤组织</td></tr>
+  <tr><td>Tpex</td><td>干性样耗竭祖细胞</td><td>TCF1+ TIM3-</td><td>对ICB响应良好</td></tr>
+  <tr><td>Ttex</td><td>终末耗竭T细胞</td><td>TCF1- TIM3+</td><td>细胞毒性高但预后差</td></tr>
+  <tr><td>类TRM</td><td>类组织驻留记忆T细胞</td><td>—</td><td>介于TRM与Ttex之间</td></tr>
+  <tr><td>旁观者T细胞</td><td>—</td><td>—</td><td>非肿瘤特异性</td></tr>
+</table>
+
+<blockquote>
+  参考文献：<br>
+  <em>Nature Medicine</em>, 2023 — "Pan-cancer T cell atlas links a cellular stress response state to immunotherapy resistance"<br>
+  <em>Annual Review of Immunology</em>, 2025 — "Molecular Mechanisms Governing CD8 T Cell Differentiation and Checkpoint Inhibitor Response in Cancer"
+</blockquote>
+
+<h2 id="sec3">3. 外源性代谢物对CD8+ T细胞的调控</h2>
+
+<p>肠道微生物群的代谢产物可经血液循环抵达肿瘤微环境，调控CD8+ T细胞的分化和功能。</p>
+
+<h3>3.1 戊二酸（Glutarate, DEG）</h3>
+<p><span class="tag">Nature Metabolism 2023</span></p>
+<p><strong>目的</strong>：探究结构类似物戊二酸（DEG）对CD8+ T细胞分化和功能的影响。</p>
+<p><strong>模型</strong>：小鼠皮下接种B16F10-OVA黑色素瘤/人源化卵巢癌异种移植 + OT-I小鼠体外模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>DEG以剂量依赖性方式增加CD62L<sup>hi</sup> CD44<sup>hi</sup> TCM数量。</li>
+  <li>DEG培养7天后，小鼠和人类分化T细胞中TCM增加，效应记忆T细胞减少。</li>
+  <li>CD8+ T细胞GZMB表达增加。</li>
+  <li>人类CD8+ T细胞中耗竭因子TOX及耗竭标记TIM3和LAG3均下调。</li>
+</ul>
+
+<h3>3.2 琥珀酸（Succinate）</h3>
+<p><span class="tag">Immunity 2025</span></p>
+<p><strong>目的</strong>：探究琥珀酸对CD8+ T细胞分化的影响。</p>
+<p><strong>模型</strong>：体外生成缺乏SDHB（琥珀酸脱氢酶B亚基）的B16-OVA+直肠腺癌细胞系。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>SDHB缺乏肿瘤的TME中，肿瘤反应性PD-1+ CD8+ T细胞增加。</li>
+  <li>SDHB缺乏肿瘤中OVA特异性和肿瘤反应性CD8+ T细胞数量增加（PD-1+、PD-1+ CD39+ IFNγ+）。</li>
+  <li>CD8+ T细胞耗竭完全消除了SDHB敲除的治疗效果，证实SDHB通过介导CD8+ T细胞发挥抗肿瘤效应。</li>
+</ul>
+
+<h3>3.3 IPA（约氏乳杆菌代谢物）</h3>
+<p><span class="tag">Cell 2024</span></p>
+<p><strong>目的</strong>：探究约氏乳杆菌代谢物IPA对CD8+ T细胞的抗肿瘤免疫作用。</p>
+<p><strong>模型</strong>：小鼠皮下接种MC38结肠癌细胞荷瘤模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>IPA补充后CD8+ T细胞增加，伴随IFN-γ和TNF-α等效应细胞因子释放。</li>
+  <li>流式显示IPA补充增加CD8+ T细胞浸润频率及其效应细胞因子在肿瘤中的产生。</li>
+  <li>NK细胞、B细胞、树突状细胞和巨噬细胞均未观察到显著变化，说明IPA的效应具有CD8+ T细胞特异性。</li>
+</ul>
+
+<h3>3.4 丁酸（Butyrate）</h3>
+<p><span class="tag">Immunity 2025</span></p>
+<p><strong>目的</strong>：探究肠道菌群来源的丁酸在黑色素瘤模型中调控CD8+ T细胞分化的机制。</p>
+<p><strong>模型</strong>：高纤维饮食后，B6小鼠皮下接种B16黑色素瘤细胞。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>高纤维饮食（HFD）增加了肿瘤引流淋巴结（tdLN）中gBT-I细胞总数。</li>
+  <li>gBT-I细胞呈PD-1中等水平表达，共表达TOX、TCF1、LY108、CD44、T-BET和CD62L，在表型上与Tpex相似。</li>
+  <li>丁酸通过FOXO1诱导干性程序，促进CD8+ T细胞干性分化。</li>
+</ul>
+
+<h3>3.5 FAD（肠菌代谢物）</h3>
+<p><span class="tag">Cell Metabolism 2026</span></p>
+<p><strong>目的</strong>：探究肠道微生物群与脂肪组织如何影响癌症免疫治疗。</p>
+<p><strong>模型</strong>：饮食诱导肥胖 + MC38/B16-F0肿瘤小鼠模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>FMT（肠道菌群移植）高组与低组在浸润免疫和基质细胞群比例上存在显著差异。</li>
+  <li>FMT高组CD8+ T细胞相对丰度比FMT低组增加超过2倍。</li>
+  <li>高FMT组肿瘤浸润细胞毒性CD8+ T细胞比例显著增加。</li>
+</ul>
+
+<h3>3.6 DOPAC（槲皮素代谢物）</h3>
+<p><span class="tag">Cell Metabolism 2025</span></p>
+<p><strong>目的</strong>：探究槲皮素直接代谢物DOPAC与肿瘤微环境的相互作用。</p>
+<p><strong>模型</strong>：小鼠皮下异种移植B16-F10黑色素瘤。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>DOPAC组小鼠肿瘤内CD8+ T细胞显著增加，且具有肿瘤特异性。</li>
+  <li>效应CD8+ T细胞和细胞毒性CD8+ T细胞频率显著增加。</li>
+  <li>对传统CD4+ T细胞、Treg、NK细胞、B细胞比例无影响。</li>
+  <li>DOPAC通过NRF2介导线粒体自噬途径发挥抗肿瘤作用。</li>
+</ul>
+
+<h2 id="sec4">4. 内源性因子对CD8+ T细胞的调控</h2>
+
+<h3>4.1 SNX17与尿苷</h3>
+<p><span class="tag">Cell Metabolism 2025</span></p>
+<p><strong>目的</strong>：探究基因SNX17对CD8+ T细胞的肿瘤免疫作用。</p>
+<p><strong>模型</strong>：小鼠皮下异种移植MC38/CMT93肿瘤（结直肠癌）。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>SNX17-KO小鼠肿瘤中CD4+和CD8+ T细胞比例升高。</li>
+  <li>CD45+群体中巨噬细胞比例略降，Tregs比例显著升高。</li>
+  <li>CD44、IFN-γ、颗粒酶B、IL-2和TNF等效应因子功能增强。</li>
+  <li>SNX17通过影响CD8+ T细胞发挥抑制肿瘤免疫作用。</li>
+</ul>
+
+<h3>4.2 ATF4（转录因子）</h3>
+<p><span class="tag">Immunity 2025</span></p>
+<p><strong>目的</strong>：探究缺氧环境下转录因子ATF4在CD8+ T细胞功能障碍中的作用。</p>
+<p><strong>模型</strong>：MCA-205肉瘤小鼠；B16-OVA黑色素瘤小鼠。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>选择性过表达ATF4的T细胞主要表现为TEX term表型（TCF-1<sup>-</sup>/Tim-3+）。</li>
+  <li>ATF4基因敲除小鼠则富集TEX prog（TCF-1<sup>+</sup>/Tim-3<sup>-</sup>）。</li>
+  <li>强ATF4活性的T细胞向TEX term状态转变，TEX prog相关基因下调，抑制抗肿瘤免疫。</li>
+</ul>
+<p><em>注：TDLN为肿瘤引流淋巴结（肿瘤中转站），TIL为肿瘤浸润淋巴细胞。</em></p>
+
+<h3>4.3 FGF21（成纤维细胞生长因子21）</h3>
+<p><span class="tag">Cell Metabolism 2024</span></p>
+<p><strong>目的</strong>：探究肿瘤分泌的FGF21如何通过影响CD8+ T细胞发挥免疫抑制作用。</p>
+<p><strong>模型</strong>：Fgf21基因敲降 + 皮下接种MC38和B16-OVA小鼠。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>shFgf21肿瘤中CD8+ T细胞频率和数量显著增加，效应T细胞比例升高，Tregs频率降低。</li>
+  <li>IFNγ和granzyme B产生增加，CD8+ T细胞细胞毒性活性增强。</li>
+  <li>FGF21通过重编程胆固醇代谢发挥免疫抑制作用。</li>
+</ul>
+
+<h3>4.4 TSH/TSHR信号轴</h3>
+<p><span class="tag">Cancer Communication 2024</span></p>
+<p><strong>目的</strong>：探究TSH/TSHR信号轴对CD8+ T细胞耗竭及肿瘤免疫逃逸的调控作用。</p>
+<p><strong>模型</strong>：Tshr条件性敲除CRC皮下肿瘤小鼠模型；人类PBMCs。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>TSHR敲除降低PD-1和TIM3表达，促进TNFα和IFNγ生成。</li>
+  <li>TSH处理显著促进PD-1和TIM3表达，抑制促炎细胞因子。</li>
+  <li>人类PBMCs中，hTSH抑制TNFα和IFNγ产生。</li>
+</ul>
+
+<h3>4.5 TOPK</h3>
+<p><span class="tag">Cancer Communication 2026</span></p>
+<p><strong>目的</strong>：探究TOPK抑制CD8+ T细胞抗肿瘤免疫的机制。</p>
+<p><strong>模型</strong>：Topk全局敲除小鼠 + CD8+ T细胞特异性TOPK敲除小鼠皮下黑色素瘤模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>Topk−/−小鼠肿瘤浸润CD8+ T细胞IFN-γ、TNF-α和GzmB分泌显著增加，CD69升高。</li>
+  <li>效应分子上调（Ccl5、Klrc1、Fasl、Slamf1）；活化分子上调（Cd28、Cd226、Cd27、Il2ra）。</li>
+  <li>耗竭标志物下降（PD-1、Lag3、Tigit、Entpd1、Cd96、Cd160）；耗竭相关转录因子下降（Tox、Ikzf2、Klf2）。</li>
+  <li>体外实验中Topk−/−组CD8+ T细胞表现出显著细胞毒性活性。</li>
+</ul>
+
+<h3>4.6 Mettl8</h3>
+<p><span class="tag">J Exp Med 2026</span></p>
+<p><strong>目的</strong>：探究Mettl8-Tcf1信号轴对CD8+ T细胞分化的调控作用。</p>
+<p><strong>模型</strong>：Mettl8−/− OT-I细胞转移到皮下注射EG7-OVA肿瘤的小鼠。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>单细胞测序显示三个不同簇：TPEX、TEX和循环（TEFF）细胞。</li>
+  <li>Mettl8缺乏表现为Tcf1+ Tim3<sup>-</sup> TPEX细胞比例减少，TEX和终末TEX细胞比例增加。</li>
+  <li>CD8+ T细胞中"干样"特征（Tcf1、Bcl6、CXCR5）表达降低，"耗竭"特征（PD-1、Tox）表达也降低，促进干型CD8+ T细胞维持。</li>
+</ul>
+
+<h2 id="sec5">5. 行为及其他因素对CD8+ T细胞的影响</h2>
+
+<h3>5.1 运动</h3>
+<p><span class="tag">Cell 2025</span></p>
+<p><strong>目的</strong>：探究运动引起的微生物组变化对抗肿瘤免疫的影响。</p>
+<p><strong>模型</strong>：小鼠皮下异种移植黑色素瘤模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>运动显著增加肿瘤引流淋巴结（tdLNs）中表达PD-1和产生效应细胞因子（IFNγ、GZMB等）的CD8+ T细胞。</li>
+  <li>运动对tdLN或TME中Tregs无显著影响。</li>
+  <li>CD8+ T细胞耗尽时运动治疗无效，表明CD8+ T细胞是运动诱导抗肿瘤效应的关键介质。</li>
+</ul>
+
+<h3>5.2 禁食（饮食限制）</h3>
+<p><span class="tag">Nature Metabolism 2025</span></p>
+<p><strong>目的</strong>：探究饮食限制（DR）如何重编程CD8+ T细胞的命运决定与代谢状态。</p>
+<p><strong>模型</strong>：饮食处理后，小鼠皮下异种移植B16黑色素瘤和E0771乳腺癌。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>DR组表达Gzmb的CD8+ Teff细胞比例增加。</li>
+  <li>DR条件下产生IFNγ的T细胞、GZMB+ CD8+ Teff细胞比例增加。</li>
+  <li>DR组中增殖的Teff细胞群（Prolif1、Prolif2）增加，Tex Int细胞数量减少。</li>
+</ul>
+
+<h3>5.3 昼夜节律</h3>
+<p><span class="tag">Nature Metabolism 2026</span></p>
+<p><strong>目的</strong>：探索CD8+ T细胞的肿瘤浸润与杀伤功能是否呈昼夜节律性。</p>
+<p><strong>模型</strong>：皮下注射B16-F10-OVA黑色素瘤细胞小鼠模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>肿瘤浸润细胞中巨噬细胞最多，其次是NK细胞和B细胞。</li>
+  <li>"非耗竭"与"耗竭"CD8+ T细胞比值存在时间差异：早晨CD8+ T细胞呈抑制表型，晚上呈更强抗肿瘤特征。</li>
+  <li>人类CD8+ T细胞同样表现出昼夜节律振荡。</li>
+</ul>
+
+<h3>5.4 慢性压力</h3>
+<p><span class="tag">Nature Metabolism 2026</span></p>
+<p><strong>目的</strong>：阐明慢性压力如何损害肝脏CD8+ T细胞的免疫监视功能。</p>
+<p><strong>模型</strong>：CUMS（慢性不可预见性温和应激模型）+ 脾脏注射MC38建立肝转移肿瘤小鼠模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>CUMS小鼠肝脏肿瘤组织中CD45+、B细胞和CD8+ T细胞显著减少。</li>
+  <li>CUMS小鼠肝脏CD8+ T细胞凋亡增加。</li>
+  <li>CD8+ T细胞耗竭标记物PD-1、Tim-3和TOX水平上调，IFNγ、TNF和GZMB表达降低。</li>
+</ul>
+
+<h3>5.5 肥胖与膳食脂肪</h3>
+<p><span class="tag">Nature Metabolism 2024</span></p>
+<p><strong>目的</strong>：探究肥胖小鼠中不同膳食脂肪来源对抗肿瘤免疫的影响。</p>
+<p><strong>模型</strong>：饮食诱导性肥胖（DIO）+ 皮下注射B16-F10黑色素瘤细胞小鼠模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>黄油-高脂饮食肿瘤中，NK细胞、CD8+ T细胞和Treg细胞浸润显著减少。</li>
+  <li>黄油饮食小鼠肿瘤浸润的NK和CD8+ T细胞中IFNγ产生均被降低。</li>
+</ul>
+
+<h3>5.6 IAV（流感病毒）感染</h3>
+<p><span class="tag">PLOS Pathogens 2024</span></p>
+<p><strong>目的</strong>：探究流感病毒感染是否能增强肿瘤特异性CD8+ T细胞免疫应答。</p>
+<p><strong>模型</strong>：皮下移植B16黑色素瘤 + 鼻腔内感染IAV小鼠模型。</p>
+<p><strong>主要发现</strong>：</p>
+<ul>
+  <li>IAV感染小鼠肿瘤中表达细胞毒性分子GzmB的活化CD43+ CD8+ T细胞频率显著增高。</li>
+  <li>gp100特异性CD8+ T细胞频率显著增加。</li>
+  <li>感染IAV小鼠肿瘤中CD8+ T细胞细胞毒性高于未感染小鼠。</li>
+  <li>IAV感染小鼠肿瘤中Tregs激活率较低。</li>
+</ul>
+
+<h2 id="sec6">6. 总结</h2>
+
+<h3>6.1 调控因素概览</h3>
+
+<table>
+  <tr><th>类别</th><th>因素</th><th>主要效应</th></tr>
+  <tr><td rowspan="6"><strong>外源性代谢物</strong></td><td>戊二酸</td><td>↑TCM，↓耗竭标记</td></tr>
+  <tr><td>琥珀酸</td><td>↑肿瘤反应性CD8+ T细胞</td></tr>
+  <tr><td>IPA</td><td>↑IFN-γ/TNF-α，增强ICB</td></tr>
+  <tr><td>丁酸</td><td>↑Tpex，干性分化</td></tr>
+  <tr><td>FAD</td><td>↑细胞毒性CD8+ T细胞</td></tr>
+  <tr><td>DOPAC</td><td>↑效应CD8+，Nrf2介导</td></tr>
+  <tr><td rowspan="6"><strong>内源性因子</strong></td><td>SNX17</td><td>促进T细胞耗竭（KO→抗肿瘤）</td></tr>
+  <tr><td>ATF4</td><td>促进终末耗竭</td></tr>
+  <tr><td>FGF21</td><td>胆固醇代谢重编程，免疫抑制</td></tr>
+  <tr><td>TSH/TSHR</td><td>促进T细胞耗竭</td></tr>
+  <tr><td>TOPK</td><td>负调控，抑制效应功能</td></tr>
+  <tr><td>Mettl8</td><td>调控Tcf1，维持干性</td></tr>
+  <tr><td rowspan="5"><strong>行为因素</strong></td><td>运动</td><td>↑tdLN中CD8+ T细胞</td></tr>
+  <tr><td>禁食</td><td>重编程T细胞命运，↑Teff</td></tr>
+  <tr><td>昼夜节律</td><td>晚上抗肿瘤特征更强</td></tr>
+  <tr><td>慢性压力</td><td>↓CD8+ T细胞，↑耗竭</td></tr>
+  <tr><td>肥胖</td><td>↓NK/CD8+ T细胞浸润</td></tr>
+  <tr><td><strong>其他</strong></td><td>IAV感染</td><td>↑GzmB+ CD8+ T细胞</td></tr>
+</table>
+
+<h3>6.2 关键科学问题</h3>
+<ol>
+  <li><strong>TEX终末耗竭悖论</strong>：终末耗竭T细胞（TEX term）虽具有强细胞毒性，却昭示着不良预后，提示耗竭与功能之间存在复杂平衡。</li>
+  <li><strong>ICB响应预测</strong>：干性样耗竭祖细胞（Tpex）对免疫检查点阻断（ICB）响应良好，是ICB疗效预测的重要标志物。</li>
+  <li><strong>代谢-免疫对话</strong>：肠道菌群代谢物可经血液循环调控远端肿瘤的免疫微环境，提示"肠-肿瘤轴"是重要的治疗干预靶点。</li>
+  <li><strong>精准调控时机</strong>：昼夜节律、运动/禁食等行为因素对CD8+ T细胞的调控具有时间依赖性，提示临床干预需考虑最佳时间窗口。</li>
+</ol>
+
+<h3>6.3 研究展望</h3>
+<ul>
+  <li>靶向代谢通路（如m6A修饰的Mettl8-Tcf1轴）可能成为新的免疫治疗策略。</li>
+  <li>肠菌代谢物的联合ICB治疗具有临床转化前景。</li>
+  <li>生活方式干预（运动、饮食）作为辅助治疗手段的机制研究尚需深入。</li>
+</ul>
+
+</div>
+
+<div class="footer">
+  本综述内容基于2026年4月17日汇报PPT整理，所有文献信息均来源于原文标注。
+</div>
+
+</div>
+</body>
+</html>
