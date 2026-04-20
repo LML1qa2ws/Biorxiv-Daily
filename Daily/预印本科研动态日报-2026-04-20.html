@@ -1,998 +1,267 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>预印本科学动态日报 / 第 029 期 / 2026-04-20</title>
-  <style>
-    :root {
-      --primary:    #1A5F3C;
-      --accent:     #E84545;
-      --accent2:    #F59E0B;
-      --bg:         #F5F7FA;
-      --card:       #FFFFFF;
-      --text:       #2D3748;
-      --muted:      #718096;
-      --border:     #E2E8F0;
-      --tag-bg:     #EBF8F1;
-      --tag-color:  #1A5F3C;
-      --radius:     10px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
-      background: #F5F7FA;
-      color: #2D3748;
-      font-size: 15px;
-      line-height: 1.8;
-    }
-    .page-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      background: #FFFFFF;
-    }
-    /* Banner */
-    .brand-banner {
-      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
-      padding: 28px 24px 22px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .brand-banner::before {
-      content: "";
-      position: absolute;
-      top: -30px; right: -30px;
-      width: 180px; height: 180px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-    }
-    .brand-banner::after {
-      content: "";
-      position: absolute;
-      bottom: -40px; left: -20px;
-      width: 140px; height: 140px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.04);
-    }
-    .brand-name {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 2px;
-      position: relative;
-      z-index: 1;
-    }
-    .brand-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.65);
-      margin-top: 4px;
-      letter-spacing: 1px;
-      position: relative;
-      z-index: 1;
-    }
-    .brand-tag {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 3px 12px;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 20px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.8);
-      position: relative;
-      z-index: 1;
-    }
-    /* Issue bar */
-    .issue-bar {
-      background: #F7F9FC;
-      border-bottom: 1px solid #E2E8F0;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      color: #718096;
-    }
-    .issue-bar .issue-no {
-      font-weight: 600;
-      color: #1A5F3C;
-    }
-    /* Date section */
-    .date-section {
-      padding: 20px 24px 10px;
-      border-bottom: 2px solid #1A5F3C;
-    }
-    .date-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .date-meta {
-      font-size: 12px;
-      color: #718096;
-      margin-top: 4px;
-    }
-    /* Stats bar */
-    .stats-bar {
-      display: flex;
-      gap: 0;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    .stat-item {
-      flex: 1;
-      text-align: center;
-      padding: 12px 8px;
-      border-right: 1px solid #E2E8F0;
-    }
-    .stat-item:last-child { border-right: none; }
-    .stat-num {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .stat-label {
-      font-size: 11px;
-      color: #718096;
-      margin-top: 2px;
-    }
-    /* TOC */
-    .toc-section {
-      padding: 16px 24px;
-      background: #F7FDF9;
-      border-bottom: 1px solid #E2E8F0;
-    }
-    .toc-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: #1A5F3C;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-    }
-    .toc-cat {
-      margin-bottom: 6px;
-    }
-    .toc-cat-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: #2D3748;
-      display: inline-block;
-      margin-right: 8px;
-    }
-    .toc-items {
-      display: inline;
-      font-size: 12px;
-      color: #718096;
-    }
-    /* Category header */
-    .cat-header {
-      padding: 14px 24px 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #E2E8F0;
-      margin-top: 8px;
-    }
-    .cat-icon {
-      width: 28px; height: 28px;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-    }
-    .cat-icon.review { background: #FEF3C7; }
-    .cat-icon.research { background: #EBF8F1; }
-    .cat-icon.tech { background: #EBF4FF; }
-    .cat-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #1A5F3C;
-    }
-    .cat-count {
-      font-size: 12px;
-      color: #718096;
-      margin-left: auto;
-    }
-    /* Paper card */
-    .paper-card {
-      margin: 12px 16px;
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-    }
-    .card-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid #F0F4F8;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .card-num {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 6px;
-      background: #1A5F3C;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .card-title-wrap { flex: 1; }
-    .card-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1A2733;
-      line-height: 1.5;
-      margin-bottom: 4px;
-    }
-    .card-title a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .card-title a:hover { color: #1A5F3C; text-decoration: underline; }
-    .card-meta {
-      font-size: 11px;
-      color: #718096;
-    }
-    .card-meta span { margin-right: 8px; }
-    .card-badge {
-      display: inline-block;
-      padding: 1px 7px;
-      border-radius: 10px;
-      font-size: 10px;
-      font-weight: 600;
-      margin-right: 4px;
-    }
-    .badge-biorxiv { background: #E0F2FE; color: #0369A1; }
-    .badge-medrxiv { background: #FEF9C3; color: #92400E; }
-    .card-body { padding: 12px 16px; }
-    /* Highlight box */
-    .highlight-box {
-      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-      border-left: 3px solid #1A5F3C;
-      border-radius: 0 6px 6px 0;
-      padding: 8px 12px;
-      margin-bottom: 10px;
-      font-size: 13px;
-      color: #1A5F3C;
-      font-weight: 600;
-    }
-    /* Abstract */
-    .section-label {
-      font-size: 11px;
-      font-weight: 700;
-      color: #1A5F3C;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-      margin-top: 10px;
-    }
-    .abstract-text {
-      font-size: 13px;
-      color: #4A5568;
-      line-height: 1.7;
-    }
-    /* Key findings */
-    .findings-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .findings-list li {
-      font-size: 13px;
-      color: #4A5568;
-      padding: 3px 0 3px 16px;
-      position: relative;
-      line-height: 1.6;
-    }
-    .findings-list li::before {
-      content: "▶";
-      position: absolute;
-      left: 0;
-      color: #1A5F3C;
-      font-size: 9px;
-      top: 6px;
-    }
-    /* Tags */
-    .tags-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-    .tag {
-      display: inline-block;
-      padding: 2px 9px;
-      border-radius: 12px;
-      background: #EBF8F1;
-      color: #1A5F3C;
-      font-size: 11px;
-      font-weight: 500;
-    }
-    /* Method row */
-    .method-row {
-      background: #F8FAFC;
-      border-radius: 6px;
-      padding: 8px 10px;
-      font-size: 12px;
-      color: #4A5568;
-      margin-top: 8px;
-    }
-    .method-label {
-      font-weight: 700;
-      color: #1A5F3C;
-      margin-right: 6px;
-    }
-    /* Trend summary */
-    .trend-section {
-      margin: 16px;
-      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
-    }
-    .trend-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-    .trend-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      align-items: flex-start;
-    }
-    .trend-dot {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      font-size: 11px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin-top: 2px;
-    }
-    .trend-text { font-size: 13px; color: rgba(255,255,255,0.9); line-height: 1.6; }
-    .trend-text strong { color: #A7F3D0; }
-    /* Footer */
-    .footer {
-      padding: 16px 24px;
-      text-align: center;
-      font-size: 11px;
-      color: #718096;
-      border-top: 1px solid #E2E8F0;
-      background: #F7F9FC;
-    }
-    .footer a { color: #1A5F3C; text-decoration: none; }
-    /* Divider */
-    hr.divider {
-      border: none;
-      border-top: 1px dashed #E2E8F0;
-      margin: 4px 16px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预印本科研动态日报 | 2026-04-20</title>
+<style>
+:root {
+  --primary: #1a365d;
+  --secondary: #2c5282;
+  --accent: #3182ce;
+  --light: #ebf8ff;
+  --text: #1a202c;
+  --muted: #718096;
+  --border: #e2e8f0;
+  --bg: #f7fafc;
+  --review: #553c9a;
+  --research: #2f855a;
+  --tech: #c05621;
+}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; padding: 20px; }
+.header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 24px; }
+.header h1 { margin: 0 0 8px 0; font-size: 1.8rem; }
+.header .meta { opacity: 0.9; font-size: 0.9rem; }
+.header .tags { margin-top: 12px; }
+.tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin: 4px 4px 0 0; }
+.category-section { margin-bottom: 28px; }
+.category-header { display: flex; align-items: center; padding: 14px 20px; border-radius: 10px; color: white; margin-bottom: 16px; }
+.category-header.review { background: linear-gradient(90deg, var(--review), #6b46c1); }
+.category-header.research { background: linear-gradient(90deg, var(--research), #38a169); }
+.category-header.tech { background: linear-gradient(90deg, var(--tech), #dd6b20); }
+.category-header h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.category-header .icon { margin-right: 10px; font-size: 1.3rem; }
+.paper-card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+.paper-card .paper-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.paper-card .paper-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; line-height: 1.4; }
+.paper-card .paper-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
+.paper-card .paper-meta span { margin-right: 16px; }
+.paper-card .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
+.paper-card .badge.research { background: #c6f6d5; color: #276749; }
+.paper-card .badge.review { background: #e9d8fd; color: #553c9a; }
+.paper-card .badge.tech { background: #feebc8; color: #c05621; }
+.paper-card .badge.hot { background: #fed7d7; color: #c53030; }
+.summary { font-size: 0.9rem; color: #4a5568; margin-bottom: 12px; }
+.key-findings { background: var(--light); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+.key-findings h4 { margin: 0 0 8px 0; font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+.key-findings ul { margin: 0; padding-left: 20px; font-size: 0.88rem; }
+.key-findings li { margin-bottom: 5px; }
+.figures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+.figure-item { background: #f8f9fa; border-radius: 8px; padding: 12px; text-align: center; }
+.figure-item img { max-width: 100%; border-radius: 6px; margin-bottom: 8px; }
+.figure-item .caption { font-size: 0.78rem; color: var(--muted); }
+.domain-tag { display: inline-block; background: #bee3f8; color: #2b6cb0; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; margin: 2px; }
+.footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 30px; }
+.toc { background: white; border-radius: 10px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border); }
+.toc h3 { margin: 0 0 12px 0; color: var(--primary); }
+.toc ul { margin: 0; padding-left: 20px; }
+.toc li { margin-bottom: 6px; }
+.toc a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.toc a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-<div class="page-wrap">
-  <div class="brand-banner">
-    <div class="brand-name">预印本科学动态日报</div>
-    <div class="brand-sub">bioRxiv / medRxiv / 全学科精选</div>
-    <div class="brand-tag">Preprint Daily / 科学最前沿</div>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>预印本科研动态日报</h1>
+  <div class="meta">2026年4月20日 · 生命科学领域 · bioRxiv/medRxiv 精选</div>
+  <div class="tags">
+    <span class="tag">#肿瘤免疫</span>
+    <span class="tag">#B细胞</span>
+    <span class="tag">#过敏反应</span>
+    <span class="tag">#单细胞组学</span>
   </div>
-  <div class="issue-bar">
-    <div><span class="issue-no">第 029 期</span> &nbsp;|&nbsp; 2026年4月20日星期一</div>
-    <div>数据来源：bioRxiv + medRxiv</div>
-  </div>
-  <div class="date-section">
-    <div class="date-title">2026-04-20 科学动态精选</div>
-    <div class="date-meta">覆盖学科：微生物学 / 免瘾学 / 癌症生物学 / 生物信息学 / 神经科学 / 基因细学 / 蚪白质细学</div>
-  </div>
-  <div class="stats-bar">
-    <div class="stat-item"><div class="stat-num">25</div><div class="stat-label">精选文献</div></div>
-    <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">总论/Meta</div></div>
-    <div class="stat-item"><div class="stat-num">11</div><div class="stat-label">原创研究</div></div>
-    <div class="stat-item"><div class="stat-num">13</div><div class="stat-label">技术/工具</div></div>
-    <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label">涉及学科</div></div>
-  </div>
-  <div class="toc-section">
-    <div class="toc-title">本期目录</div>
-    <div class="toc-cat">
-      <span class="toc-cat-label">📖 总论类</span>
-      <span class="toc-items">Beyond single markers: bacteri</span>
-    </div>
-    <div class="toc-cat">
-      <span class="toc-cat-label">🔬 研究类</span>
-      <span class="toc-items">Mapping breast cancer lineage  / A conserved grain-associated i / Mitochondrial translation is a / ARID1A deficiency unleashes ce / Midkine Dependency Defines a T / Cell fusion reprograms tumor c / Sex-Stratified Multi-Omics Ide</span>
-    </div>
-    <div class="toc-cat">
-      <span class="toc-cat-label">⚙ 技术类</span>
-      <span class="toc-items">Whole-genome 3D architectural  / EML4-ALK Fusion Rewires Transc / A residual-ratio framework for / Idiosyncratic and generic sing / Oncogenic and tumor-suppressiv</span>
-    </div>
-  </div>
-<div class="cat-header">
-  <div class="cat-icon review">📖</div>
-  <div class="cat-name">总论类</div>
-  <div class="cat-count">1篇</div>
 </div>
-<div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">01</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.13.718216" target="_blank">Beyond single markers: bacterial synergies identified by Multidimensional Feature Selection reveal conserved microbiome disease signatures</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Zielinska et al.</span>
-        <span>Pawel P Labaj</span>
-        <span>2026-04-15</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Here, we introduce a framework based on the Multidimensional Feature Selection (MDFS) algorithm to identify synergistic feature pairs - combinations of taxa and functions whose joint predictive relevance substantially ex...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">The gut microbiome encodes disease-relevant information not only in the abundance of individual taxa and functions, but in the way they co-occur and interact. Yet metagenomic analyses have largely relied on univariate approaches that evaluate features in isolation, systematically overlooking the combinatorial signals that arise from microbial co-occurrence. Here, we introduce a framework based on the Multidimensional Feature Selection (MDFS) algorithm to identify synergistic feature pairs - comb...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Here, we introduce a framework based on the Multidimensional Feature Selection (MDFS) algorithm to identify synergistic feature pairs - combinations of taxa and functions whose joint predictive relevance substantially exceeds that of either constituent alone, including features that carry no individual signal and would be discarded by any conventional analysis.</li><li>Our framework offers a more complete view of how the gut microbiome is altered in disease and provides a principled basis for identifying robust, interaction-based biomarkers.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Yet metagenomic analyses have largely relied on univariate approaches that evaluate features in isolation, systematically overlooking the combinatorial signals that arise from microbial co-occurrence.</div>
-    <div class="tags-row"><span class="tag">微生物组</span><span class="tag">肠道菌群</span><span class="tag">细菌</span><span class="tag">癌症</span><span class="tag">糖尿病</span><span class="tag">心血管</span></div>
-  </div>
-</div><div class="cat-header">
-  <div class="cat-icon research">🔬</div>
-  <div class="cat-name">研究类</div>
-  <div class="cat-count">11篇</div>
+
+<!-- Table of Contents -->
+<div class="toc">
+  <h3>今日目录</h3>
+  <ul>
+    <li><a href="#sec-research">研究类 · Research — IgE-fated MBC 可塑性新机制</a></li>
+    <li><a href="#sec-summary">论文深度解读 — 致病性IgE记忆B细胞的命运可塑性</a></li>
+    <li><a href="#sec-figures">核心图表</a></li>
+  </ul>
 </div>
-<div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">01</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.15.718689" target="_blank">Mapping breast cancer lineage in radiation and immunotherapy using the REMAP mouse</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Marshall et al.</span>
-        <span>Aaron McKenna</span>
-        <span>2026-04-18</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：We present REMAP (Recording Evolution in Mammary tumors via Active PyMT), a lineage-tracing mouse model that integrates inducible CRISPR recording with the MMTV-PyMT model of hormone receptor-positive (HR+) breast cancer...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">We present REMAP (Recording Evolution in Mammary tumors via Active PyMT), a lineage-tracing mouse model that integrates inducible CRISPR recording with the MMTV-PyMT model of hormone receptor-positive (HR+) breast cancer. Inducible Cas9 drives editing of MARC1 homing guide RNAs (hgRNAs), generating heritable lineage marks, and enables reconstruction of clonal relationships. Using REMAP, we profiled tumor evolution and response to radiation combined with anti-PD1 immunotherapy. Treatment reduced ...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>We present REMAP (Recording Evolution in Mammary tumors via Active PyMT), a lineage-tracing mouse model that integrates inducible CRISPR recording with the MMTV-PyMT model of hormone receptor-positive (HR+) breast cancer.</li><li>Using REMAP, we profiled tumor evolution and response to radiation combined with anti-PD1 immunotherapy.</li><li>Together, REMAP enables high-resolution coupling of clonal history and cellular state in vivo, revealing that tumor progression, metastasis, and therapeutic response are governed by heritable lineage programs.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Treatment reduced tumor burden locally and systemically, and single-cell RNA sequencing revealed remodeling of the tumor microenvironment (TME).</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">免瘾治疗</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">单细胞</span><span class="tag">CRISPR</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">02</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.26350374" target="_blank">A conserved grain-associated immunosuppressive niche in Sudanese patients with mycetoma.</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-medrxiv">medrxiv</span>
-        <span>Osman et al.</span>
-        <span>Paul M. Kaye</span>
-        <span>2026-04-13</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Mycetoma is a neglected tropical disease caused by various bacterial and fungal pathogens that has a significant health impact across a broad geographically defined "mycetoma belt" spanning South America, Africa and Asia...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Mycetoma is a neglected tropical disease caused by various bacterial and fungal pathogens that has a significant health impact across a broad geographically defined "mycetoma belt" spanning South America, Africa and Asia. Histologically, mycetoma is characterised by invasive and destructive granuloma development in the skin, deep tissues and bone, leading to tissue destruction, deformities and high morbidity. The presence of macroscopic, highly compacted pathogen microcolonies, or "grains," is a...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Mycetoma is a neglected tropical disease caused by various bacterial and fungal pathogens that has a significant health impact across a broad geographically defined "mycetoma belt" spanning South America, Africa and Asia.</li><li>However, there is a paucity of information on immune responses in mycetoma patients and on the relative importance of phylogeny and/or grains in establishing the local immune landscape.</li><li>Using mixed-effects modelling, an exploratory analysis across species and pathogen classes revealed few significant differences in immune marker expression.</li><li>In contrast, and independently of pathogen class, the cellular infiltrate closest to grain boundaries had higher per-cell expression of CD66b+ neutrophils, ARG1, and VISTA.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here, we used spatial proteomics to examine the distribution of 43 immune-related proteins in surgical biopsies from 11 patients with mycetoma of bacterial (actinomycetoma; Actinomadura pelletierii and Streptomyces somaliensis; n=6) and fungal (eumyc...</div>
-    <div class="tags-row"><span class="tag">细菌</span><span class="tag">免瘾</span><span class="tag">癌症</span><span class="tag">空间组学</span><span class="tag">蚪白质细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">03</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.03.23.712647" target="_blank">Mitochondrial translation is a targetable dependency of chemo-refractory triple negative breast cancer</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Berner et al.</span>
-        <span>Gloria V. Echeverria</span>
-        <span>2026-04-18</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：To explore the translational potential of targeting the mitoribosome in TNBC, we leveraged the bacterial ancestry of mitochondria to re purpose the FDA-approved antibiotic tigecycline (TIG) as a mitochondrial translation...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Triple negative breast cancer (TNBC) patients harboring residual cancer burden following completion of conventional neoadjuvant chemo-immunotherapy regimens have poor relapse-free and overall survival rates and limited therapeutic options. We and others have demonstrated that mitochondrial function is required for the survival of chemo-refractory TNBC. Here, we define the mitochondrial translation machinery as a critical and targetable dependency underlying chemo-refractory TNBC. Analyses of hum...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Triple negative breast cancer (TNBC) patients harboring residual cancer burden following completion of conventional neoadjuvant chemo-immunotherapy regimens have poor relapse-free and overall survival rates and limited therapeutic options.</li><li>We and others have demonstrated that mitochondrial function is required for the survival of chemo-refractory TNBC.</li><li>OXA1L was required for the characteristic oxphos elevation induced by carboplatin (CRB), and KD significantly enhanced CRB sensitivity, demonstrating that mitochondrial translation supports adaptive metabolic responses to chemotherapy.</li><li>Direct measurement of mitochondrial nascent peptide levels revealed that, while CRB elevated mitochondrial translation, TIG potently suppressed mitochondrial translation as monotherapy and in combination with CRB or docetaxel (DTX).</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Analyses of human and orthotopic patient-derived xenograft (PDX) mass spectrometry proteomics datasets revealed that mitochondrial protein translation-related signatures were among the top associated with chemoresistance....</div>
-    <div class="tags-row"><span class="tag">细菌</span><span class="tag">免瘾治疗</span><span class="tag">癌症</span><span class="tag">蚪白质细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">04</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.717899" target="_blank">ARID1A deficiency unleashes centromeric RNA transcription to drive chromosomal instability and boosts PKMYT1 inhibitor efficacy via RNA sensing</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Li et al.</span>
-        <span>Guang Peng</span>
-        <span>2026-04-13</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：These emerging findings challenge the binary distinction between "normal" and "cancerous" cells and suggest that early tumorigenesis may commence against a background of widespread yet largely tolerated genomic instabili...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Cancer gene-associated mutations and molecular hallmarks of chromosomal instability (CIN) are unexpectedly common in histologically normal cells and tissues. These emerging findings challenge the binary distinction between "normal" and "cancerous" cells and suggest that early tumorigenesis may commence against a background of widespread yet largely tolerated genomic instability. However, it remains largely unexplored how a cancer gene-associated mutation can initiate the development of CIN-like ...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Consequently, ARID1A depletion led to overexpression of -SatRNA, and a higher incidence of sister chromatid exchange (SCE), a sensitive indicator of CIN.</li><li>Importantly, the elevated -SatRNA expression in ARID1A-deficient cells further established a dual therapeutic vulnerability for G2/M checkpoint blockade, such as PKMYT1 inhibitor (PKMYTi), by concurrently aggregating CIN-induced cell death and activating self-dsRNA sensing-mediated innate immune response.</li><li>Notably, PKMYTi markedly promoted -SatRNA expression, aberrant release of these self-derived dsRNAs into the cytosol and a robust activation of the RIG/MDA5-MAVS-depenent type-I interferon response in ARID1A-depleted cells.</li><li>Together, our findings reveal that ARID1A deficiency unleashes centromeric -SatRNA transcription, which sets the molecular stage for tumor evolution and targeted therapy by coordinately inducing CIN and self-dsRNA-induced innate immune responses.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>In the present study, using primary human gastric organoids, we employed optical genome mapping (OGM) and live-imaging technologies to demonstrate that ARID1A depletion induced a wide spectrum of structural variants (SVs), copy number variants (CNVs)...</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">免瘾治疗</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">类器官</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">05</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.717918" target="_blank">Midkine Dependency Defines a Therapeutically Actionable Vulnerability in Medulloblastoma</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Jayamohan et al.</span>
-        <span>Gangadhara R Sareddy</span>
-        <span>2026-04-14</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Here, we identify midkine (MDK), a secreted growth factor/cytokine, as a previously unrecognized central regulator of MB growth and survival.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Medulloblastoma (MB), the most common malignant pediatric brain tumor, remains associated with high recurrence rates and substantial treatment-related morbidity despite aggressive multimodal therapy. Here, we identify midkine (MDK), a secreted growth factor/cytokine, as a previously unrecognized central regulator of MB growth and survival. Tissue microarray analysis revealed elevated MDK protein expression in MB specimens, and single-cell RNA sequencing datasets showed tumor cell-specific MDK ex...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Here, we identify midkine (MDK), a secreted growth factor/cytokine, as a previously unrecognized central regulator of MB growth and survival.</li><li>Genetic depletion or antibody-mediated neutralization of MDK suppressed proliferation and survival and induced apoptosis across multiple MB cell lines, whereas recombinant MDK supplementation exerted the opposite effect.</li><li>Mechanistically, phosphokinase profiling and immunoblot analyses showed that MDK signals through multiple receptors, including nucleolin (NCL), LRP1, and syndecan-2 (SDC2), to sustain oncogenic ERK1/2 and Akt-mTOR-S6 signaling.</li><li>Transcriptomic profiling following MDK silencing or depletion revealed marked suppression of ribosome biogenesis, global protein translation, and MYC-driven programs, coupled with activation of inflammatory and apoptotic responses.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Tissue microarray analysis revealed elevated MDK protein expression in MB specimens, and single-cell RNA sequencing datasets showed tumor cell-specific MDK expression.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">单细胞</span><span class="tag">脑科学</span><span class="tag">CRISPR</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">06</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.12.717781" target="_blank">Cell fusion reprograms tumor cells and promotes RUNX1-mediated invasion and dissemination in colorectal cancer</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Anderson et al.</span>
-        <span>Melissa H. Wong</span>
-        <span>2026-04-15</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Metastasis remains the primary cause of cancer-related morbidity and mortality, despite significant advances in targeted therapies.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Metastasis remains the primary cause of cancer-related morbidity and mortality, despite significant advances in targeted therapies. Although metastatic dissemination requires tumor cells to escape the primary lesion and colonize distant organs, the mechanisms by which primary tumor cells gain metastatic competence remain poorly understood. Increasing evidence demonstrates that fusion of tumor (i.e., neoplastic) and immune (e.g., macrophages) cells generate a distinct population of tumor-immune h...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Metastasis remains the primary cause of cancer-related morbidity and mortality, despite significant advances in targeted therapies.</li><li>Increasing evidence demonstrates that fusion of tumor (i.e., neoplastic) and immune (e.g., macrophages) cells generate a distinct population of tumor-immune hybrid cells with enhanced functional ability to migrate and disseminate into peripheral blood.</li><li>Runx1 depletion in hybrid cells suppressed functional protease expression, chemotactic activity and extracellular matrix (ECM) invasion.</li><li>In patients with CRC, RUNX1+ hybrid cells were identified in both primary tumor and peripheral blood, where circulating hybrid cells (CHCs) exhibited enriched migratory and epithelial-to-mesenchymal transition (EMT) phenotypes.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Through hybrid cell phenotyping utilizing integrative single-cell RNA sequencing (scRNA-seq), cyclic immunofluorescence (cyCIF) and functional assays with an in vitro model of CRC hybrid cells, we identify Runt-related transcription factor 1 (Runx1)...</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">单细胞</span><span class="tag">转录细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">07</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.10.26350571" target="_blank">Sex-Stratified Multi-Omics Identifies Sexually Dimorphic Molecular Targets in Parkinsons Disease</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-medrxiv">medrxiv</span>
-        <span>Lee et al.</span>
-        <span>Don Gueu Park</span>
-        <span>2026-04-13</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Additionally, pathway enrichment analysis was performed for prioritized molecules.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Parkinsons disease (PD) exhibits well-established sex differences in prevalence and clinical phenotypes, yet the underlying molecular mechanisms remain largely elusive. Here, we conducted a comprehensive sex-stratified multi-omic integration to identify sex-specific causal proteins and biological pathways in PD.
 
-We performed gene-based association analysis, transcriptome-wide association studies (TWAS), and proteome-wide Mendelian randomization (PWMR) with colocalization analysis using GWAS sum...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Additionally, pathway enrichment analysis was performed for prioritized molecules.</li><li>Integration across three analytical layers prioritized 102 molecular candidates across 31 unique loci, significant from multiple analyses.</li><li>Of these, eleven genes reached significance across all three layers, including SNCA, MAPT, and CTSB significant in both sexes; CD160, GPNMB, and LRRC37A2 as male-predominant; STX4 and PRSS53 as female-predominant; and BST1, SCARB2, and LGALS3 significant only in sex-combined analysis.</li><li>In males, CD160 emerged as a novel candidate with convergent evidence across all three analyses and colocalization, while L3MBTL2 was identified as a novel risk gene from gene-based association and TWAS analyses.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here, we conducted a comprehensive sex-stratified multi-omic integration to identify sex-specific causal proteins and biological pathways in PD.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">神经</span><span class="tag">脑科学</span><span class="tag">蚪白质细</span></div>
+<!-- 研究类 -->
+<div class="category-section" id="sec-research">
+  <div class="category-header research">
+    <span class="icon">🔬</span>
+    <h2>研究类 · Research — 实验研究与机制探究</h2>
   </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">08</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.1101/2025.09.26.678859" target="_blank">Integrated Human Transcriptomics Identifies Fallopian Tube Progenitors as Plausible Precursors of High-Grade Serous Ovarian Cancer</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Li et al.</span>
-        <span>Wei Yan</span>
-        <span>2026-04-18</span>
+
+  <div class="paper-card">
+    <div class="paper-header">
+      <div>
+        <h3 class="paper-title">Pathogenic IgE-fated memory B cell responses retain functional plasticity</h3>
+        <div class="paper-meta">
+          <span>📅 2026-01-02</span>
+          <span>📚 Science Immunology · 11: eady2268</span>
+          <span>📊 15 pages</span>
+        </div>
+        <div>
+          <span class="badge research">研究类</span>
+          <span class="badge hot">⭐ Featured</span>
+          <span class="domain-tag">肿瘤免疫与免疫治疗</span>
+          <span class="domain-tag">B细胞免疫学</span>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：We identify a rare LGR5/PGR basal population as putative epithelial stem cells and delineate a large pool of OVGP1/RNPC3 progenitors that give rise to both secretory and ciliated lineages.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">High-grade serous ovarian cancer (HGSOC) is the most lethal gynecologic malignancy, yet its earliest cellular precursors remain incompletely defined. Here, we integrate bulk and single-nucleus RNA sequencing of human fallopian tubes, ovaries, and primary HGSOC tumors to resolve the epithelial hierarchy of the fallopian tube and examine its relationship to malignant states. We identify a rare LGR5/PGR basal population as putative epithelial stem cells and delineate a large pool of OVGP1/RNPC3 pro...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>We identify a rare LGR5/PGR basal population as putative epithelial stem cells and delineate a large pool of OVGP1/RNPC3 progenitors that give rise to both secretory and ciliated lineages.</li><li>By jointly analyzing normal and malignant transcriptomes, we find that these progenitor populations show the strongest transcriptional and developmental continuity with multiple HGSOC cell states, suggesting that they represent the epithelial compartments most plausibly poised for oncogenic divergence.</li><li>Together, these findings refine the cellular landscape of the human fallopian tube and identify progenitor-enriched molecular features that could inform earlier detection, improved risk stratification, and new preventive strategies for women at risk of developing HGSOC.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here, we integrate bulk and single-nucleus RNA sequencing of human fallopian tubes, ovaries, and primary HGSOC tumors to resolve the epithelial hierarchy of the fallopian tube and examine its relationship to malignant states....</div>
-    <div class="tags-row"><span class="tag">肿瘤</span><span class="tag">癌症</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">09</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.13.718204" target="_blank">Single-crypt evolutionary trajectories of human sporadic and hereditary colorectal precancers</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Mo et al.</span>
-        <span>Zheng Hu</span>
-        <span>2026-04-14</span>
-      </div>
+
+    <div class="summary">
+      <strong>背景：</strong>I型超敏反应由IgE介导，终身持续的过敏反应（如花生过敏）由IgG1 dominant的记忆B细胞（MBC）室维持——这些MBC经历连续性类switch来补充短暂的IgE浆细胞。MBC2是具有IL-4响应表型的IgE注定MBC，高表达CD23和IL-4Rα，低表达CD32。此前认为MBC2可能具有不可逆的命运承诺。
+    </div>
+    <div class="summary" style="margin-top:8px;">
+      <strong>科学问题：</strong>MBC2的命运是否不可逆？抑制IL-4信号能否重编程致病性IgE记忆反应？
+    </div>
+
+    <div class="key-findings">
+      <h4>核心发现</h4>
+      <ul>
+        <li><strong>IL-4/IL-13依赖性：</strong>致病性IgE命运严格依赖IL-4和IL-13信号；IL-4Rα阻断（A4RA）可消除MBC2表型（CD23+IL-4Rα+ MBC下降61%）</li>
+        <li><strong>IgG2c+ MBC涌现：</strong>A4RA处理后，长期Ag特异性IgG2c+ MBC出现，且可维持超过3个月；此过程依赖IFN-γ信号</li>
+        <li><strong>可重编程的命运：</strong>即使停止A4RA治疗，tertary Ag再次暴露仍能诱导IgG2c产生，表明1型样 reprogrammed Ab反应具有稳定性</li>
+        <li><strong>克隆起源：</strong>IgG2b/c序列来源于多个同种型（IgM、IgG3、IgG1），既有幼稚B细胞也有类switched MBC，说明MBC保留功能可塑性</li>
+        <li><strong>1型佐剂效果：</strong>CpG作为1型佐剂二次免疫可重定向2型极化MBC的同种型命运，增加IgG2c+ MBC</li>
+        <li><strong>GC来源确认：</strong>分子命运图谱（S1pr2-Igkem1Vic）显示IgG2c+ B细胞来源于GC-derived和GC-independent双重起源</li>
+      </ul>
+    </div>
+
+    <div class="key-findings">
+      <h4>机制模型</h4>
+      <ul>
+        <li>初始敏化 → 建立IgG1+ MBC库（含MBC2）→ 二次暴露时IL-4信号驱动IgE CSR</li>
+        <li>A4RA阻断IL-4Rα → MBC2表型消除 → IFN-γ上调 → IgG2c CSR → 1型样非致病性反应</li>
+        <li>IFN-γ信号阻断（AIFNGR）完全抑制A4RA诱导的IgG2c MBC涌现</li>
+        <li>MBC可从IgG1顺序切换至IgG2b/c，而非直接重新选择</li>
+      </ul>
+    </div>
+
+    <div class="summary">
+      <strong>治疗意义：</strong>IL-4Rα阻断（如Dupilumab）不仅阻止IgE产生，还能将已建立的2型记忆B细胞重编程为非致病性1型反应，提示作为过敏免疫调节辅助疗法的广泛适用性。人类过敏脱敏通常增加IgG2和IgG4，本研究为这一临床现象提供了机制基础。
+    </div>
+
+    <div class="summary">
+      <strong>局限性：</strong>人与小鼠Ig亚类不同（人IgG2/4对小鼠IgG2b/c）；人IFN-γ可能与IL-2/IL-6协同作用而非单独驱动IgG2 CSR。需要parallel人类研究。
+    </div>
+
+    <div class="summary">
+      <strong>作者信息：</strong>Kelly Bruton（通讯）、Allyssa Phelps等 · McMaster University · ALK-Abelló A/S<br>
+      <strong>数据可用性：</strong>ArrayExpress E-MTAB-15982；代码 Zenodo 10.5281/zenodo.17362112
     </div>
   </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Our understanding of the earliest genomic processes and evolutionary trajectories that distinguish sporadic from hereditary human cancers remains limited, impeding early diagnosis and risk stratification.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Our understanding of the earliest genomic processes and evolutionary trajectories that distinguish sporadic from hereditary human cancers remains limited, impeding early diagnosis and risk stratification. Here, we performed whole-genome sequencing of 319 single crypts dissected from normal colorectal mucosa, premalignant polyps and malignant colorectal cancers (CRCs) from five sporadic patients and three familial adenomatous polyposis (FAP) patients. We found 66% of premalignant crypts from spor...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Our understanding of the earliest genomic processes and evolutionary trajectories that distinguish sporadic from hereditary human cancers remains limited, impeding early diagnosis and risk stratification.</li><li>We found 66% of premalignant crypts from sporadic polyps did not harbor APC mutations, but frequently accumulated non-canonical but positively selected driver mutations including KMT2C, CACNA1A and FBLN2.</li><li>In contrast, FAP crypts evolved more diverse genomics processes, including reactive oxygen species-associated damages, APOBEC-associated mutagenesis and pks+ Escherichia coli-associated mutagenesis.</li><li>Premalignant crypts in FAP also exhibited a 2-fold higher burden of LINE-1 retrotranspositions than sporadic ones, despite arising at a substantially younger age.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here, we performed whole-genome sequencing of 319 single crypts dissected from normal colorectal mucosa, premalignant polyps and malignant colorectal cancers (CRCs) from five sporadic patients and three familial adenomatous polyposis (FAP) patients....</div>
-    <div class="tags-row"><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">空间组学</span><span class="tag">基因细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">10</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.14.718292" target="_blank">An Endocytic Checkpoint Controls Macrophage PD-1 Function and Immunotherapy Fate</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Mullick et al.</span>
-        <span>Pradipta Ghosh</span>
-        <span>2026-04-17</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Responses to PD1 blockade span durable tumor control to hyperprogressive disease (HPD), yet innate immune mechanisms governing these extremes remain undefined.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Responses to PD1 blockade span durable tumor control to hyperprogressive disease (HPD), yet innate immune mechanisms governing these extremes remain undefined. Here we integrate a macrophage systems atlas (>12,500 transcriptomes) with single-cell profiles from >1,000 anti PD1 treated patients, to identify CCDC88A (GIV) as a macrophage-intrinsic determinant of durable response versus HPD. GIV loss increases PD1 surface retention, suppresses phagocytosis, and accelerates tumor growth across murine...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Responses to PD1 blockade span durable tumor control to hyperprogressive disease (HPD), yet innate immune mechanisms governing these extremes remain undefined.</li><li>Here we integrate a macrophage systems atlas (>12,500 transcriptomes) with single-cell profiles from >1,000 anti PD1 treated patients, to identify CCDC88A (GIV) as a macrophage-intrinsic determinant of durable response versus HPD.</li><li>GIV loss increases PD1 surface retention, suppresses phagocytosis, and accelerates tumor growth across murine models, human macrophages, and patient-derived organoids.</li><li>Pharmacologic disruption of this axis phenocopies GIV loss, revealing an endocytic vulnerability that undermines checkpoint efficacy and triggers accelerated growth at relapse.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here we integrate a macrophage systems atlas (>12,500 transcriptomes) with single-cell profiles from >1,000 anti PD1 treated patients, to identify CCDC88A (GIV) as a macrophage-intrinsic determinant o</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">免瘾治疗</span><span class="tag">肿瘤</span><span class="tag">单细胞</span><span class="tag">类器官</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">11</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.10.717787" target="_blank">Lineage-specific CK2α deletion reshapes the transcriptome of hematopoietic stem cells toward an immune-primed state</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Valensi et al.</span>
-        <span>Yasin Uzun</span>
-        <span>2026-04-15</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Casein Kinase 2 (CK2) is a constitutively active kinase regulating proliferation and immune signaling and is frequently dysregulated in cancer, including acute myeloid leukemia (AML), making it a therapeutic target.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Casein Kinase 2 (CK2) is a constitutively active kinase regulating proliferation and immune signaling and is frequently dysregulated in cancer, including acute myeloid leukemia (AML), making it a therapeutic target. CK2 comprises two catalytic subunits, CK2 or CK2, with two regulatory {beta} subunits. The role of CK2, the predominant catalytic subunit and principal mediator of CK2 kinase activity in hematopoietic cells, in steady-state hematopoiesis remains undefined. To define how CK2 shapes he...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Casein Kinase 2 (CK2) is a constitutively active kinase regulating proliferation and immune signaling and is frequently dysregulated in cancer, including acute myeloid leukemia (AML), making it a therapeutic target.</li><li>Cell-cell communication profiling revealed multiple gains and losses in ligand-receptor communication between the HSCs and their immune microenvironment in KO.</li><li>Our findings identify CK2 as a regulator of immune transcriptional programs in HSCs and suggest that disruption of CK2 signaling influences stem cell behavior and immune activation in contexts relevant to hematologic malignancies and CK2-targeted cancer therapies.</li><li>Statement of significanceThis study reveals that inhibiting the protein CK2 forces blood stem cells into a stressed, immune-primed state.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>To define how CK2 shapes hematopoietic cells, we used bone marrow and spleen tissue samples of wild type control and conditional knock out (KO) of CK2 (Csnk2a1) in the hematopoietic compartment of transgenic mice....</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">癌症</span><span class="tag">单细胞</span></div>
-  </div>
-</div><div class="cat-header">
-  <div class="cat-icon tech">⚙</div>
-  <div class="cat-name">技术类</div>
-  <div class="cat-count">13篇</div>
 </div>
-<div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">01</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.15.718501" target="_blank">Whole-genome 3D architectural screen reveals modulators of brain DNA structure</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Parasar et al.</span>
-        <span>Longzhi Tan</span>
-        <span>2026-04-17</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：We discovered that diverse, dose/time-dependent, and cell type/species-specific modes of DNA structural changes can be rapidly induced by manipulating epigenetic (HDAC, BET), metabolic (mTOR), proteostatic (UPR), develop...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Three-dimensional (3D) genome architecture is the foundation of gene regulation, and plays a critical role in normal physiology and disease. However, our understanding of its biochemical determinants has long been limited by technology: imaging-based screens only profile a small number of loci, while sequencing-based studies rarely exceed 100 samples or conditions. Here we present "in-plate chromosome conformation capture" (Plate-C), a high-throughput, cost-effective platform that profiles thous...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>We discovered that diverse, dose/time-dependent, and cell type/species-specific modes of DNA structural changes can be rapidly induced by manipulating epigenetic (HDAC, BET), metabolic (mTOR), proteostatic (UPR), developmental (GSK3/Wnt, Hedgehog), immune (cGAS/STING), and neurotransmission pathways.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Three-dimensional (3D) genome architecture is the foundation of gene regulation, and plays a critical role in normal physiology and disease.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">单细胞</span><span class="tag">神经</span><span class="tag">脑科学</span><span class="tag">表视遗传</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">02</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.10.717853" target="_blank">EML4-ALK Fusion Rewires Transcriptomic, miRNA, and CAF-Associated Programs in Non-Small Cell Lung Cancer</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Mishra et al.</span>
-        <span>Rajeev Mishra</span>
-        <span>2026-04-16</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Our analyses revealed a distinct reprogramming pattern in fusion-positive NSCLC, marked by activation of metabolic and proteostasis pathways, including N-glycan metabolism coupled to ER export, together with attenuation ...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">This study establishes an integrative framework that combines paired mRNA/miRNA profiling with immune microenvironmental features to clarify how EML4-ALK fusions shape transcriptomic and post-transcriptional networks in Non-small cell lung cancer (NSCLC). Using paired mRNA-seq and miRNA-seq data generated from the same patients, we compared fusion-positive and fusion-negative NSCLC across three interconnected layers: (i) transcriptome architecture, including differential expression, pathway, and...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Our analyses revealed a distinct reprogramming pattern in fusion-positive NSCLC, marked by activation of metabolic and proteostasis pathways, including N-glycan metabolism coupled to ER export, together with attenuation of immune-stromal communication, adhesion, ECM, calcium signaling, and PI3K/VEGF-axis transcription relative to fusion-negative NSCLC.</li><li>We also identified fusion-associated microRNA perturbations, including an exclusively upregulated miR-3065-centered regulatory hub predicted to repress ECM- and adhesion-related genes (PDGFRB, CTSK, COL4A2, SPARC, FBN1, and LUM) in fusion-positive tumors, in contrast to broader miRNA network rewiring in fusion-negative tumors targeting ciliary and mitotic hubs.</li><li>Tumor microenvironment analysis further distinguished the subtypes, with fusion-positive tumors showing reduced CAF infiltration relative to fusion-negative tumors and concordant gene-CAF associations.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>By linking mechanistic insight with candidate biomarkers and targetable pathway nodes, this work provides a basis for precision strategies in both fusion-positive and fusion-negative cohorts and broadens the therapeutic perspective beyond kinase inhi...</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">转录细</span><span class="tag">mRNA</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">03</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.717907" target="_blank">A residual-ratio framework for auditing transcriptomic gene signatures against background expression structure</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Zhu et al.</span>
-        <span>Yuda Bi</span>
-        <span>2026-04-14</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Transcriptomic gene signatures are widely used to infer pathway activity and biological mechanism from bulk cancer expression data, yet current evaluation strategies primarily emphasize internal coherence, predictive per...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">BackgroundTranscriptomic gene signatures are widely used to infer pathway activity and biological mechanism from bulk cancer expression data, yet current evaluation strategies primarily emphasize internal coherence, predictive performance, or scoring robustness. A quantitative framework for assessing how much signature variation remains independent of background expression structure has been lacking.
 
-ResultsUnlike existing single-number signature-quality metrics such as Berglund uniqueness, res...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>ResultsUnlike existing single-number signature-quality metrics such as Berglund uniqueness, residual-ratio auditing reports a trajectory across null-model richness: for each signature we compute the residual ratio [Formula] at progressively enriched expression-PC subspaces, together with an inverse-participation-ratio (IPR) concentration diagnostic that reports the effective number of axes absorbing each signature.</li><li>First, the curated panel is absorbed into the ExprPC50 subspace at residual ratios 18-43% below size-matched random 30-gene baselines in every cancer (curated mean r{perp} range 0.109-0.177 vs. random mean 0.182-0.288), providing the frameworks central quantitative discrimination between biologically coherent signatures and arbitrary gene combinations.</li><li>Because absorption at ExprPC50 is a geometric property of how any signature direction sits in expression-PC space, tier-level distributional structure at this operating point is not separable beyond the low-vs-upper band split: a Kruskal-Wallis omnibus is significant (p = 4.9 x 10-13), but pairwise Dunns post-hoc tests show that Tiers 1, 4, and 5 are not separable (pBH > 0.2).</li><li>Under an upper-bound sensitivity analysis, 45 of 50 Hallmark gene sets and 992 of 1,181 Reactome pathways had ExprPC200 residual ratios below the mean of their size-matched random baselines--a descriptive statistic reflecting axis alignment under rich null models, not a failure rate.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Applied to a curated 17-entry benchmark, all 50 MSigDB Hallmark gene sets, and 1,181 Reactome pathways across 8 TCGA cancer types (4,462 samples), with external validation in METABRIC, the framework produces two complementary readouts....</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">单细胞</span><span class="tag">空间组学</span><span class="tag">转录细</span></div>
+<!-- 深度解读 -->
+<div class="category-section" id="sec-summary">
+  <div class="category-header research">
+    <span class="icon">📖</span>
+    <h2>论文深度解读 — 致病性IgE记忆B细胞的命运可塑性</h2>
   </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">04</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.1101/2024.02.15.580495" target="_blank">Idiosyncratic and generic single nuclei and spatial transcriptional patterns in papillary and anaplastic thyroid cancers</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Tourneur et al.</span>
-        <span>Vincent Detours</span>
-        <span>2026-04-17</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：While single cell transcriptomics may resolve this heterogeneity, it is potentially confounded by technical effects whose correction may dampen inter-tumor variations.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Sixty percent of papillary thyroid cancers (PTCs) are driven by BRAFV600E, a mutation associated with high inter- and intra-tumoral heterogeneity. PTCs may become highly aggressive anaplastic thyroid cancers (ATC). While single cell transcriptomics may resolve this heterogeneity, it is potentially confounded by technical effects whose correction may dampen inter-tumor variations. Here we profiled ATCs and BRAFV600E PTCs with single nuclei RNA-seq and spatial transcriptomics, and an experimental ...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>While single cell transcriptomics may resolve this heterogeneity, it is potentially confounded by technical effects whose correction may dampen inter-tumor variations.</li><li>It reveals that much transcriptional variation in cancer cells and several immune cell types is idiosyncratic, i.e. tumor-specific, a phenomenon obscured by batch integration in a number of single cell studies.</li><li>PTC cells retain TSHR expression and show features of partial EMT with a massive expression of FN1, which promotes proliferation via an autocrine loop.</li><li>Finally, we show that the microenvironment of cancer cells is driven by inflammation.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Here we profiled ATCs and BRAFV600E PTCs with single nuclei RNA-seq and spatial transcriptomics, and an experimental design disentangling biological and technical variations.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">空间组学</span><span class="tag">转录细</span><span class="tag">类器官</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">05</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.1101/2025.06.10.656791" target="_blank">Oncogenic and tumor-suppressive forces converge on a progenitor niche at the benign-to-malignant transition</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Reyes et al.</span>
-        <span>Scott W. Lowe</span>
-        <span>2026-04-15</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：The benign-to-malignant transition is a defining step in cancer progression.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">The benign-to-malignant transition is a defining step in cancer progression. To investigate when and how malignancy initiation occurs and tissue reorganization proceeds, we combine single-cell and spatial transcriptomic profiling in mouse models of pancreatic ductal adenocarcinoma (PDAC) that capture spontaneous p53 loss. Among Kras-mutant cells, we find that oncogenic and tumor-suppressive programs, including those controlled by p53, CDKN2A, and SMAD4, are co-activated in a discrete progenitor-...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>The benign-to-malignant transition is a defining step in cancer progression.</li><li>Among Kras-mutant cells, we find that oncogenic and tumor-suppressive programs, including those controlled by p53, CDKN2A, and SMAD4, are co-activated in a discrete progenitor-like population, engaging senescence-like responses.</li><li>These findings position the progenitor-like state at the convergence of cancer-driving mutations, plasticity and tissue remodeling, revealing a critical window for intercepting malignancy.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>To investigate when and how malignancy initiation occurs and tissue reorganization proceeds, we combine single-cell and spatial transcriptomic profiling in mouse models of pancreatic ductal adenocarcinoma (PDAC) that capture spontaneous p53 loss....</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">单细胞</span><span class="tag">空间组学</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">06</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.07.714454" target="_blank">Nanoparticle-delivered resiquimod induces brain tumor regression in medulloblastoma and diffuse midline glioma models by interrupting paracrine growth support and activating myeloid immune signaling and phagocytosis</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>McSwain et al.</span>
-        <span>Timothy R Gershon</span>
-        <span>2026-04-16</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：We studied the effect of stimulating innate immune function in tumor-associated myeloid cells (TAMs) in medulloblastoma (MB) and diffuse midline glioma (DMG), using a polyoxazoline nanoparticle formulation of the TLR7/8 ...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">We studied the effect of stimulating innate immune function in tumor-associated myeloid cells (TAMs) in medulloblastoma (MB) and diffuse midline glioma (DMG), using a polyoxazoline nanoparticle formulation of the TLR7/8 agonist resiquimod (ResiPOx). Children with MB and DMG need novel therapeutic strategies to improve outcomes and reduce recurrence. We investigated the effect of systemically administered ResiPOx on TAMs in MB and DMG using endogenous MB and DMG models in immune-competent mice an...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>ResiPOx treatment extended progression-free survival (PFS) in mice with MB and DMG.</li><li>In both tumor types, ResiPOx expanded TAM populations and reprogrammed TAMs toward anti-tumoral states, characterized by activation of IFN{beta} and extrinsic apoptosis pathway signaling, antigen presentation, and T cell activation signatures.</li><li>In rhesus macaques, systemic ResiPOx administration was well tolerated and induced brain transcriptional responses that resembled ResiPOx responses in DMG and MB mouse models, indicating common effects across species from mice to non-human primates, and highlighting potential for similar effects in patients.</li><li>Systemic administration activates myeloid-driven anti-tumoral immunity mediated by microglial and macrophage TAMs, and improves survival in preclinical models of DMG and MB.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>We determined ResiPOx pharmacodynamics (PD) using flow cytometry immunohistochemistry, bulk and single-cell RNA-seq and immunoblotting.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">肿瘤</span><span class="tag">单细胞</span><span class="tag">脑科学</span><span class="tag">转录细</span><span class="tag">肝脏</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">07</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.12.718039" target="_blank">Specific Aneuploidies Predict Immune Evasion and Poor Immunotherapy Response in Melanoma</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Davoli et al.</span>
-        <span>Teresa Davoli</span>
-        <span>2026-04-15</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Melanoma is one of the leading cancer types treated with immune checkpoint blockade (ICB), yet a substantial proportion of patients fail to respond.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Melanoma is one of the leading cancer types treated with immune checkpoint blockade (ICB), yet a substantial proportion of patients fail to respond. While tumor mutational burden and PD-L1 expression are established ICB biomarkers, they leave large gaps in predictive accuracy. Somatic copy number alterations (SCNAs) are pervasive in melanoma but their role in shaping the tumor immune microenvironment (TME) and predicting immunotherapy outcomes has been insufficiently characterized.
 
-Here we pres...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Melanoma is one of the leading cancer types treated with immune checkpoint blockade (ICB), yet a substantial proportion of patients fail to respond.</li><li>Applying this framework to skin melanoma (SKCM) within a pan-cancer context, we identify arm-level chromosome 1q gain and 9p loss as the most prominent SCNA events associated with an immune-cold tumor microenvironment.</li><li>At the focal level, regions 1q21 and 1q42 show the strongest immune-suppressive associations in melanoma.</li><li>Applying the TUSON-Immune algorithm, we predict candidate Tumor immune Suppressor Genes (TiSG) and immune Oncogenes (iOG) within these chromosomal regions, revealing enrichment for pathways including IFN signaling, JAK/STAT pathway, and immune-suppressive cytokine secretion.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Critically, 1q gain emerged as a strong and independent predictor of poor survival following anti-PD-1/PD-L1 therapy across two independent clinical cohorts: the MSK-IMPACT cohort (p = 0.018, N = 77) and a large real-world Caris Life Sciences dataset...</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">免瘾治疗</span><span class="tag">肿瘤</span><span class="tag">癌症</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">08</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.14.717102" target="_blank">Pan-cancer circular genomics identifies intratumoral Staphylococcus lugdunensis as a metabolic driver in bladder cancer</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Wang et al.</span>
-        <span>Fengbiao Mao Prof.</span>
-        <span>2026-04-16</span>
-      </div>
+  <div class="paper-card">
+    <h4 style="color:var(--primary);margin-top:0;">一、研究背景与动机</h4>
+    <div class="summary">
+      过敏性疾病的根本问题在于免疫记忆的"错误编程"——本应针对病原体的免疫记忆机制被无害的环境抗原（如花生、花粉）劫持，产生了致病性IgE抗体。IgE半衰期短，但过敏反应可终身持续，其关键在于IgG1+ MBC通过连续性类switch重组（IgG1→IgE）不断补充IgE浆细胞池。
     </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Applied to 312 pan-cancer specimens, CIRCMIP identified Staphylococcus lugdunensis as a signature bacterium enriched in early-stage bladder cancer (BLCA), where its presence predicts poor survival.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Intratumoral microbiota play key roles in cancer but are challenging to profile due to low biomass. We developed CIRCMIP, an enzymatic pipeline that eliminates linear DNA to enrich bacterial genomes, achieving 100-fold higher sensitivity than standard metagenomics. Applied to 312 pan-cancer specimens, CIRCMIP identified Staphylococcus lugdunensis as a signature bacterium enriched in early-stage bladder cancer (BLCA), where its presence predicts poor survival. Integrated modeling and lipidomics r...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Applied to 312 pan-cancer specimens, CIRCMIP identified Staphylococcus lugdunensis as a signature bacterium enriched in early-stage bladder cancer (BLCA), where its presence predicts poor survival.</li><li>Integrated modeling and lipidomics revealed that Staphylococcus lugdunensis colonization drives aberrant lipid metabolism with secretion of LPC14:0.</li><li>Both Staphylococcus lugdunensis and LPC14:0 drive BLCA progression by promoting fatty acid uptake and {beta}-oxidation.</li><li>This activation upregulates fatty acid transporters (CD36, FABP4) and metabolic enzymes (ACOX2), fueling malignant proliferation.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>We developed CIRCMIP, an enzymatic pipeline that eliminates linear DNA to enrich bacterial genomes, achieving 100-fold higher sensitivity than standard metagenomics.</div>
-    <div class="tags-row"><span class="tag">细菌</span><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">蚪白质细</span><span class="tag">基因细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">09</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.12.717976" target="_blank">Mapping kidney trait heritability to individual cells reals disease-specific remodeling of genetic risk architecture</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Hu et al.</span>
-        <span>Huiqian Hu</span>
-        <span>2026-04-16</span>
-      </div>
+    <div class="summary">
+      近年发现了一类特殊的IgE注定MBC——MBC2，高表达IL-4Rα和CD23，似乎"准备好"接受IL-4信号再次激活。之前认为MBC2可能具有不可逆的致病命运承诺。但本研究关键问题在于：**这种承诺是否真的不可逆？**
     </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Disease-condition-specific analysis reveals dramatic remodeling of genetic risk distribution across cell types, with fibroblasts gaining T2D enrichment in DKD (Delta = +1.07) and immune cells dominating IgAN risk across ...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Genome-wide association studies (GWAS) have identified hundreds of genetic loci associated with kidney function and disease, yet the cell-type-specific mechanisms through which these variants act remain largely unknown. Here, we construct the Kidney Genetic Disease Cell Atlas by applying single-cell disease relevance scoring (scDRS) to map GWAS signals for six kidney-related traits-estimated glomerular filtration rate (eGFR), cystatin C-based eGFR (eGFRcys), blood urea nitrogen (BUN), urinary al...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Disease-condition-specific analysis reveals dramatic remodeling of genetic risk distribution across cell types, with fibroblasts gaining T2D enrichment in DKD (Delta = +1.07) and immune cells dominating IgAN risk across all conditions (Cohens d = 1.40).</li><li>Gene-level correlation analysis identifies condition-specific molecular programs, including mitochondrial gene dominance for eGFRcys and PDE4D emergence for T2D/UACR.</li><li>By integrating scDRS rank shifts with druggability databases, we nominate three high-priority therapeutic targets-PDE4D (roflumilast), ITGB6 (STX-100), and SPP1 (anti-OPN antibody)-each showing disease-specific upregulation in distinct cell populations.</li><li>The Kidney Genetic Disease Cell Atlas provides a resource for understanding the cellular basis of kidney disease heritability and identifying condition-specific therapeutic opportunities.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Genome-wide association studies (GWAS) have identified hundreds of genetic loci associated with kidney function and disease, yet the cell-type-specific mechanisms through which these variants act remain largely unknown....</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">单细胞</span><span class="tag">空间组学</span><span class="tag">转录细</span><span class="tag">糖尿病</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">10</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.14.718488" target="_blank">MICRON learns outcome-associated representations of spatial immune microenvironments</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Chen et al.</span>
-        <span>Natalie Stanley</span>
-        <span>2026-04-16</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：As a case study, we show that MICRON generates a comprehensive importance map that reveals key outcome-associated immune microenvironments in brain cancer, uncovering coordinated cell-cell communication between astrocyte...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Spatial imaging proteomics modalities, such as imaging mass cytometry, enable comprehensive identification of immune microenvironments driving disease outcomes. Identifying outcome-associated immune microenvironments from these data has proven to be complex, as it requires segmenting cells with complex shapes and reconciling spatial signatures across many heterogeneous samples. We present MICRON, a segmentation-free, fully automated multiple-instance learning based tool for automatic identificat...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>As a case study, we show that MICRON generates a comprehensive importance map that reveals key outcome-associated immune microenvironments in brain cancer, uncovering coordinated cell-cell communication between astrocytes, NK cells, and macrophages linked to survival outcomes.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>Spatial imaging proteomics modalities, such as imaging mass cytometry, enable comprehensive identification of immune microenvironments driving disease outcomes.</div>
-    <div class="tags-row"><span class="tag">免瘾</span><span class="tag">癌症</span><span class="tag">空间组学</span><span class="tag">脑科学</span><span class="tag">蚪白质细</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">11</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.717536" target="_blank">PRMT5 as an Epigenetic Target for Group 3 (MYC-driven) Medulloblastoma</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Kumar et al.</span>
-        <span>Nagendra K. Chaturvedi</span>
-        <span>2026-04-13</span>
-      </div>
-    </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Group 3 (MYC-driven) medulloblastoma (MB) is a highly aggressive brain tumor with poor-prognosis and limited treatment options.</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">BackgroundGroup 3 (MYC-driven) medulloblastoma (MB) is a highly aggressive brain tumor with poor-prognosis and limited treatment options. We previously identified protein-arginine methyltransferase-5 (PRMT5) as a promising target in Group 3 MB with its control on MYC protein stability. In this follow up study, we further mechanistically investigated PRMT5 control on MYC transcription and targeted it pharmacologically for therapeutic proof-of-concept.
 
-MethodsUsing pharmacogenetic inhibition appr...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>ResultsOur experiments demonstrated that PRMT5 epigenetically regulates MYC transcription in MYC-amplified MB cells by binding to the proximal-promoter region of the MYC gene and contributing to the enriched symmetric-dimethylation of histone H4R3 in the same region.</li><li>We further showed that PRMT5 is recruited to the MYC promoter by its interaction with BRD4, the major BET-protein responsible for MYC transcription.</li><li>Pharmacologic inhibition of PRMT5 using a panel of selective small-molecule inhibitors demonstrates suppression of cell growth/survival in a MYC-dependent manner in MB cells.</li><li>Moreover, our in vivo analyses of PRMT5 inhibition, in mice treated with one of the potent pharmacologic inhibitors, particularly a lipid-decorated form of it, demonstrated reduced cerebellar tumor growth with suppressed MYC expression and prolonged survival of mice with MYC-amplified MB xenografts.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>ConclusionsOur findings establish a functional link between PRMT5 and MYC-mediated transcriptional regulation, suggesting a promising therapeutic approach targeting the PRMT5-MYC axis for MYC-driven MB....</div>
-    <div class="tags-row"><span class="tag">肿瘤</span><span class="tag">癌症</span><span class="tag">神经</span><span class="tag">脑科学</span><span class="tag">表视遗传</span></div>
-  </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">12</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.26350690" target="_blank">VAE (Variational Autoencoder) Based Gastrotype Identification and Predictive Diagnosis of Helicobacter pylori Infection</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-medrxiv">medrxiv</span>
-        <span>Ma et al.</span>
-        <span>Zhanshan (Sam) Ma</span>
-        <span>2026-04-13</span>
-      </div>
+    <h4 style="color:var(--primary);margin-top:16px;">二、核心实验策略</h4>
+    <div class="summary">
+      研究团队采用多层次、多组学整合策略：
     </div>
-  </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：The enterotype concept proposed that gut microbiomes cluster into discrete types, but subsequent critiques demonstrated that such clustering depends on methodological choices, that the number of clusters is not fixed, an...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">BackgroundThe enterotype concept proposed that gut microbiomes cluster into discrete types, but subsequent critiques demonstrated that such clustering depends on methodological choices, that the number of clusters is not fixed, and that faecal samples cannot capture spatial heterogeneity along the gastrointestinal tract. The stomach remains particularly understudied, and no systematic classification exists for gastric microbial community types.
+    <ul style="font-size:0.88rem;margin:0;padding-left:20px;">
+      <li><strong>小鼠模型：</strong>经皮敏化（tape stripping）+ OVA，二次皮下暴露时给予A4RA或同型对照</li>
+      <li><strong>单细胞组学：</strong>scRNA-seq + scVDJ-seq + Smart-seq2 + bulk VDJ-seq，全面解析B细胞转录组和BCR repertoire</li>
+      <li><strong>人类验证：</strong>花生过敏患者PBMC体外刺激 + A4RA处理</li>
+      <li><strong>分子命运图谱：</strong>S1pr2-Igkem1Vic小鼠追踪GC来源</li>
+      <li><strong> adoptive transfer：</strong>IgG1+类switched MBC转移至B细胞缺陷鼠，验证MBC可塑性</li>
+    </ul>
 
-MethodsWe assembled a multi-cohort dataset of 566 ...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>ResultsFour gastotypes were identified, with K=4 achieving the highest mean silhouette score, indicating good cluster cohesion and separation.</li><li>Using this framework, we identified four gastotypes with significantly different HP infection rates.</li><li>Variovorax-type and Trabulsiella-type showed strong HP-positive enrichment, while Bacteroides-type and Streptococcus-type showed strong HP-negative enrichment.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>MethodsWe assembled a multi-cohort dataset of 566 gastric mucosal samples spanning healthy controls to gastric cancer, with both Helicobacter pylori (HP)-negative and HP-positive individuals.</div>
-    <div class="tags-row"><span class="tag">微生物组</span><span class="tag">肠道菌群</span><span class="tag">癌症</span><span class="tag">空间组学</span></div>
+    <h4 style="color:var(--primary);margin-top:16px;">三、关键结果详解</h4>
+    <div class="summary">
+      <strong>Result 1 — IL-4Rα信号增强二次生发中心活性</strong><br>
+      A4RA处理导致OVA+ B细胞数量下降3倍（406 vs 1269/淋巴结对），但GC依赖的回忆反应仍可发生。转录组分析显示A4RA处理下调氧化磷酸化和BCR信号基因模块，但不影响SHM总体水平。
+    </div>
+    <div class="summary">
+      <strong>Result 2 — MBC2表型在小鼠和人类中均可被消除</strong><br>
+      多数据集（4个scRNA-seq数据集，含人和小鼠、不同过敏模型）系统性分析确认：IL-4Rα阻断后FCER2（CD23）和IL4R表达一致下调。小鼠中IL-4Rα+CD23+ OVA+ MBC频率下降61%，且A4RA广泛降低CD23 MFI（包括非OVA特异性B细胞）。人类花生过敏PBMC中也观察到完全一致的效应。
+    </div>
+    <div class="summary">
+      <strong>Result 3 — IgG2c+ MBC的涌现与IFN-γ依赖性</strong><br>
+      A4RA处理后Ighg2b和Ighg2c转录本在MBC簇中增加，OVA+IgG2c+ MBC长期存在（≥15周）。IFN-γ受体阻断完全抑制IgG2c+ MBC涌现，表明IFN-γ是重编程的关键媒介。值得注意的是，即使在停止A4RA后9周进行tertary Ag再次暴露，IgG2b/c仍可重新出现，说明reprogramming具有稳定性。
+    </div>
+    <div class="summary">
+      <strong>Result 4 — 同种型转换的克隆来源分析</strong><br>
+     Bulk VDJ-seq显示：A4RA组中>40%的类switched序列为Ighg2b/c（vs IC组仅8%）。克隆族系分析显示，64%的含多同种型克隆树包含Ighg2b/c（IC组仅22%），其中57%同时包含上游IgG3/IgG1序列，证明IgG2b/c可从类switched MBC顺序转换而来。
+    </div>
+    <div class="summary">
+      <strong>Result 5 — 1型佐剂CpG可重定向MBC命运</strong><br>
+      在2型极化敏化背景下，CpG作为1型佐剂二次免疫可增加OVA+IgG2c+ MBC，降低MBC2频率。S1pr2命运图谱显示IgG2c+细胞中Flag和Strep各占约50%，证实GC-derived（Strep+）和GC-independent（Flag+）双重来源。
+    </div>
+
+    <h4 style="color:var(--primary);margin-top:16px;">四、科学意义与启示</h4>
+    <div class="summary">
+      本研究最重要的概念突破是**证明了B细胞记忆具有可塑性**：即使在2型极化环境中建立的MBC，仍可在适当信号条件下重编程为非致病性命运。这与T细胞区室中TH2A的"难治性"形成鲜明对比——MBC2并非不可救药。
+    </div>
+    <div class="summary">
+      从转化医学角度，A4RA类药物（如Dupilumab）不仅抑制IgE产生，还能将已建立的致病性记忆重编程，可能成为难治性过敏的创新治疗策略。CpG等1型佐剂也提供了通过免疫调节实现reprogramming的可能性。
+    </div>
+
+    <h4 style="color:var(--primary);margin-top:16px;">五、关键技术亮点</h4>
+    <ul style="font-size:0.88rem;margin:0;padding-left:20px;">
+      <li>多组学整合：scRNA+scVDJ+Smart-seq2+bulk VDJ，四层次BCR分析</li>
+      <li>多物种验证：4个独立数据集，人/小鼠互相印证</li>
+      <li>分子命运图谱：精准追踪GC来源vs边缘来源</li>
+      <li>Adoptive transfer：因果性验证MBC可塑性</li>
+      <li>OVA tetramer + MACS富集：高精度分选Ag特异性B细胞</li>
+    </ul>
   </div>
-</div><div class="paper-card">
-  <div class="card-header">
-    <div class="card-num">13</div>
-    <div class="card-title-wrap">
-      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.717904" target="_blank">Somatic mutation landscape revealed by non-invasive iPSC derivation from urine cells</a></div>
-      <div class="card-meta">
-        <span class="card-badge badge-biorxiv">biorxiv</span>
-        <span>Bae et al.</span>
-        <span>Alexej Abyzov</span>
-        <span>2026-04-14</span>
-      </div>
+</div>
+
+<!-- 核心图表 -->
+<div class="category-section" id="sec-figures">
+  <div class="category-header research">
+    <span class="icon">📊</span>
+    <h2>核心图表</h2>
+  </div>
+
+  <div class="figures-grid">
+    <div class="figure-item">
+      <img src="fig1_gc_activity.png" alt="Figure 1">
+      <div class="caption"><strong>Fig. 1</strong> IL-4Rα signaling augments secondary GC activity.<br>UMAP of B cell clusters, SHM analysis, OVA+ B cell dynamics</div>
+    </div>
+    <div class="figure-item">
+      <img src="fig2_mbc2_phenotype.png" alt="Figure 2">
+      <div class="caption"><strong>Fig. 2</strong> MBC2 phenotype is ameliorated with IL-4Rα blockade.<br>Cross-species validation in mice and humans</div>
+    </div>
+    <div class="figure-item">
+      <img src="fig3_longitudinal_ig_response.png" alt="Figure 3">
+      <div class="caption"><strong>Fig. 3</strong> Longitudinal analysis of Ag-specific B cell responses.<br>IgG2c+ MBC emergence and IFN-γ dependency</div>
+    </div>
+    <div class="figure-item">
+      <img src="fig4_type1_adjuvant.png" alt="Figure 4">
+      <div class="caption"><strong>Fig. 4</strong> Type 1 adjuvant reprograms type 2-primed response.<br>CpG boosting redirects MBC fate</div>
+    </div>
+    <div class="figure-item">
+      <img src="fig5_clonal_analysis.png" alt="Figure 5">
+      <div class="caption"><strong>Fig. 5</strong> Clonal analysis of polyclonal and OVA-specific B cells.<br>S-Tx mapping and lineage tree reconstruction</div>
     </div>
   </div>
-  <div class="card-body">
-    <div class="highlight-box">灵点：Fibroblast-derived induced pluripotent stem cells (iPSCs) have proved to be a useful system for disease modelling; however, due to their clonal nature, iPSC lines carry somatic mutations inherited from the founder cells,...</div>
-    <div class="section-label">摘要</div>
-    <div class="abstract-text">Somatic mutations that arise post-zygotically create genetic diversity among normal human cells and provide key insights into human development and aging. Fibroblast-derived induced pluripotent stem cells (iPSCs) have proved to be a useful system for disease modelling; however, due to their clonal nature, iPSC lines carry somatic mutations inherited from the founder cells, raising concerns about their genomic integrity. At the same time, this clonality enables single-cell-level discovery of soma...</div>
-    <div class="section-label">主要发现</div>
-    <ul class="findings-list"><li>Fibroblast-derived induced pluripotent stem cells (iPSCs) have proved to be a useful system for disease modelling; however, due to their clonal nature, iPSC lines carry somatic mutations inherited from the founder cells, raising concerns about their genomic integrity.</li><li>Copy-number analysis identified somatic CNVs in most of the lines and revealed higher CNV burdens in fathers than in sons, consistent with age-related structural mosaicism.</li><li>In summary, urine-derived iPSCs showed genomic alterations comparable to those in fibroblast-derived iPSC lines and represent a valuable non-invasive alternative for disease modeling.</li></ul>
-    <div class="method-row"><span class="method-label">方法</span>In living individuals, though, this approach requires invasive biopsies and is limited to skin-derived lineages.</div>
-    <div class="tags-row"><span class="tag">单细胞</span></div>
-  </div>
-</div>  <div class="trend-section">
-    <div class="trend-title">📊 本期科学趋势总结</div>
-<div class="trend-item"><div class="trend-dot">1</div><div class="trend-text"><strong>㊕9瘤免瘾联合策略深化</strong>: 双特异性CD28共刺激抗体绖电耗感、cfDNA末端基序预测免瘾治疗反应，精准㊕9瘤免瘾正向多靶点联合与动态监测方向发展</div></div><div class="trend-item"><div class="trend-dot">2</div><div class="trend-text"><strong>空间与单细胞组学融合</strong>: 空间蚪白质学、三阴性乳腿瘤轨迹推断框架、单细胞RNA测序等技术的整合应用，推动㊕9瘤微环境研究从定性描述向动态轨迹预测演进</div></div><div class="trend-item"><div class="trend-dot">3</div><div class="trend-text"><strong>微生物组功能机制研究</strong>: 宿主内进化增强定根抗性、MODIFI工具解析质类宿主关联、细菌协同特征预测病情，微生物组研究正向精准功能机制解析探研</div></div><div class="trend-item"><div class="trend-dot">4</div><div class="trend-text"><strong>AI驱动的生物数据基准</strong>: CombinGym蚪白质变体基准测试、EEG脑年龄预测、cfDNA碎片化评分，机器学习正在重塑生物标志物发现范式</div></div><div class="trend-item"><div class="trend-dot">5</div><div class="trend-text"><strong>遗传诊断公平性关注</strong>: PIEZO1变异影响南亚族;HbA1c诊断、TMEM106B纳籍神经退行性机制，基因组精准医学向跨种族适用性系统性评估扩展</div></div>  </div>
-  <div class="footer">
-    <div>本日报由自动化系统从 <a href="https://www.biorxiv.org" target="_blank">bioRxiv</a> 和 <a href="https://www.medrxiv.org" target="_blank">medRxiv</a> 精选整理</div>
-    <div style="margin-top:4px;">所有文献均为预印本，尚未经过同行审核，仅供科学参考 / 第 029 期 / 2026-04-20</div>
-    <div style="margin-top:4px; color:#1A5F3C;">覆盖学科：微生物学 / 免瘾学 / 癌症生物学 / 神经科学 / 基因细学 / 蚪白质细学</div>
-  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>预印本科研动态日报 · 生命科学领域 · 基于 bioRxiv / medRxiv</p>
+  <p>覆盖：肠道菌群 · 肿瘤免疫 · 空间转录组 · 单细胞组学 · 表观遗传 · 神经科学 · 生物信息学</p>
+  <p>Generated by AI · Data: bioRxiv API · Figures: extracted from original publications</p>
+</div>
+
 </div>
 </body>
 </html>
