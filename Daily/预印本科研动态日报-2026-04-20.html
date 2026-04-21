@@ -3,62 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>预印本科研动态日报 | 2026-04-20</title>
+<title>预印本科研动态日报 · 2026-04-20</title>
 <style>
-:root {
-  --primary: #1a365d;
-  --secondary: #2c5282;
-  --accent: #3182ce;
-  --light: #ebf8ff;
-  --text: #1a202c;
-  --muted: #718096;
-  --border: #e2e8f0;
-  --bg: #f7fafc;
-  --review: #553c9a;
-  --research: #2f855a;
-  --tech: #c05621;
+:root{--primary:#1a365d;--secondary:#2c5282;--accent:#3182ce;--light:#ebf8ff;--text:#1a202c;--muted:#718096;--border:#e2e8f0;--bg:#f7fafc;--review:#6b46c1;--research:#276749;--tech:#c05621;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.container{max-width:900px;margin:0 auto;padding:20px;}
+
+/* Header */
+.header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:28px;border-radius:12px;margin-bottom:24px;}
+.header h1{margin:0 0 8px;font-size:1.7rem;font-weight:700;}
+.header .meta{opacity:0.9;font-size:0.85rem;}
+.header .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;}
+.header .tag{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:0.75rem;}
+
+/* Stats */
+.stats-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.stat-item{flex:1;min-width:120px;background:white;border-radius:10px;padding:14px 18px;border:1px solid var(--border);text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+.stat-item .num{font-size:1.6rem;font-weight:700;color:var(--primary);}
+.stat-item .label{font-size:0.72rem;color:var(--muted);margin-top:2px;}
+
+/* TOC */
+.toc{background:white;border-radius:10px;padding:18px 22px;margin-bottom:24px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.toc h3{color:var(--primary);margin:0 0 10px;font-size:0.95rem;}
+.toc ul{list-style:none;padding:0;margin:0;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--accent);text-decoration:none;font-size:0.85rem;}
+.toc a:hover{text-decoration:underline;}
+
+/* Category */
+.category-section{margin-bottom:30px;}
+.cat-header{display:flex;align-items:center;padding:14px 20px;border-radius:10px 10px 0 0;color:white;margin-bottom:0;}
+.cat-header.research{background:linear-gradient(90deg,#276749,#2f855a);}
+.cat-header.tech{background:linear-gradient(90deg,#c05621,#dd6b20);}
+.cat-header.review{background:linear-gradient(90deg,#553c9a,#6b46c1);}
+.cat-header h2{margin:0;font-size:1rem;font-weight:600;flex:1;}
+.cat-header .cat-icon{margin-right:8px;font-size:1.2rem;}
+.cat-header .cat-count{background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.72rem;}
+
+/* Paper card */
+.paper-card{background:white;border-radius:0 0 10px 10px;padding:18px 20px;margin-bottom:10px;border:1px solid var(--border);border-top:none;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.paper-card:first-of-type{border-radius:0;}
+.paper-card:last-of-type{border-radius:0 0 10px 10px;}
+.card-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px;}
+.card-num{background:var(--light);color:var(--primary);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0;}
+.card-main{flex:1;min-width:0;}
+.card-title{font-size:0.95rem;font-weight:700;color:var(--primary);margin-bottom:6px;line-height:1.4;}
+.card-title a{color:var(--primary);text-decoration:none;}
+.card-title a:hover{color:var(--accent);text-decoration:underline;}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:0.75rem;color:var(--muted);margin-bottom:8px;}
+.badge-biorxiv{background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:6px;font-weight:600;}
+.badge-medrxiv{background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-weight:600;}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag-chip{padding:2px 8px;border-radius:6px;font-size:0.7rem;font-weight:600;}
+.card-abstract{font-size:0.82rem;color:#4a5568;line-height:1.6;padding-top:8px;border-top:1px solid var(--border);}
+
+/* Footer */
+.footer{text-align:center;padding:20px;color:var(--muted);font-size:0.75rem;border-top:1px solid var(--border);margin-top:24px;}
+
+/* Responsive */
+@media(max-width:600px){
+  .card-top{flex-direction:column;}
+  .stats-bar{flex-direction:column;}
+  .header h1{font-size:1.3rem;}
 }
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); line-height: 1.6; }
-.container { max-width: 900px; margin: 0 auto; padding: 20px; }
-.header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 30px; border-radius: 12px; margin-bottom: 24px; }
-.header h1 { margin: 0 0 8px 0; font-size: 1.8rem; }
-.header .meta { opacity: 0.9; font-size: 0.9rem; }
-.header .tags { margin-top: 12px; }
-.tag { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; margin: 4px 4px 0 0; }
-.category-section { margin-bottom: 28px; }
-.category-header { display: flex; align-items: center; padding: 14px 20px; border-radius: 10px; color: white; margin-bottom: 16px; }
-.category-header.review { background: linear-gradient(90deg, var(--review), #6b46c1); }
-.category-header.research { background: linear-gradient(90deg, var(--research), #38a169); }
-.category-header.tech { background: linear-gradient(90deg, var(--tech), #dd6b20); }
-.category-header h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
-.category-header .icon { margin-right: 10px; font-size: 1.3rem; }
-.paper-card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border); }
-.paper-card .paper-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
-.paper-card .paper-title { font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 6px 0; line-height: 1.4; }
-.paper-card .paper-meta { font-size: 0.82rem; color: var(--muted); margin-bottom: 10px; }
-.paper-card .paper-meta span { margin-right: 16px; }
-.paper-card .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; }
-.paper-card .badge.research { background: #c6f6d5; color: #276749; }
-.paper-card .badge.review { background: #e9d8fd; color: #553c9a; }
-.paper-card .badge.tech { background: #feebc8; color: #c05621; }
-.paper-card .badge.hot { background: #fed7d7; color: #c53030; }
-.summary { font-size: 0.9rem; color: #4a5568; margin-bottom: 12px; }
-.key-findings { background: var(--light); border-radius: 8px; padding: 14px; margin-bottom: 12px; }
-.key-findings h4 { margin: 0 0 8px 0; font-size: 0.85rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-.key-findings ul { margin: 0; padding-left: 20px; font-size: 0.88rem; }
-.key-findings li { margin-bottom: 5px; }
-.figures-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
-.figure-item { background: #f8f9fa; border-radius: 8px; padding: 12px; text-align: center; }
-.figure-item img { max-width: 100%; border-radius: 6px; margin-bottom: 8px; }
-.figure-item .caption { font-size: 0.78rem; color: var(--muted); }
-.domain-tag { display: inline-block; background: #bee3f8; color: #2b6cb0; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; margin: 2px; }
-.footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 30px; }
-.toc { background: white; border-radius: 10px; padding: 20px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid var(--border); }
-.toc h3 { margin: 0 0 12px 0; color: var(--primary); }
-.toc ul { margin: 0; padding-left: 20px; }
-.toc li { margin-bottom: 6px; }
-.toc a { color: var(--accent); text-decoration: none; font-size: 0.9rem; }
-.toc a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -67,199 +75,216 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helv
 <!-- Header -->
 <div class="header">
   <h1>预印本科研动态日报</h1>
-  <div class="meta">2026年4月20日 · 生命科学领域 · bioRxiv/medRxiv 精选</div>
+  <div class="meta">📅 2026-04-20 · 生命科学领域 · bioRxiv / medRxiv 精选（共10篇）</div>
   <div class="tags">
-    <span class="tag">#肿瘤免疫</span>
-    <span class="tag">#B细胞</span>
-    <span class="tag">#过敏反应</span>
-    <span class="tag">#单细胞组学</span>
+    <span class="tag">#肿瘤免疫</span><span class="tag">#单细胞组学</span>
+    <span class="tag">#空间转录组</span><span class="tag">#神经科学</span>
+    <span class="tag">#肠道菌群</span><span class="tag">#生物信息学</span>
   </div>
 </div>
 
-<!-- Table of Contents -->
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="num">10</div><div class="label">研究类</div></div>
+  <div class="stat-item"><div class="num">0</div><div class="label">技术类</div></div>
+  <div class="stat-item"><div class="num">1</div><div class="label">综述类</div></div>
+  <div class="stat-item"><div class="num">6</div><div class="label">bioRxiv</div></div>
+  <div class="stat-item"><div class="num">4</div><div class="label">medRxiv</div></div>
+</div>
+
+<!-- TOC -->
 <div class="toc">
-  <h3>今日目录</h3>
+  <h3>📋 今日目录</h3>
   <ul>
-    <li><a href="#sec-research">研究类 · Research — IgE-fated MBC 可塑性新机制</a></li>
-    <li><a href="#sec-summary">论文深度解读 — 致病性IgE记忆B细胞的命运可塑性</a></li>
-    <li><a href="#sec-figures">核心图表</a></li>
+    <li><a href="#sec-research">🔬 研究类 · Research (10篇)</a></li>
+    <li><a href="#sec-tech">🛠️ 技术类 · Tech (0篇)</a></li>
   </ul>
 </div>
 
-<!-- 研究类 -->
-<div class="category-section" id="sec-research">
-  <div class="category-header research">
-    <span class="icon">🔬</span>
+
+<div class="category-section">
+  <div class="cat-header cat-research">
+    <span class="cat-icon">🔬</span>
     <h2>研究类 · Research — 实验研究与机制探究</h2>
+    <span class="cat-count">10篇</span>
   </div>
-
-  <div class="paper-card">
-    <div class="paper-header">
-      <div>
-        <h3 class="paper-title">Pathogenic IgE-fated memory B cell responses retain functional plasticity</h3>
-        <div class="paper-meta">
-          <span>📅 2026-01-02</span>
-          <span>📚 Science Immunology · 11: eady2268</span>
-          <span>📊 15 pages</span>
-        </div>
-        <div>
-          <span class="badge research">研究类</span>
-          <span class="badge hot">⭐ Featured</span>
-          <span class="domain-tag">肿瘤免疫与免疫治疗</span>
-          <span class="domain-tag">B细胞免疫学</span>
-        </div>
+  <div class="paper-card" id="paper-01">
+  <div class="card-top">
+    <div class="card-num">01</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.02.15.580495" target="_blank">Idiosyncratic and generic single nuclei and spatial transcriptional patterns in papillary and anaplastic thyroid cancers</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Tourneur, A. et al.</span>
+        <span class="meta-correspondent">📧 Vincent Detours</span>
+        <span class="meta-date">📅 2026-04-17</span>
+        <span class="meta-cat">cancer biology</span>
       </div>
-    </div>
-
-    <div class="summary">
-      <strong>背景：</strong>I型超敏反应由IgE介导，终身持续的过敏反应（如花生过敏）由IgG1 dominant的记忆B细胞（MBC）室维持——这些MBC经历连续性类switch来补充短暂的IgE浆细胞。MBC2是具有IL-4响应表型的IgE注定MBC，高表达CD23和IL-4Rα，低表达CD32。此前认为MBC2可能具有不可逆的命运承诺。
-    </div>
-    <div class="summary" style="margin-top:8px;">
-      <strong>科学问题：</strong>MBC2的命运是否不可逆？抑制IL-4信号能否重编程致病性IgE记忆反应？
-    </div>
-
-    <div class="key-findings">
-      <h4>核心发现</h4>
-      <ul>
-        <li><strong>IL-4/IL-13依赖性：</strong>致病性IgE命运严格依赖IL-4和IL-13信号；IL-4Rα阻断（A4RA）可消除MBC2表型（CD23+IL-4Rα+ MBC下降61%）</li>
-        <li><strong>IgG2c+ MBC涌现：</strong>A4RA处理后，长期Ag特异性IgG2c+ MBC出现，且可维持超过3个月；此过程依赖IFN-γ信号</li>
-        <li><strong>可重编程的命运：</strong>即使停止A4RA治疗，tertary Ag再次暴露仍能诱导IgG2c产生，表明1型样 reprogrammed Ab反应具有稳定性</li>
-        <li><strong>克隆起源：</strong>IgG2b/c序列来源于多个同种型（IgM、IgG3、IgG1），既有幼稚B细胞也有类switched MBC，说明MBC保留功能可塑性</li>
-        <li><strong>1型佐剂效果：</strong>CpG作为1型佐剂二次免疫可重定向2型极化MBC的同种型命运，增加IgG2c+ MBC</li>
-        <li><strong>GC来源确认：</strong>分子命运图谱（S1pr2-Igkem1Vic）显示IgG2c+ B细胞来源于GC-derived和GC-independent双重起源</li>
-      </ul>
-    </div>
-
-    <div class="key-findings">
-      <h4>机制模型</h4>
-      <ul>
-        <li>初始敏化 → 建立IgG1+ MBC库（含MBC2）→ 二次暴露时IL-4信号驱动IgE CSR</li>
-        <li>A4RA阻断IL-4Rα → MBC2表型消除 → IFN-γ上调 → IgG2c CSR → 1型样非致病性反应</li>
-        <li>IFN-γ信号阻断（AIFNGR）完全抑制A4RA诱导的IgG2c MBC涌现</li>
-        <li>MBC可从IgG1顺序切换至IgG2b/c，而非直接重新选择</li>
-      </ul>
-    </div>
-
-    <div class="summary">
-      <strong>治疗意义：</strong>IL-4Rα阻断（如Dupilumab）不仅阻止IgE产生，还能将已建立的2型记忆B细胞重编程为非致病性1型反应，提示作为过敏免疫调节辅助疗法的广泛适用性。人类过敏脱敏通常增加IgG2和IgG4，本研究为这一临床现象提供了机制基础。
-    </div>
-
-    <div class="summary">
-      <strong>局限性：</strong>人与小鼠Ig亚类不同（人IgG2/4对小鼠IgG2b/c）；人IFN-γ可能与IL-2/IL-6协同作用而非单独驱动IgG2 CSR。需要parallel人类研究。
-    </div>
-
-    <div class="summary">
-      <strong>作者信息：</strong>Kelly Bruton（通讯）、Allyssa Phelps等 · McMaster University · ALK-Abelló A/S<br>
-      <strong>数据可用性：</strong>ArrayExpress E-MTAB-15982；代码 Zenodo 10.5281/zenodo.17362112
+      <div class="card-tags"><span class="tag-chip" style="background:#06b6d422;color:#06b6d4;border:1px solid #06b6d444">空间转录组</span><span class="tag-chip" style="background:#ef444422;color:#ef4444;border:1px solid #ef444444">肿瘤生物学</span></div>
     </div>
   </div>
+  <div class="card-abstract">Sixty percent of papillary thyroid cancers (PTCs) are driven by BRAFV600E, a mutation associated with high inter- and intra-tumoral heterogeneity...</div>
 </div>
-
-<!-- 深度解读 -->
-<div class="category-section" id="sec-summary">
-  <div class="category-header research">
-    <span class="icon">📖</span>
-    <h2>论文深度解读 — 致病性IgE记忆B细胞的命运可塑性</h2>
+<div class="paper-card" id="paper-02">
+  <div class="card-top">
+    <div class="card-num">02</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2025.03.10.642376" target="_blank">Multiomic analysis identifies suppressive myeloid cell populations in human TB granulomas.</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Jain, N. et al.</span>
+        <span class="meta-correspondent">📧 Amanda J Martinot</span>
+        <span class="meta-date">📅 2026-04-18</span>
+        <span class="meta-cat">pathology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">结核病</span></div>
+    </div>
   </div>
-
-  <div class="paper-card">
-    <h4 style="color:var(--primary);margin-top:0;">一、研究背景与动机</h4>
-    <div class="summary">
-      过敏性疾病的根本问题在于免疫记忆的"错误编程"——本应针对病原体的免疫记忆机制被无害的环境抗原（如花生、花粉）劫持，产生了致病性IgE抗体。IgE半衰期短，但过敏反应可终身持续，其关键在于IgG1+ MBC通过连续性类switch重组（IgG1→IgE）不断补充IgE浆细胞池。
-    </div>
-    <div class="summary">
-      近年发现了一类特殊的IgE注定MBC——MBC2，高表达IL-4Rα和CD23，似乎"准备好"接受IL-4信号再次激活。之前认为MBC2可能具有不可逆的致病命运承诺。但本研究关键问题在于：**这种承诺是否真的不可逆？**
-    </div>
-
-    <h4 style="color:var(--primary);margin-top:16px;">二、核心实验策略</h4>
-    <div class="summary">
-      研究团队采用多层次、多组学整合策略：
-    </div>
-    <ul style="font-size:0.88rem;margin:0;padding-left:20px;">
-      <li><strong>小鼠模型：</strong>经皮敏化（tape stripping）+ OVA，二次皮下暴露时给予A4RA或同型对照</li>
-      <li><strong>单细胞组学：</strong>scRNA-seq + scVDJ-seq + Smart-seq2 + bulk VDJ-seq，全面解析B细胞转录组和BCR repertoire</li>
-      <li><strong>人类验证：</strong>花生过敏患者PBMC体外刺激 + A4RA处理</li>
-      <li><strong>分子命运图谱：</strong>S1pr2-Igkem1Vic小鼠追踪GC来源</li>
-      <li><strong> adoptive transfer：</strong>IgG1+类switched MBC转移至B细胞缺陷鼠，验证MBC可塑性</li>
-    </ul>
-
-    <h4 style="color:var(--primary);margin-top:16px;">三、关键结果详解</h4>
-    <div class="summary">
-      <strong>Result 1 — IL-4Rα信号增强二次生发中心活性</strong><br>
-      A4RA处理导致OVA+ B细胞数量下降3倍（406 vs 1269/淋巴结对），但GC依赖的回忆反应仍可发生。转录组分析显示A4RA处理下调氧化磷酸化和BCR信号基因模块，但不影响SHM总体水平。
-    </div>
-    <div class="summary">
-      <strong>Result 2 — MBC2表型在小鼠和人类中均可被消除</strong><br>
-      多数据集（4个scRNA-seq数据集，含人和小鼠、不同过敏模型）系统性分析确认：IL-4Rα阻断后FCER2（CD23）和IL4R表达一致下调。小鼠中IL-4Rα+CD23+ OVA+ MBC频率下降61%，且A4RA广泛降低CD23 MFI（包括非OVA特异性B细胞）。人类花生过敏PBMC中也观察到完全一致的效应。
-    </div>
-    <div class="summary">
-      <strong>Result 3 — IgG2c+ MBC的涌现与IFN-γ依赖性</strong><br>
-      A4RA处理后Ighg2b和Ighg2c转录本在MBC簇中增加，OVA+IgG2c+ MBC长期存在（≥15周）。IFN-γ受体阻断完全抑制IgG2c+ MBC涌现，表明IFN-γ是重编程的关键媒介。值得注意的是，即使在停止A4RA后9周进行tertary Ag再次暴露，IgG2b/c仍可重新出现，说明reprogramming具有稳定性。
-    </div>
-    <div class="summary">
-      <strong>Result 4 — 同种型转换的克隆来源分析</strong><br>
-     Bulk VDJ-seq显示：A4RA组中>40%的类switched序列为Ighg2b/c（vs IC组仅8%）。克隆族系分析显示，64%的含多同种型克隆树包含Ighg2b/c（IC组仅22%），其中57%同时包含上游IgG3/IgG1序列，证明IgG2b/c可从类switched MBC顺序转换而来。
-    </div>
-    <div class="summary">
-      <strong>Result 5 — 1型佐剂CpG可重定向MBC命运</strong><br>
-      在2型极化敏化背景下，CpG作为1型佐剂二次免疫可增加OVA+IgG2c+ MBC，降低MBC2频率。S1pr2命运图谱显示IgG2c+细胞中Flag和Strep各占约50%，证实GC-derived（Strep+）和GC-independent（Flag+）双重来源。
-    </div>
-
-    <h4 style="color:var(--primary);margin-top:16px;">四、科学意义与启示</h4>
-    <div class="summary">
-      本研究最重要的概念突破是**证明了B细胞记忆具有可塑性**：即使在2型极化环境中建立的MBC，仍可在适当信号条件下重编程为非致病性命运。这与T细胞区室中TH2A的"难治性"形成鲜明对比——MBC2并非不可救药。
-    </div>
-    <div class="summary">
-      从转化医学角度，A4RA类药物（如Dupilumab）不仅抑制IgE产生，还能将已建立的致病性记忆重编程，可能成为难治性过敏的创新治疗策略。CpG等1型佐剂也提供了通过免疫调节实现reprogramming的可能性。
-    </div>
-
-    <h4 style="color:var(--primary);margin-top:16px;">五、关键技术亮点</h4>
-    <ul style="font-size:0.88rem;margin:0;padding-left:20px;">
-      <li>多组学整合：scRNA+scVDJ+Smart-seq2+bulk VDJ，四层次BCR分析</li>
-      <li>多物种验证：4个独立数据集，人/小鼠互相印证</li>
-      <li>分子命运图谱：精准追踪GC来源vs边缘来源</li>
-      <li>Adoptive transfer：因果性验证MBC可塑性</li>
-      <li>OVA tetramer + MACS富集：高精度分选Ag特异性B细胞</li>
-    </ul>
-  </div>
+  <div class="card-abstract">Tuberculosis (TB) remains a major global health challenge...</div>
 </div>
-
-<!-- 核心图表 -->
-<div class="category-section" id="sec-figures">
-  <div class="category-header research">
-    <span class="icon">📊</span>
-    <h2>核心图表</h2>
-  </div>
-
-  <div class="figures-grid">
-    <div class="figure-item">
-      <img src="fig1_gc_activity.png" alt="Figure 1">
-      <div class="caption"><strong>Fig. 1</strong> IL-4Rα signaling augments secondary GC activity.<br>UMAP of B cell clusters, SHM analysis, OVA+ B cell dynamics</div>
-    </div>
-    <div class="figure-item">
-      <img src="fig2_mbc2_phenotype.png" alt="Figure 2">
-      <div class="caption"><strong>Fig. 2</strong> MBC2 phenotype is ameliorated with IL-4Rα blockade.<br>Cross-species validation in mice and humans</div>
-    </div>
-    <div class="figure-item">
-      <img src="fig3_longitudinal_ig_response.png" alt="Figure 3">
-      <div class="caption"><strong>Fig. 3</strong> Longitudinal analysis of Ag-specific B cell responses.<br>IgG2c+ MBC emergence and IFN-γ dependency</div>
-    </div>
-    <div class="figure-item">
-      <img src="fig4_type1_adjuvant.png" alt="Figure 4">
-      <div class="caption"><strong>Fig. 4</strong> Type 1 adjuvant reprograms type 2-primed response.<br>CpG boosting redirects MBC fate</div>
-    </div>
-    <div class="figure-item">
-      <img src="fig5_clonal_analysis.png" alt="Figure 5">
-      <div class="caption"><strong>Fig. 5</strong> Clonal analysis of polyclonal and OVA-specific B cells.<br>S-Tx mapping and lineage tree reconstruction</div>
+<div class="paper-card" id="paper-03">
+  <div class="card-top">
+    <div class="card-num">03</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.26350374" target="_blank">A conserved grain-associated immunosuppressive niche in Sudanese patients with mycetoma.</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Osman, M. et al.</span>
+        <span class="meta-correspondent">📧 Paul M. Kaye</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">infectious diseases</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">infectious diseases</span></div>
     </div>
   </div>
+  <div class="card-abstract">Mycetoma is a neglected tropical disease...</div>
+</div>
+<div class="paper-card" id="paper-04">
+  <div class="card-top">
+    <div class="card-num">04</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.26350690" target="_blank">VAE-based Gastrotype Identification and Predictive Diagnosis of Helicobacter pylori Infection</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Ma, Z. et al.</span>
+        <span class="meta-correspondent">📧 Zhanshan (Sam) Ma</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">gastroenterology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">肠道菌群</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Background: The enterotype concept proposed that gut microbiomes cluster into discrete types...</div>
+</div>
+<div class="paper-card" id="paper-05">
+  <div class="card-top">
+    <div class="card-num">05</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.01.15.575649" target="_blank">Plasma membrane order maps functional diversity in immune cells</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Andronico, L. A. et al.</span>
+        <span class="meta-correspondent">📧 Erdinc Sezgin</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">biophysics</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#f9731622;color:#f97316;border:1px solid #f9731644">肿瘤免疫</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Cell membranes undergo biophysical remodelling...</div>
+</div>
+<div class="paper-card" id="paper-06">
+  <div class="card-top">
+    <div class="card-num">06</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.12.25.630341" target="_blank">Candida albicans drives colorectal cancer progression by inducing hypoxia signaling</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Wang, W. et al.</span>
+        <span class="meta-correspondent">📧 Kun Sun</span>
+        <span class="meta-date">📅 2026-04-20</span>
+        <span class="meta-cat">cancer biology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#ef444422;color:#ef4444;border:1px solid #ef444444">肿瘤生物学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Colorectal cancer (CRC) is the third leading cause of cancer-related mortality...</div>
+</div>
+<div class="paper-card" id="paper-07">
+  <div class="card-top">
+    <div class="card-num">07</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2025.02.25.639746" target="_blank">Endogenously generated Dutch-type Abeta nonfibrillar aggregates dysregulate presynaptic neurotransmission</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Castranio, E. L. et al.</span>
+        <span class="meta-correspondent">📧 Michelle E Ehrlich</span>
+        <span class="meta-date">📅 2026-04-15</span>
+        <span class="meta-cat">neuroscience</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#3b82f622;color:#3b82f6;border:1px solid #3b82f644">神经科学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Background APPE693Q ("Dutch") transgenic mice develop aging-related learning deficits...</div>
+</div>
+<div class="paper-card" id="paper-08">
+  <div class="card-top">
+    <div class="card-num">08</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.10.26350571" target="_blank">Sex-Stratified Multi-Omics Identifies Sexually Dimorphic Molecular Targets in Parkinsons Disease</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Lee, J.-Y. et al.</span>
+        <span class="meta-correspondent">📧 Don Gueu Park</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">genetic and genomic medicine</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">genetic and genomic medicine</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Parkinsons disease (PD) exhibits well-established sex differences...</div>
+</div>
+<div class="paper-card" id="paper-09">
+  <div class="card-top">
+    <div class="card-num">09</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.26350342" target="_blank">Neurochemical and genetic organization of head impact effects on cortical neurophysiology</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Yu, K. C. et al.</span>
+        <span class="meta-correspondent">📧 Alex I. Wiesman</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">neurology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#3b82f622;color:#3b82f6;border:1px solid #3b82f644">神经科学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Purpose: Previous research has demonstrated effects of head impact exposure on cortical neurophysiology...</div>
+</div>
+<div class="paper-card" id="paper-10">
+  <div class="card-top">
+    <div class="card-num">10</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2022.02.03.479045" target="_blank">Heterogeneous, Population-Level Drug-Tolerant Persisters Exhibit Ion-Channel Remodeling and Ferroptosis Susceptibility</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Hayford, C. E. et al.</span>
+        <span class="meta-correspondent">📧 Leonard A Harris</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">systems biology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">systems biology</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Drug-tolerant persisters (DTPs) represent a major obstacle to durable responses...</div>
+</div>
 </div>
 
 <!-- Footer -->
 <div class="footer">
-  <p>预印本科研动态日报 · 生命科学领域 · 基于 bioRxiv / medRxiv</p>
+  <p>预印本科研动态日报 · 生命科学领域 · 基于 bioRxiv / medRxiv API</p>
   <p>覆盖：肠道菌群 · 肿瘤免疫 · 空间转录组 · 单细胞组学 · 表观遗传 · 神经科学 · 生物信息学</p>
-  <p>Generated by AI · Data: bioRxiv API · Figures: extracted from original publications</p>
+  <p>Generated by AI · Data: bioRxiv API</p>
 </div>
 
 </div>
