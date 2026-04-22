@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>预印本科研动态日报 · 2026-04-21</title>
+<style>
+:root{--primary:#1a365d;--secondary:#2c5282;--accent:#3182ce;--light:#ebf8ff;--text:#1a202c;--muted:#718096;--border:#e2e8f0;--bg:#f7fafc;--review:#6b46c1;--research:#276749;--tech:#c05621;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+.container{max-width:900px;margin:0 auto;padding:20px;}
+
+/* Header */
+.header{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:28px;border-radius:12px;margin-bottom:24px;}
+.header h1{margin:0 0 8px;font-size:1.7rem;font-weight:700;}
+.header .meta{opacity:0.9;font-size:0.85rem;}
+.header .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;}
+.header .tag{display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:0.75rem;}
+
+/* Stats */
+.stats-bar{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+.stat-item{flex:1;min-width:120px;background:white;border-radius:10px;padding:14px 18px;border:1px solid var(--border);text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.04);}
+.stat-item .num{font-size:1.6rem;font-weight:700;color:var(--primary);}
+.stat-item .label{font-size:0.72rem;color:var(--muted);margin-top:2px;}
+
+/* TOC */
+.toc{background:white;border-radius:10px;padding:18px 22px;margin-bottom:24px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.toc h3{color:var(--primary);margin:0 0 10px;font-size:0.95rem;}
+.toc ul{list-style:none;padding:0;margin:0;}
+.toc li{margin-bottom:5px;}
+.toc a{color:var(--accent);text-decoration:none;font-size:0.85rem;}
+.toc a:hover{text-decoration:underline;}
+
+/* Category */
+.category-section{margin-bottom:30px;}
+.cat-header{display:flex;align-items:center;padding:14px 20px;border-radius:10px 10px 0 0;color:white;margin-bottom:0;}
+.cat-header.research{background:linear-gradient(90deg,#276749,#2f855a);}
+.cat-header.tech{background:linear-gradient(90deg,#c05621,#dd6b20);}
+.cat-header.review{background:linear-gradient(90deg,#553c9a,#6b46c1);}
+.cat-header h2{margin:0;font-size:1rem;font-weight:600;flex:1;}
+.cat-header .cat-icon{margin-right:8px;font-size:1.2rem;}
+.cat-header .cat-count{background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:20px;font-size:0.72rem;}
+
+/* Paper card */
+.paper-card{background:white;border-radius:0 0 10px 10px;padding:18px 20px;margin-bottom:10px;border:1px solid var(--border);border-top:none;box-shadow:0 1px 4px rgba(0,0,0,0.03);}
+.paper-card:first-of-type{border-radius:0;}
+.paper-card:last-of-type{border-radius:0 0 10px 10px;}
+.card-top{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px;}
+.card-num{background:var(--light);color:var(--primary);width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.85rem;flex-shrink:0;}
+.card-main{flex:1;min-width:0;}
+.card-title{font-size:0.95rem;font-weight:700;color:var(--primary);margin-bottom:6px;line-height:1.4;}
+.card-title a{color:var(--primary);text-decoration:none;}
+.card-title a:hover{color:var(--accent);text-decoration:underline;}
+.card-meta{display:flex;flex-wrap:wrap;gap:8px;font-size:0.75rem;color:var(--muted);margin-bottom:8px;}
+.badge-biorxiv{background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:6px;font-weight:600;}
+.badge-medrxiv{background:#fce7f3;color:#9d174d;padding:2px 8px;border-radius:6px;font-weight:600;}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag-chip{padding:2px 8px;border-radius:6px;font-size:0.7rem;font-weight:600;}
+.card-abstract{font-size:0.82rem;color:#4a5568;line-height:1.6;padding-top:8px;border-top:1px solid var(--border);}
+
+/* Footer */
+.footer{text-align:center;padding:20px;color:var(--muted);font-size:0.75rem;border-top:1px solid var(--border);margin-top:24px;}
+
+/* Responsive */
+@media(max-width:600px){
+  .card-top{flex-direction:column;}
+  .stats-bar{flex-direction:column;}
+  .header h1{font-size:1.3rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+  <h1>预印本科研动态日报</h1>
+  <div class="meta">📅 2026-04-21 · 生命科学领域 · bioRxiv / medRxiv 精选（共10篇）</div>
+  <div class="tags">
+    <span class="tag">#肿瘤免疫</span><span class="tag">#单细胞组学</span>
+    <span class="tag">#空间转录组</span><span class="tag">#神经科学</span>
+    <span class="tag">#肠道菌群</span><span class="tag">#生物信息学</span>
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-bar">
+  <div class="stat-item"><div class="num">10</div><div class="label">研究类</div></div>
+  <div class="stat-item"><div class="num">0</div><div class="label">技术类</div></div>
+  <div class="stat-item"><div class="num">1</div><div class="label">综述类</div></div>
+  <div class="stat-item"><div class="num">6</div><div class="label">bioRxiv</div></div>
+  <div class="stat-item"><div class="num">4</div><div class="label">medRxiv</div></div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <h3>📋 今日目录</h3>
+  <ul>
+    <li><a href="#sec-research">🔬 研究类 · Research (10篇)</a></li>
+    <li><a href="#sec-tech">🛠️ 技术类 · Tech (0篇)</a></li>
+  </ul>
+</div>
+
+
+<div class="category-section">
+  <div class="cat-header cat-research">
+    <span class="cat-icon">🔬</span>
+    <h2>研究类 · Research — 实验研究与机制探究</h2>
+    <span class="cat-count">10篇</span>
+  </div>
+  <div class="paper-card" id="paper-01">
+  <div class="card-top">
+    <div class="card-num">01</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.02.15.580495" target="_blank">Idiosyncratic and generic single nuclei and spatial transcriptional patterns in papillary and anaplastic thyroid cancers</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Tourneur, A. et al.</span>
+        <span class="meta-correspondent">📧 Vincent Detours</span>
+        <span class="meta-date">📅 2026-04-17</span>
+        <span class="meta-cat">cancer biology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#06b6d422;color:#06b6d4;border:1px solid #06b6d444">空间转录组</span><span class="tag-chip" style="background:#ef444422;color:#ef4444;border:1px solid #ef444444">肿瘤生物学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Sixty percent of papillary thyroid cancers (PTCs) are driven by BRAFV600E, a mutation associated with high inter- and intra-tumoral heterogeneity...</div>
+</div>
+<div class="paper-card" id="paper-02">
+  <div class="card-top">
+    <div class="card-num">02</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2025.03.10.642376" target="_blank">Multiomic analysis identifies suppressive myeloid cell populations in human TB granulomas.</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Jain, N. et al.</span>
+        <span class="meta-correspondent">📧 Amanda J Martinot</span>
+        <span class="meta-date">📅 2026-04-18</span>
+        <span class="meta-cat">pathology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#f59e0b22;color:#f59e0b;border:1px solid #f59e0b44">结核病</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Tuberculosis (TB) remains a major global health challenge...</div>
+</div>
+<div class="paper-card" id="paper-03">
+  <div class="card-top">
+    <div class="card-num">03</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.26350374" target="_blank">A conserved grain-associated immunosuppressive niche in Sudanese patients with mycetoma.</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Osman, M. et al.</span>
+        <span class="meta-correspondent">📧 Paul M. Kaye</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">infectious diseases</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">infectious diseases</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Mycetoma is a neglected tropical disease...</div>
+</div>
+<div class="paper-card" id="paper-04">
+  <div class="card-top">
+    <div class="card-num">04</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.11.26350690" target="_blank">VAE-based Gastrotype Identification and Predictive Diagnosis of Helicobacter pylori Infection</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Ma, Z. et al.</span>
+        <span class="meta-correspondent">📧 Zhanshan (Sam) Ma</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">gastroenterology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#22c55e22;color:#22c55e;border:1px solid #22c55e44">肠道菌群</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Background: The enterotype concept proposed that gut microbiomes cluster into discrete types...</div>
+</div>
+<div class="paper-card" id="paper-05">
+  <div class="card-top">
+    <div class="card-num">05</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.01.15.575649" target="_blank">Plasma membrane order maps functional diversity in immune cells</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Andronico, L. A. et al.</span>
+        <span class="meta-correspondent">📧 Erdinc Sezgin</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">biophysics</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#f9731622;color:#f97316;border:1px solid #f9731644">肿瘤免疫</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Cell membranes undergo biophysical remodelling...</div>
+</div>
+<div class="paper-card" id="paper-06">
+  <div class="card-top">
+    <div class="card-num">06</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2024.12.25.630341" target="_blank">Candida albicans drives colorectal cancer progression by inducing hypoxia signaling</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Wang, W. et al.</span>
+        <span class="meta-correspondent">📧 Kun Sun</span>
+        <span class="meta-date">📅 2026-04-21</span>
+        <span class="meta-cat">cancer biology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#ef444422;color:#ef4444;border:1px solid #ef444444">肿瘤生物学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Colorectal cancer (CRC) is the third leading cause of cancer-related mortality...</div>
+</div>
+<div class="paper-card" id="paper-07">
+  <div class="card-top">
+    <div class="card-num">07</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2025.02.25.639746" target="_blank">Endogenously generated Dutch-type Abeta nonfibrillar aggregates dysregulate presynaptic neurotransmission</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Castranio, E. L. et al.</span>
+        <span class="meta-correspondent">📧 Michelle E Ehrlich</span>
+        <span class="meta-date">📅 2026-04-15</span>
+        <span class="meta-cat">neuroscience</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#3b82f622;color:#3b82f6;border:1px solid #3b82f644">神经科学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Background APPE693Q ("Dutch") transgenic mice develop aging-related learning deficits...</div>
+</div>
+<div class="paper-card" id="paper-08">
+  <div class="card-top">
+    <div class="card-num">08</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.10.26350571" target="_blank">Sex-Stratified Multi-Omics Identifies Sexually Dimorphic Molecular Targets in Parkinsons Disease</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Lee, J.-Y. et al.</span>
+        <span class="meta-correspondent">📧 Don Gueu Park</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">genetic and genomic medicine</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">genetic and genomic medicine</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Parkinsons disease (PD) exhibits well-established sex differences...</div>
+</div>
+<div class="paper-card" id="paper-09">
+  <div class="card-top">
+    <div class="card-num">09</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.64898/2026.04.09.26350342" target="_blank">Neurochemical and genetic organization of head impact effects on cortical neurophysiology</a></div>
+      <div class="card-meta">
+        <span class="badge-medrxiv">MEDRXIV</span>
+        <span class="meta-author">Yu, K. C. et al.</span>
+        <span class="meta-correspondent">📧 Alex I. Wiesman</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">neurology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#3b82f622;color:#3b82f6;border:1px solid #3b82f644">神经科学</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Purpose: Previous research has demonstrated effects of head impact exposure on cortical neurophysiology...</div>
+</div>
+<div class="paper-card" id="paper-10">
+  <div class="card-top">
+    <div class="card-num">10</div>
+    <div class="card-main">
+      <div class="card-title"><a href="https://doi.org/10.1101/2022.02.03.479045" target="_blank">Heterogeneous, Population-Level Drug-Tolerant Persisters Exhibit Ion-Channel Remodeling and Ferroptosis Susceptibility</a></div>
+      <div class="card-meta">
+        <span class="badge-biorxiv">BIORXIV</span>
+        <span class="meta-author">Hayford, C. E. et al.</span>
+        <span class="meta-correspondent">📧 Leonard A Harris</span>
+        <span class="meta-date">📅 2026-04-13</span>
+        <span class="meta-cat">systems biology</span>
+      </div>
+      <div class="card-tags"><span class="tag-chip" style="background:#6b728022;color:#9ca3af;border:1px solid #6b728044">systems biology</span></div>
+    </div>
+  </div>
+  <div class="card-abstract">Drug-tolerant persisters (DTPs) represent a major obstacle to durable responses...</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>预印本科研动态日报 · 生命科学领域 · 基于 bioRxiv / medRxiv API</p>
+  <p>覆盖：肠道菌群 · 肿瘤免疫 · 空间转录组 · 单细胞组学 · 表观遗传 · 神经科学 · 生物信息学</p>
+  <p>Generated by AI · Data: bioRxiv API</p>
+</div>
+
+</div>
+</body>
+</html>
