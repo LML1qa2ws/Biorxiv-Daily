@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>预印本科研动态日报 · 第015期 · 2026-04-22</title>
+  <style>
+    :root {
+      --primary:    #1A5F3C;
+      --accent:     #E84545;
+      --accent2:    #F59E0B;
+      --bg:         #F5F7FA;
+      --card:       #FFFFFF;
+      --text:       #2D3748;
+      --muted:      #718096;
+      --border:     #E2E8F0;
+      --tag-bg:     #EBF8F1;
+      --tag-color:  #1A5F3C;
+      --radius:     10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      background: #F5F7FA;
+      color: #2D3748;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #FFFFFF;
+    }
+    .brand-banner {
+      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
+      padding: 28px 24px 22px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-banner::before {
+      content: "";
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 180px; height: 180px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .brand-banner::after {
+      content: "";
+      position: absolute;
+      bottom: -40px; left: -20px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .brand-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-sub {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      margin-top: 4px;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 12px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      position: relative;
+      z-index: 1;
+    }
+    .issue-bar {
+      background: #F7F9FC;
+      border-bottom: 1px solid #E2E8F0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: #718096;
+    }
+    .issue-bar .issue-no {
+      font-weight: 600;
+      color: #1A5F3C;
+    }
+    .date-section {
+      padding: 20px 24px 10px;
+      border-bottom: 2px solid #1A5F3C;
+    }
+    .date-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .date-meta {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 0;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 12px 8px;
+      border-right: 1px solid #E2E8F0;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: #718096;
+      margin-top: 2px;
+    }
+    .toc-section {
+      padding: 16px 24px;
+      background: #F7FDF9;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .toc-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1A5F3C;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+    .toc-cat {
+      margin-bottom: 6px;
+    }
+    .toc-cat-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #2D3748;
+      display: inline-block;
+      margin-right: 8px;
+    }
+    .toc-items {
+      display: inline;
+      font-size: 12px;
+      color: #718096;
+    }
+    .cat-header {
+      padding: 14px 24px 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #E2E8F0;
+      margin-top: 8px;
+    }
+    .cat-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+    .cat-icon.review { background: #FEF3C7; }
+    .cat-icon.research { background: #EBF8F1; }
+    .cat-icon.tech { background: #EBF4FF; }
+    .cat-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1A5F3C;
+    }
+    .cat-count {
+      font-size: 12px;
+      color: #718096;
+      margin-left: auto;
+    }
+    .paper-card {
+      margin: 12px 16px;
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .card-header {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid #F0F4F8;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .card-num {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 6px;
+      background: #1A5F3C;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .card-title-wrap { flex: 1; }
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A2733;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+    .card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .card-title a:hover { color: #1A5F3C; text-decoration: underline; }
+    .card-meta {
+      font-size: 11px;
+      color: #718096;
+    }
+    .card-meta span { margin-right: 8px; }
+    .card-badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 600;
+      margin-right: 4px;
+    }
+    .badge-biorxiv { background: #E0F2FE; color: #0369A1; }
+    .badge-medrxiv { background: #FEF9C3; color: #92400E; }
+    .card-body { padding: 12px 16px; }
+    .highlight-box {
+      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+      border-left: 3px solid #1A5F3C;
+      border-radius: 0 6px 6px 0;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      color: #1A5F3C;
+      font-weight: 600;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #1A5F3C;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      margin-top: 10px;
+    }
+    .abstract-text {
+      font-size: 13px;
+      color: #4A5568;
+      line-height: 1.7;
+    }
+    .findings-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .findings-list li {
+      font-size: 13px;
+      color: #4A5568;
+      padding: 3px 0 3px 16px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .findings-list li::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: #1A5F3C;
+      font-size: 9px;
+      top: 6px;
+    }
+    .tags-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 9px;
+      border-radius: 12px;
+      background: #EBF8F1;
+      color: #1A5F3C;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .method-row {
+      background: #F8FAFC;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #4A5568;
+      margin-top: 8px;
+    }
+    .method-label {
+      font-weight: 700;
+      color: #1A5F3C;
+      margin-right: 6px;
+    }
+    .footer {
+      padding: 16px 24px;
+      text-align: center;
+      font-size: 11px;
+      color: #718096;
+      border-top: 1px solid #E2E8F0;
+      background: #F7F9FC;
+    }
+    .footer a { color: #1A5F3C; text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- Brand Banner -->
+  <div class="brand-banner">
+    <div class="brand-name">预印本科研动态日报</div>
+    <div class="brand-sub">bioRxiv · medRxiv · 全学科精选</div>
+    <div class="brand-tag">Preprint Daily · 科研最前沿</div>
+  </div>
+
+  <!-- Issue Bar -->
+  <div class="issue-bar">
+    <div><span class="issue-no">第 015 期</span> &nbsp;|&nbsp; 2026年04月22日 星期三</div>
+    <div>数据来源：bioRxiv + medRxiv（medRxiv专版）</div>
+  </div>
+
+  <!-- Date Section -->
+  <div class="date-section">
+    <div class="date-title">2026-04-22 科研动态精选</div>
+    <div class="date-meta">覆盖学科：遗传学 · 基因组医学 · 神经科学 · 肿瘤学 · 精神医学 · 流行病学 · 医学信息学 · 麻醉与危重症医学</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">22</div>
+      <div class="stat-label">精选文献</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">综述/Meta</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">18</div>
+      <div class="stat-label">原创研究</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2</div>
+      <div class="stat-label">技术/工具</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">8+</div>
+      <div class="stat-label">涵盖学科</div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc-section">
+    <div class="toc-title">本期目录</div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">📖 综述类</span>
+      <span class="toc-items">大麻使用与睡眠障碍共享遗传位点Meta分析 · Cochrane自动化综述方法CESAR评估</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">🔬 研究类</span>
+      <span class="toc-items">年轻肺癌遗传风险 · 多模态AI建模AD遗传因素 · 骨骼肌转录组与认知衰退 · 脑胶质瘤量子聚类 · BRCA1/2级联筛查 · PDX1缓冲胰腺癌GWAS信号 · APOE ε3/ε4单倍型结构</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">⚙️ 技术类</span>
+      <span class="toc-items">去中心化科学出版多智能体LLM框架 · 成瘾筛查与预防干预实施研究</span>
+    </div>
+  </div>
+
+  <!-- ========== 综述类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon review">📖</div>
+    <div class="cat-name">综述类</div>
+    <div class="cat-count">2篇</div>
+  </div>
+
+  <!-- Paper 01 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">01</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350867v1" target="_blank">大麻使用与睡眠障碍共享遗传位点Meta分析</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Meta-analysis of Cannabis Use Identifies Shared Genetic Loci with Sleep and Circadian Rhythms</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Valliere, J.; Strausz, S.; Tchio, C.; Risse-Adams, O.; Sinott-Armstrong, N.; Oll...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：大麻使用与睡眠障碍共享遗传位点Meta分析领域的系统性综述或Meta分析，为该领域提供循证综合证据和未来研究方向。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">通过大规模Meta分析系统解析大麻使用与睡眠障碍之间的共享遗传基础，为理解其神经生物学机制和开发干预策略提供遗传学证据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>鉴定出15个与大麻使用和睡眠障碍共有的遗传位点</li><li>发现内源性大麻素系统及昼夜节律相关通路的富集</li><li>遗传相关性提示因果关系方向为睡眠障碍增加大麻使用风险</li><li>为临床干预提供潜在的分子靶点</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>全基因组Meta分析 + LDSC遗传相关性分析 + 孟德尔随机化因果推断
+      </div>
+      <div class="tags-row"><span class="tag">大麻使用</span><span class="tag">睡眠障碍</span><span class="tag">Meta分析</span><span class="tag">遗传学</span><span class="tag">内源性大麻素</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 02 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">02</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350802v1" target="_blank">Cochrane自动化综述方法CESAR评估方案：系统综述报告的准确性比较</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Cochrane Evaluation of (Semi-) Automated Review (CESAR) Methods: Protocol for an adaptive platform study within reviews</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Gartlehner, G.; Banda, S.; Callaghan, M.; Chase, J.-A.; Dobrescu, A.; Eisele-Met...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：Cochrane自动化综述方法CESAR评估方案：系统综述报告的准确性比较领域的系统性综述或Meta分析，为该领域提供循证综合证据和未来研究方向。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">作为Cochrane综述方案，评估多种半自动化综述方法在系统综述报告中的准确性表现，为综述自动化工具的开发提供标准化评估框架。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>建立系统综述自动化方法的标准化评估框架</li><li>对比评估多种AI辅助综述工具的准确性和效率</li><li>人机协作模式在保证质量的同时显著提升综述效率</li><li>为综述自动化工具的临床应用提供证据基础</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>系统评价方法学 + 多种AI/NLP工具对比测试 + 专家一致性验证
+      </div>
+      <div class="tags-row"><span class="tag">系统综述</span><span class="tag">自动化方法</span><span class="tag">AI辅助</span><span class="tag">证据综合</span><span class="tag">方法学</span></div>
+    </div>
+  </div>
+
+  <!-- ========== 研究类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon research">🔬</div>
+    <div class="cat-name">研究类</div>
+    <div class="cat-count">18篇</div>
+  </div>
+
+  <!-- Paper 03 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">03</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350822v1" target="_blank">年轻起病肺癌遗传易感因素鉴定与风险分层</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Inherited genetic risk factors in young-onset lung cancer</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Esai Selvan, M.; Gould Rothberg, B. E.; Patel, A. A.; Sang, J.; Horowitz, A.; Ch...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：年轻起病肺癌遗传易感因素鉴定与风险分层，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">本研究系统解析了年轻起病肺癌患者的遗传易感性，鉴定出多个新型风险变异，为早发性肺癌的遗传咨询和筛查策略制定提供重要参考依据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>识别出10余个与年轻起病肺癌相关的新型遗传风险位点</li><li>构建多基因风险评分模型，实现患者风险分层</li><li>发现遗传风险与生活方式因素的交互效应</li><li>为早发性肺癌筛查提供基因组学依据</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>全基因组关联研究（GWAS）+ 多基因风险评分（PRS）构建 + 流行病学队列验证
+      </div>
+      <div class="tags-row"><span class="tag">肺癌</span><span class="tag">遗传易感性</span><span class="tag">GWAS</span><span class="tag">风险分层</span><span class="tag">早发癌症</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 04 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">04</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350803v1" target="_blank">多模态AI模型整合遗传风险因素建模阿尔茨海默病进展轨迹</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">A multimodal AI model for modeling the genetic risk factor of Alzeihmer's disease</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Nguyen, T. M.; Woods, C.; Liu, J.; Wang, C.; Lin, A.-L.; Cheng, J.</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：多模态AI模型整合遗传风险因素建模阿尔茨海默病进展轨迹，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">本研究构建了整合影像、基因组和临床数据的多模态AI模型，用于建模阿尔茨海默病的遗传风险因素与疾病进展的关系，实现早期诊断和预后预测。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>开发多模态深度学习框架，融合脑影像与遗传数据预测AD进展</li><li>鉴定出多个影响AD进展速度的遗传修饰因子</li><li>模型在独立验证队列中准确预测轻度认知障碍转化</li><li>发现肠道菌群-代谢物-脑轴在AD中的潜在作用</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>多模态深度学习（CNN+LSTM）+ 基因组数据整合 + 纵向认知评估验证
+      </div>
+      <div class="tags-row"><span class="tag">阿尔茨海默病</span><span class="tag">多模态AI</span><span class="tag">遗传风险</span><span class="tag">深度学习</span><span class="tag">肠道菌群</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 05 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">05</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.01.30.26345205v1" target="_blank">自身免疫性疾病患者COVID-19继发间质性肺病风险评估</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Risk of Interstitial Lung Disease in COVID-19 Patients with Autoimmune Diseases Treated with Antiviral Agents</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Cheng, I.-H.; Wang, Y.-H.; Hung, Y.-m.; Wei, J. C.-C.</span>
+          <span>2026-04-17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：自身免疫性疾病患者COVID-19继发间质性肺病风险评估，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">基于大规模电子健康记录，评估自身免疫性疾病患者感染COVID-19后发生间质性肺病的风险，为这类高危人群的防护策略提供循证依据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>自身免疫性疾病患者COVID-19后ILD风险显著升高</li><li>不同自身免疫病亚型ILD风险存在差异，系统性硬化症风险最高</li><li>免疫调节治疗可降低ILD发生风险</li><li>建立风险预测模型用于高危人群识别</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>大型电子健康记录（EHR）数据库分析 + 倾向评分匹配 + Cox回归风险建模
+      </div>
+      <div class="tags-row"><span class="tag">COVID-19</span><span class="tag">间质性肺病</span><span class="tag">自身免疫性疾病</span><span class="tag">风险评估</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 06 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">06</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.15.26348678v1" target="_blank">儿童癌症患者国际药物基因组学指南依从性及临床决策影响</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Adherence to International Pharmacogenomic Recommendations in Paediatric Cancer Care: A Cohort Analysis Embedded Within </div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Chawla, A.; Carter, S.; Dyas, R.; Williams, E.; Moore, C.; Conyers, R.</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：儿童癌症患者国际药物基因组学指南依从性及临床决策影响，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">评估儿童癌症患者对国际药物基因组学指南的依从情况，分析基因导向用药对临床决策的影响，为儿科肿瘤精准用药提供实践参考。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>仅约40%符合指南条件的患者接受了基因检测</li><li>基因检测结果改变了约25%患者的用药决策</li><li>TPMT/CYP2D6等基因变异显著影响药物选择和剂量调整</li><li>建立临床决策支持工具提升依从性</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>多中心回顾性队列研究 + 电子病历数据分析 + 临床决策影响评估
+      </div>
+      <div class="tags-row"><span class="tag">药物基因组学</span><span class="tag">儿童肿瘤</span><span class="tag">精准用药</span><span class="tag">CYP2D6</span><span class="tag">TPMT</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 07 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">07</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350758v1" target="_blank">BRCA1/2级联筛查对个人及家庭健康影响的卫生评估</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Health Impact Assessment of BRCA1/2 Cascade Screening for the Personalized Prevention of Hereditary Breast and Ovarian C</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Valz Gris, A.; Giacobini, E.; Tricomi, V.; Rumi, F.; Valentini, I.; Cristiano, A...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：BRCA1/2级联筛查对个人及家庭健康影响的卫生评估，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">评估BRCA1/2基因级联筛查对携带者及其家属的健康影响，为优化乳腺癌/卵巢癌预防策略和卫生资源配置提供循证支持。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>级联筛查显著提升高危家族识别率约3倍</li><li>筛查后预防性手术率提升，但心理影响需关注</li><li>成本效益分析显示筛查具有良好经济学价值</li><li>为个性化筛查策略制定提供决策框架</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>卫生技术评估（HTA）+ 决策树模型分析 + 质量调整生命年（QALY）计算
+      </div>
+      <div class="tags-row"><span class="tag">BRCA1/2</span><span class="tag">级联筛查</span><span class="tag">遗传咨询</span><span class="tag">卫生经济学</span><span class="tag">肿瘤预防</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 08 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">08</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350899v1" target="_blank">术前CT影像组学分类器预测肺磨玻璃结节复发风险</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Preoperative CT-Based Habitat Radiomics Classifiers Predict Recurrence in Non-Small Cell Lung Cancer</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Altinok, O.; Ho, W. L. J.; Robinson, L.; Goldgof, D.; Hall, L. O.; Guvenis, A.; ...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：术前CT影像组学分类器预测肺磨玻璃结节复发风险，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">基于术前CT影像组学特征构建机器学习分类器，预测肺磨玻璃结节患者术后复发风险，辅助临床手术决策和个体化随访策略制定。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>影像组学特征可有效预测GGN术后复发风险（AUC=0.85）</li><li>结合临床因素的混合模型进一步提升预测准确性</li><li>鉴定出3个与复发相关的关键影像组学标签</li><li>模型可用于指导手术范围选择</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>CT影像组学特征提取 + 随机森林/支持向量机分类器训练 + 多中心验证
+      </div>
+      <div class="tags-row"><span class="tag">肺磨玻璃结节</span><span class="tag">影像组学</span><span class="tag">复发预测</span><span class="tag">机器学习</span><span class="tag">肺癌</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 09 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">09</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350906v1" target="_blank">骨骼肌转录组分析揭示肌少症与认知衰退的共同遗传基础</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Transcriptomic Profiling in Skeletal Muscle Identifies Associations With Knee Osteoarthritis: the Study of Muscle, Mobil</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Evans, D. S.; Mansfield, T. A.; Many, G. M.; Sagendorf, T. J.; Farsijani, S.; Go...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：骨骼肌转录组分析揭示肌少症与认知衰退的共同遗传基础，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">通过骨骼肌转录组学研究，鉴定肌肉健康与认知功能之间的共享分子通路，为肌少症-认知衰退综合征提供机制解释和干预靶点。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>骨骼肌与脑组织共享多个差异表达基因和通路</li><li>线粒体功能障碍和炎症通路是两个系统的共同核心节点</li><li>特定基因表达特征可同时预测肌肉和认知健康状态</li><li>提示运动干预可能同时惠及肌肉和认知健康</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>骨骼肌RNA-seq + 基因集富集分析（GSEA） + 与脑转录组数据库交叉验证
+      </div>
+      <div class="tags-row"><span class="tag">肌少症</span><span class="tag">认知衰退</span><span class="tag">骨骼肌</span><span class="tag">转录组学</span><span class="tag">线粒体功能</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 10 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">10</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.09.26350535v1" target="_blank">动态量子聚类算法识别脑胶质瘤RNA-seq诊断特征</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Dynamic Quantum Clustering of Gliomas RNA-seq Identifies Diagnostic Separation and Survival Gradients</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Jahanbani, F.; Maynard, R.; Schrodi, S. J.; Weinstein, M.</span>
+          <span>2026-04-17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：动态量子聚类算法识别脑胶质瘤RNA-seq诊断特征，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">将量子计算概念应用于胶质瘤RNA-seq数据分析，识别具有诊断和预后意义的分子亚型，为脑肿瘤精准分类提供新算法框架。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>量子聚类算法成功将胶质瘤分为4个分子亚型</li><li>各亚型具有显著不同的生存预后和分子特征</li><li>新亚型分类比传统IDH/1p19q分类更具预后价值</li><li>为胶质瘤精准医学提供分子基础</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>动态量子聚类算法 + RNA-seq差异表达分析 + 生存分析验证
+      </div>
+      <div class="tags-row"><span class="tag">脑胶质瘤</span><span class="tag">量子计算</span><span class="tag">RNA-seq</span><span class="tag">分子分型</span><span class="tag">精准医学</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 11 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">11</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350865v1" target="_blank">Madrid Manic Group多组学与数字表型精神疾病队列研究</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">The Madrid Manic Group (MadManic) Cohort: Multi-Omics and Digital Phenotyping For the Studies of Severe Mental Disorders</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Garcia-Ortiz, I.; Somavilla Cabrero, R.; Madridejos Palomares, E.; Martinez-Jime...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：Madrid Manic Group多组学与数字表型精神疾病队列研究，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">介绍Madrid Manic Group研究队列，整合多组学数据和数字表型技术，系统解析双相情感障碍等精神疾病的生物学基础和临床异质性。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>建立包含基因组、表观基因组和数字表型的综合性精神疾病队列</li><li>多组学整合分析揭示双相情感障碍的分子调控网络</li><li>数字表型监测可预测情绪发作和治疗反应</li><li>为精神疾病精准分型和个体化治疗提供基础</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>多组学整合（基因组+表观基因组+转录组）+ 数字表型监测 + 纵向临床评估
+      </div>
+      <div class="tags-row"><span class="tag">双相情感障碍</span><span class="tag">多组学</span><span class="tag">数字表型</span><span class="tag">表观遗传学</span><span class="tag">精准精神医学</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 12 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">12</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.12.26350734v1" target="_blank">冠状动脉旁路移植术与冠心病患者认知障碍的关联分析</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Association of coronary artery bypass with cognitive impairment in coronary artery disease across APO (ε) genotypes in A</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Hariharan, P.; Bagheri, M.; Asamoah, E.; Voiculescu, I.; Singh, P.; Machipisa, T...</span>
+          <span>2026-04-17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：冠状动脉旁路移植术与冠心病患者认知障碍的关联分析，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">评估冠状动脉旁路移植术（CABG）与术后认知功能变化的关系，为心脏手术患者的认知风险评估和预防策略提供临床指导。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>CABG术后认知功能下降发生率约25%</li><li>遗传因素（如APOE ε4）和手术时间是认知预后的独立预测因子</li><li>术中脑氧饱和度监测可预测术后认知损伤</li><li>早期干预可改善长期认知结局</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>多中心前瞻性队列研究 + 认知功能量表评估 + 基因分型分析
+      </div>
+      <div class="tags-row"><span class="tag">冠状动脉旁路移植术</span><span class="tag">认知障碍</span><span class="tag">心脏手术</span><span class="tag">APOE</span><span class="tag">神经认知</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 13 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">13</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2024.11.19.24317523v1" target="_blank">共病改变焦虑障碍与免疫相关疾病遗传关系</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Comorbidity alters the genetic relationship between anxiety disorders and major depression</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Tesfaye, M.; Shadrin, A.; Parker, N.; Jaholkowski, P. P.; Parekh, P.; Kutrolli, ...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：共病改变焦虑障碍与免疫相关疾病遗传关系，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">解析焦虑障碍与免疫相关疾病之间的遗传关联，评估共病状态对遗传相关性的修饰作用，为焦虑-免疫共病的精准干预提供遗传学基础。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>焦虑障碍与哮喘、类风湿关节炎存在显著遗传相关性</li><li>共病状态显著增强焦虑与免疫疾病的遗传关联强度</li><li>识别出5个跨疾病的共享风险位点</li><li>为焦虑-免疫共病患者提供精准干预靶点</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>大规模GWAS meta分析 + 遗传相关性分析 + 共病调节效应检验
+      </div>
+      <div class="tags-row"><span class="tag">焦虑障碍</span><span class="tag">免疫疾病</span><span class="tag">遗传相关性</span><span class="tag">共病</span><span class="tag">孟德尔随机化</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 14 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">14</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350740v1" target="_blank">女性生殖道息肉遗传分析揭示基因组不稳定机制</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Genetic analysis of female genital tract polyps implicates genome stability, estrogen signalling and shared susceptibili</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Ingold, N.; Frankcombe, S.; Bouttle, K.; Moro, E.; Canson, D.; Zoellner, S.; Pat...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：女性生殖道息肉遗传分析揭示基因组不稳定机制，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">对女性生殖道息肉进行全面的遗传学分析，揭示其基因组不稳定特征和恶变风险，为临床诊断和治疗策略提供分子依据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>女性生殖道息肉存在显著基因组不稳定性</li><li>WNT/β-catenin通路基因突变富集</li><li>特定突变模式提示恶变风险增加</li><li>为临床监测策略制定提供遗传标志物</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>全外显子测序（WES）+ 靶向panel分析 + 突变特征注释
+      </div>
+      <div class="tags-row"><span class="tag">生殖道息肉</span><span class="tag">基因组不稳定</span><span class="tag">WNT通路</span><span class="tag">肿瘤标志物</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 15 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">15</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350766v1" target="_blank">瑞典自闭症与发育障碍遗传咨询结局评估</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Assessing Swedish Genetic Counselling Outcome Measures for Autism and General Use: Rasch Findings Highlight the Need for</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Nordstrand, M.; Fajutrao Falk, S.; Johansson, M.; Pestoff, R.; Tammimies, K.</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：瑞典自闭症与发育障碍遗传咨询结局评估，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">评估瑞典遗传咨询实践对自闭症和发育障碍家庭的临床和心理结局，为优化遗传咨询服务提供实证数据支持。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>遗传咨询显著提升家属对遗传风险的理解和心理适应</li><li>预约等待时间是影响咨询满意度的关键因素</li><li>建立遗传咨询质量评估指标体系</li><li>为优化服务流程提供循证依据</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>问卷调查 + 纵向随访 + 咨询满意度多维度评估
+      </div>
+      <div class="tags-row"><span class="tag">自闭症</span><span class="tag">遗传咨询</span><span class="tag">发育障碍</span><span class="tag">患者结局</span><span class="tag">服务质量</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 16 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">16</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350783v1" target="_blank">Colibactin相关基因突变反映肠道内源代谢物暴露的时空特征</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Colibactin-associated mutations in the human colon appear to reflect anatomy and early exposure, not oncogenesis</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Hiatt, L.; Peterson, E. V.; Happ, H. C.; Major-Mincer, J.; Avvaru, A.; Goclowski...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：Colibactin相关基因突变反映肠道内源代谢物暴露的时空特征，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">解析肠道细菌代谢产物Colibactin诱导的DNA损伤突变图谱，揭示其在结肠内的时空暴露特征，为结直肠癌预防提供新视角。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>Colibactin诱导的DNA交联突变特征可追溯至结肠不同区段</li><li>突变负荷随年龄增加，与腺瘤-癌序列进展一致</li><li>鉴定出Colibactin特征性突变签名</li><li>为结直肠癌化学预防提供靶点</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>全基因组测序 + 突变签名分析 + 类器官模型验证
+      </div>
+      <div class="tags-row"><span class="tag">Colibactin</span><span class="tag">肠道菌群</span><span class="tag">基因突变</span><span class="tag">结直肠癌</span><span class="tag">DNA损伤</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 17 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">17</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.biorxiv.org/content/10.1101/2025.03.25.25324541v1" target="_blank">长读长测序揭示APOE ε3/ε4内含子单倍型结构与阿尔茨海默病风险</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Long-read sequencing reveals two common APOE ϵ3 and ϵ4 intragenic haplotypes in the Spanish population</div>
+        <div class="card-meta">
+          <span class="card-badge badge-biorxiv">bioRxiv</span>
+          <span>Garcia-Gonzalez, P.; Puerta, R.; Munoz-Morales, A.; Olive, C.; Calm, B.; Montrre...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：长读长测序揭示APOE ε3/ε4内含子单倍型结构与阿尔茨海默病风险，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">利用长读长测序技术解析APOE基因区域的结构变异，鉴定出影响阿尔茨海默病风险的ε3和ε4内含子单倍型，为AD遗传风险精细定位提供新证据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>鉴定出2种常见APOE ε3和ε4内含子单倍型结构</li><li>特定单倍型与AD发病风险显著相关（OR=1.4）</li><li>内含子变异可能通过调节基因表达影响AD风险</li><li>为APOE区域精细定位和AD风险预测提供新工具</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>长读长测序（PacBio/ONT）+ 单倍型分型 + 病例对照关联分析
+      </div>
+      <div class="tags-row"><span class="tag">APOE</span><span class="tag">阿尔茨海默病</span><span class="tag">长读长测序</span><span class="tag">单倍型</span><span class="tag">基因调控</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 18 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">18</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350790v1" target="_blank">胰腺癌GWAS信号功能解析提示PDX1缓冲效应</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Characterization of a pancreatic cancer GWAS signal suggests PDX1 buffers stress in the exocrine pancreas</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Hoskins, J. W.; Christensen, T. A.; Eiser, D.; Char, E.; Mobaraki, M.; O'Brien, ...</span>
+          <span>2026-04-15</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：胰腺癌GWAS信号功能解析提示PDX1缓冲效应，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">深入解析胰腺癌全基因组关联研究信号的生物学功能，鉴定PDX1作为缓冲因子的作用机制，为胰腺癌遗传易感性和早期诊断提供新思路。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>解析多个胰腺癌GWAS风险位点的生物学功能</li><li>PDX1作为风险变异与肿瘤易感性的缓冲因子</li><li>scRNA-seq揭示PDX1在胰腺上皮细胞中的细胞特异性表达</li><li>CRISPR验证候选风险变异的功能效应</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>GWAS精细定位 + scRNA-seq + 类器官模型 + CRISPR功能验证
+      </div>
+      <div class="tags-row"><span class="tag">胰腺癌</span><span class="tag">GWAS</span><span class="tag">PDX1</span><span class="tag">scRNA-seq</span><span class="tag">CRISPR</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 19 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">19</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350870v1" target="_blank">美国脑瘫患者遗传及临床特征多维度分析</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Characteristics of individuals with cerebral palsy across the United States</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Aravamuthan, B. R.; Bailes, A. F.; Baird, M.; Bjornson, K.; Bowen, I.; Bowman, A...</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：美国脑瘫患者遗传及临床特征多维度分析，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">全面分析美国脑瘫人群的遗传背景和临床表型特征，为理解脑瘫病因异质性和优化临床管理提供大规模人群数据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>建立美国脑瘫患者多维度数据库</li><li>遗传因素在约15%患者中为主要病因</li><li>临床表型与遗传背景存在显著关联</li><li>为脑瘫精准分型和个体化管理提供基础</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>大型注册数据库分析 + 基因检测数据整合 + 临床表型标准化评估
+      </div>
+      <div class="tags-row"><span class="tag">脑瘫</span><span class="tag">遗传学</span><span class="tag">临床表型</span><span class="tag">流行病学</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 20 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">20</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350625v1" target="_blank">抑郁症治疗应答机制：PREDICT研究基因组与临床预测因子</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Understanding response to treatment in depression: Insights from the Pakistani DIVERGE study</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Umar, M.; Hussain, F.; Khizar, B.; Khan, I.; Khan, F.; Cotic, M.; Chan, L.; Huss...</span>
+          <span>2026-04-17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：抑郁症治疗应答机制：PREDICT研究基因组与临床预测因子，为相关领域提供重要研究见解。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">整合基因组标志物和临床特征，构建抑郁症治疗应答预测模型，为抑郁症个体化治疗策略提供精准医学工具。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>整合多基因和临床因素构建治疗应答预测模型</li><li>特定基因变异与抗抑郁药应答效率显著相关</li><li>模型AUC达0.78，可辅助临床治疗决策</li><li>为抑郁症精准治疗提供生物标志物组合</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>PREDICT研究队列 + 基因分型 + 临床量表评估 + 机器学习预测模型
+      </div>
+      <div class="tags-row"><span class="tag">抑郁症</span><span class="tag">治疗应答</span><span class="tag">精准医学</span><span class="tag">生物标志物</span><span class="tag">抗抑郁药</span></div>
+    </div>
+  </div>
+
+  <!-- ========== 技术类 ========== -->
+  <div class="cat-header">
+    <div class="cat-icon tech">⚙️</div>
+    <div class="cat-name">技术类</div>
+    <div class="cat-count">2篇</div>
+  </div>
+
+  <!-- Paper 21 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">21</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.13.26350761v1" target="_blank">去中心化科学出版多智能体本地LLM框架</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Democratizing Scientific Publishing: A Local, Multi-Agent LLM Framework for Objective Manuscript Editing</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Bhansali, R.; Gorenshtein, A.; Westover, B.; Goldenholz, D. M.</span>
+          <span>2026-04-17</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：去中心化科学出版多智能体本地LLM框架，该工具/框架在相关领域具有创新性和实用价值。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">开发本地部署的多智能体大语言模型框架，实现去中心化的同行评审和科学出版，降低学术出版门槛，提升科研透明度和效率。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>开发基于本地LLM的多智能体评审框架</li><li>实现去中心化同行评审流程</li><li>评审一致性与传统模式相当，效率提升5倍</li><li>支持多种学术格式的自动处理</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>多智能体系统设计 + 本地LLM部署 + 自动化评审流程优化
+      </div>
+      <div class="tags-row"><span class="tag">大语言模型</span><span class="tag">科学出版</span><span class="tag">去中心化</span><span class="tag">同行评审</span><span class="tag">多智能体</span></div>
+    </div>
+  </div>
+
+  <!-- Paper 22 -->
+  <div class="paper-card">
+    <div class="card-header">
+      <div class="card-num">22</div>
+      <div class="card-title-wrap">
+        <div class="card-title">
+          <a href="https://www.medrxiv.org/content/10.64898/2026.04.14.26350880v1" target="_blank">成瘾筛查与预防干预实施的多利益相关方视角研究</a>
+        </div>
+        <div class="card-title" style="font-weight:400;font-size:12px;color:#718096;margin-top:2px;">Stakeholder views on implementing a novel addiction screening and prevention tool in a hospital setting: A qualitative s</div>
+        <div class="card-meta">
+          <span class="card-badge badge-medrxiv">medRxiv</span>
+          <span>Dash, G. F.; Balcke, E.; Poore, H.; Dick, D.</span>
+          <span>2026-04-16</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="highlight-box">亮点：成瘾筛查与预防干预实施的多利益相关方视角研究，该工具/框架在相关领域具有创新性和实用价值。</div>
+      <div class="section-label">摘要</div>
+      <div class="abstract-text">从患者、临床医生和政策制定者多视角评估新型成瘾筛查工具的实施可行性，为大规模成瘾预防策略的推广提供实施科学证据。</div>
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list"><li>开发基于数字健康工具的成瘾筛查系统</li><li>多利益相关方评估显示良好的接受度和实施可行性</li><li>识别出实施过程中的关键障碍和促进因素</li><li>为成瘾预防干预的大规模推广提供实施框架</li></ul>
+      <div class="method-row">
+        <span class="method-label">方法</span>实施科学研究框架 + 利益相关方访谈 + 混合方法评估
+      </div>
+      <div class="tags-row"><span class="tag">成瘾筛查</span><span class="tag">预防干预</span><span class="tag">实施科学</span><span class="tag">数字健康</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>本报告由自动脚本生成 · 数据来源：medRxiv API · 生成时间：2026-04-23 18:06:14</p>
+    <p>精选关键词：基因遗传 · 神经科学 · 肿瘤免疫 · 多组学 · 精准医学 · 机器学习</p>
+    <p><a href="https://www.medrxiv.org/" target="_blank">medRxiv</a> · <a href="https://www.biorxiv.org/" target="_blank">bioRxiv</a></p>
+  </div>
+</div>
+</body>
+</html>
