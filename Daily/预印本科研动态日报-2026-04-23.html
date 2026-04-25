@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>预印本科研动态日报 · 第014期 · 2026-04-23</title>
+  <title>预印本科研动态日报 · 第016期 · 2026-04-23</title>
   <style>
     :root {
       --primary:    #1A5F3C;
@@ -191,68 +191,85 @@
       border: 1px solid #E2E8F0;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
     }
-    .card-header {
-      padding: 14px 16px 10px;
-      border-bottom: 1px solid #F0F4F8;
+    .paper-card:hover {
+      box-shadow: 0 2px 8px rgba(26,95,60,0.1);
+    }
+    .card-top {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
+      gap: 12px;
+      padding: 14px 16px 10px;
     }
-    .card-num {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 6px;
-      background: #1A5F3C;
-      color: #fff;
-      font-size: 12px;
+    .paper-num {
+      font-size: 20px;
       font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
+      color: #1A5F3C;
+      min-width: 32px;
     }
-    .card-title-wrap { flex: 1; }
-    .card-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #1A2733;
+    .paper-body {
+      flex: 1;
+    }
+    .paper-title-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .paper-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1A5F3C;
       line-height: 1.5;
-      margin-bottom: 4px;
     }
-    .card-meta {
-      font-size: 11px;
-      color: #718096;
+    .paper-title a {
+      color: inherit;
+      text-decoration: none;
     }
-    .card-meta span { margin-right: 8px; }
-    .card-badge {
+    .paper-title a:hover {
+      text-decoration: underline;
+    }
+    .badge {
       display: inline-block;
-      padding: 1px 7px;
-      border-radius: 10px;
+      padding: 2px 8px;
+      border-radius: 12px;
       font-size: 10px;
       font-weight: 600;
-      margin-right: 4px;
+      vertical-align: middle;
     }
-    .badge-arxiv { background: #FEF3C7; color: #92400E; }
-    .card-body { padding: 12px 16px; }
-    .highlight-box {
-      background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-      border-left: 3px solid #1A5F3C;
-      border-radius: 0 6px 6px 0;
-      padding: 8px 12px;
-      margin-bottom: 10px;
-      font-size: 13px;
+    .badge-medrxiv {
+      background: #EBF8F1;
       color: #1A5F3C;
-      font-weight: 600;
+    }
+    .badge-biorxiv {
+      background: #EBF4FF;
+      color: #5A67D8;
+    }
+    .paper-meta {
+      font-size: 12px;
+      color: #718096;
+      margin-top: 4px;
+    }
+    .paper-highlight {
+      background: #F7FDF9;
+      padding: 10px 14px;
+      margin: 0 14px 12px;
+      border-left: 3px solid #1A5F3C;
+      font-size: 13px;
+      color: #2D3748;
+    }
+    .paper-section {
+      padding: 0 16px 12px;
     }
     .section-label {
       font-size: 11px;
       font-weight: 700;
-      color: #1A5F3C;
+      color: #718096;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       margin-bottom: 4px;
-      margin-top: 10px;
     }
-    .abstract-text {
+    .paper-abstract {
       font-size: 13px;
       color: #4A5568;
       line-height: 1.7;
@@ -260,849 +277,1000 @@
     .findings-list {
       list-style: none;
       padding: 0;
-      margin: 0;
     }
     .findings-list li {
       font-size: 13px;
       color: #4A5568;
-      padding: 3px 0 3px 16px;
+      padding: 4px 0;
+      padding-left: 16px;
       position: relative;
-      line-height: 1.6;
     }
     .findings-list li::before {
-      content: "▶";
-      position: absolute;
-      left: 0;
+      content: "&#8226;";
       color: #1A5F3C;
-      font-size: 9px;
-      top: 6px;
-    }
-    .tags-row {
-      margin-top: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-    }
-    .tag {
-      display: inline-block;
-      padding: 2px 9px;
-      border-radius: 12px;
-      background: #EBF8F1;
-      color: #1A5F3C;
-      font-size: 11px;
-      font-weight: 500;
-    }
-    .method-row {
-      background: #F8FAFC;
-      border-radius: 6px;
-      padding: 8px 10px;
-      font-size: 12px;
-      color: #4A5568;
-      margin-top: 8px;
-    }
-    .method-label {
       font-weight: 700;
-      color: #1A5F3C;
+      position: absolute;
+      left: 4px;
+    }
+    .method-badge {
+      display: inline-block;
+      background: #EBF4FF;
+      color: #5A67D8;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 11px;
       margin-right: 6px;
     }
-    .trend-section {
-      margin: 16px;
-      background: linear-gradient(135deg, #1A5F3C 0%, #0D3D26 100%);
-      border-radius: 10px;
-      padding: 20px;
-      color: #fff;
-    }
-    .trend-title {
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      letter-spacing: 1px;
-    }
-    .trend-item {
+    .tag-list {
       display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 6px;
     }
-    .trend-dot {
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-    }
-    .trend-text {
-      font-size: 13px;
-      color: rgba(255,255,255,0.9);
-      line-height: 1.6;
-    }
-    .footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 11px;
-      color: #718096;
-      border-top: 1px solid #E2E8F0;
-    }
-    .footer a {
+    .tag {
+      background: #EBF8F1;
       color: #1A5F3C;
-      text-decoration: none;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 11px;
+    }
+    .footer-bar {
+      background: #F7F9FC;
+      border-top: 1px solid #E2E8F0;
+      padding: 14px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: #718096;
     }
   </style>
 </head>
 <body>
-  <div class="page-wrap">
-    <div class="brand-banner">
-      <div class="brand-name">预印本科研动态日报</div>
-      <div class="brand-sub">追踪全球生命科学与生物医学预印本前沿</div>
-      <div class="brand-tag">数据来源：arXiv q-bio</div>
+<div class="page-wrap">
+  <div class="brand-banner">
+    <div class="brand-name">预印本科研动态日报</div>
+    <div class="brand-sub">Daily BioRxiv &amp; medRxiv Report</div>
+    <div class="brand-tag">生物医学前沿追踪</div>
+  </div>
+  <div class="issue-bar">
+    <span>第016期</span>
+    <span class="issue-no">2026-04-23</span>
+  </div>
+  <div class="date-section">
+    <div class="date-title">&#128466; 2026年4月23日</div>
+    <div class="date-meta">数据来源：bioRxiv/medRxiv API（2026-04-23）</div>
+  </div>
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">25</div>
+      <div class="stat-label">精选文献</div>
     </div>
-    <div class="issue-bar">
-      <span>第 <span class="issue-no">014</span> 期</span>
-      <span>数据来源：arXiv</span>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">综述</div>
     </div>
-    <div class="date-section">
-      <div class="date-title">2026-04-23</div>
-      <div class="date-meta">arXiv q-bio 分类 · 过去48小时更新</div>
+    <div class="stat-item">
+      <div class="stat-num">20</div>
+      <div class="stat-label">研究</div>
     </div>
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-num">20</div>
-        <div class="stat-label">论文总数</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">0</div>
-        <div class="stat-label">综述</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">9</div>
-        <div class="stat-label">研究</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">11</div>
-        <div class="stat-label">工具</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">2</div>
-        <div class="stat-label">覆盖天数</div>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">技术</div>
     </div>
-    <div class="toc-section" id="toc">
-      <div class="toc-title">目录索引</div>
-      <div class="toc-cat">
-        <span class="toc-cat-label">【研究论文】</span>
-        <span class="toc-items">
-          Transcriptomic Models for Immunotherapy Response...&nbsp;&nbsp;
-          Spatial dynamic modelling to understand dendritic cell...&nbsp;&nbsp;
-          Cell-cell adhesion cannot sustain extended follower...&nbsp;&nbsp;
-          High-dimensional Many-to-many-to-many Mediation...&nbsp;&nbsp;
-          Quantum AI for Cancer Diagnostic Biomarker...&nbsp;&nbsp;
-          QuantumXCT: Learning Interaction-Induced State...&nbsp;&nbsp;
-          Intrinsic stochasticity in cell polarity and contact...&nbsp;&nbsp;
-          Re-analysis of the Human Transcription Factor...&nbsp;&nbsp;
-          An Imbalanced Dataset with Multiple Feature...
-        </span>
-      </div>
-      <div class="toc-cat">
-        <span class="toc-cat-label">【工具方法】</span>
-        <span class="toc-items">
-          LAFA: A Framework for Reproducible Longitudinal...&nbsp;&nbsp;
-          ECLIPSE: A Composable Pipeline for Predicting ecDNA...&nbsp;&nbsp;
-          oxo-call: Documentation-grounded Skill Augmentation...&nbsp;&nbsp;
-          Conditional Monte Carlo Tree Diffusion for Designing...&nbsp;&nbsp;
-          WebCVTree4: A Newly Designed Phylogenetic...&nbsp;&nbsp;
-          Benchmarking Heritability Estimation Strategies...&nbsp;&nbsp;
-          annbatch unlocks terabyte-scale training of...&nbsp;&nbsp;
-          Applications of deep generative models to DNA...&nbsp;&nbsp;
-          Geometric coherence of single-cell CRISPR...&nbsp;&nbsp;
-          EvoLen: Evolution-Guided Tokenization for DNA...&nbsp;&nbsp;
-          The Mechanistic Invariance Test: Genomic Language...
-        </span>
-      </div>
-    </div>
-    <div class="cat-header">
-      <div class="cat-icon research">🔬</div>
-      <div class="cat-name">研究论文</div>
-      <div class="cat-count">共 9 篇</div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">1</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Transcriptomic Models for Immunotherapy Response Prediction Show Limitations in Generalizability</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-22</span>
-            <span>|</span>
-            <span>An Phan, Yanli Wang, Frimpong Boadu + et al.</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 5 | 相关领域: cancer, immune, immunotherapy, checkpoint, single-cell</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">This study evaluates transcriptomic-based models for predicting immunotherapy response across multiple cancer types. The authors systematically benchmark 15 different machine learning approaches on 12 independent validation cohorts comprising over 5,000 patients. Results demonstrate that while models perform well within training data domains, significant performance degradation occurs when applied to external datasets with different technical platforms or population characteristics. This highlights critical challenges in translating transcriptomic signatures to clinical practice...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及免疫治疗相关研究</li>
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>涉及单细胞/空间组学技术</li>
-          <li>机器学习模型跨数据集泛化能力有限</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>实验/计算分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">cancer</span>
-          <span class="tag">immune</span>
-          <span class="tag">immunotherapy</span>
-          <span class="tag">checkpoint</span>
-          <span class="tag">single-cell</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">2</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Spatial dynamic modelling to understand how dendritic cell clustering shapes T cell activation</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-22</span>
-            <span>|</span>
-            <span>Animesh Awasthi, Raphael Bednarsky, Moritz Schaefer + et al.</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 4 | 相关领域: cancer, immune, t cell, spatial</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We develop a spatial computational model to investigate how dendritic cell (DC) clustering patterns influence T cell activation dynamics in tumor microenvironments. Using multiplexed imaging data from 200+ patient samples, we quantify spatial relationships and integrate them into an agent-based model. Our simulations reveal that DC-T cell spatial organization is a stronger predictor of immunotherapy response than overall immune cell infiltration levels...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及免疫治疗相关研究</li>
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>涉及单细胞/空间组学技术</li>
-          <li>空间组织结构可预测免疫治疗响应</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>实验/计算分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">cancer</span>
-          <span class="tag">immune</span>
-          <span class="tag">t cell</span>
-          <span class="tag">spatial</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">3</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Cell-cell adhesion cannot sustain extended follower streams in a minimal model of contact guidance</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-21</span>
-            <span>|</span>
-            <span>John Carlo Dimaculangan, Cameron A. Smith, Christian A. Yates + et al.</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: cancer, t cell, spatial</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">Contact guidance is a phenomenon where cells align along adhesive fiber patterns, playing crucial roles in wound healing, neural development, and cancer invasion. We present a minimal mathematical model to investigate whether cell-cell adhesion can sustain directed migration in follower cells during contact guidance. Using a hybrid vertex-adhesion model, we find that while leader cells effectively follow fiber tracks, follower streams rapidly disassemble beyond a critical cell density threshold...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>涉及空间组学技术</li>
-          <li>细胞-细胞粘附在接触引导中的作用有限</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>计算建模分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">cancer</span>
-          <span class="tag">t cell</span>
-          <span class="tag">spatial</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">4</div>
-        <div class="card-title-wrap">
-          <div class="card-title">High-dimensional Many-to-many-to-many Mediation Analysis</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-22</span>
-            <span>|</span>
-            <span>Research Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 4 | 相关领域: neuro, brain, cognitive, alzheimer</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We propose a novel high-dimensional mediation analysis framework for multi-omics data that can handle many-to-many-to-many relationships between exposures, mediators, and outcomes. Applied to Alzheimer's disease data from three cohorts (n=3,500), we identify 47 significant mediation pathways involving DNA methylation, gene expression, and cognitive decline. The framework addresses challenges of multiple testing and confounding in high-dimensional settings...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及神经科学相关研究</li>
-          <li>多组学中介分析新方法</li>
-          <li>发现47条阿尔茨海默病相关中介通路</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>统计计算分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">neuro</span>
-          <span class="tag">brain</span>
-          <span class="tag">cognitive</span>
-          <span class="tag">alzheimer</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">5</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Quantum AI for Cancer Diagnostic Biomarker Discovery</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-21</span>
-            <span>|</span>
-            <span>International Research Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 5 | 相关领域: tumor, cancer, methylation, neuro, neuron</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We present a quantum machine learning approach for discovering diagnostic biomarkers in cancer. Using quantum kernel methods applied to methylome and transcriptomic data from 8 cancer types (n=8,000), our method identifies biomarker panels with improved discrimination power compared to classical approaches. Quantum advantage is most pronounced in high-dimensional, multi-modal data settings, suggesting potential for clinical translation...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>量子机器学习在癌症生物标志物发现中的应用</li>
-          <li>甲基化组学数据分析</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>量子计算/机器学习
-        </div>
-        <div class="tags-row">
-          <span class="tag">tumor</span>
-          <span class="tag">cancer</span>
-          <span class="tag">methylation</span>
-          <span class="tag">neuro</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">6</div>
-        <div class="card-title-wrap">
-          <div class="card-title">QuantumXCT: Learning Interaction-Induced State Transformation in Cell-Type-Specific Chromatin Organization</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-20</span>
-            <span>|</span>
-            <span>Computational Biology Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: cancer, single-cell, transcriptomics</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">QuantumXCT is a novel computational method that integrates single-cell multi-omics data to model cell-type-specific chromatin reorganization in cancer. By learning interaction-induced state transformations using quantum-inspired neural networks, the method accurately predicts transcription factor binding dynamics and regulatory element activity across 15 cell types...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>涉及单细胞/空间组学技术</li>
-          <li>整合单细胞多组学数据</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>量子神经网络/计算分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">cancer</span>
-          <span class="tag">single-cell</span>
-          <span class="tag">transcriptomics</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">7</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Intrinsic stochasticity in cell polarity and contact inhibition of locomotion</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-19</span>
-            <span>|</span>
-            <span>Cell Biology Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: t cell, spatial</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">Cell polarity and contact inhibition of locomotion (CIL) are fundamental processes in development and cancer metastasis. Here we investigate the role of intrinsic stochasticity in establishing and maintaining polarity in migrating cells. Using high-throughput live-cell imaging and quantitative image analysis, we demonstrate that polarity is maintained through a tug-of-war between stochastic signaling events and mechanical constraints...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>细胞极性建立的内源性随机性机制</li>
-          <li>涉及空间组学技术</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>实验/成像分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">t cell</span>
-          <span class="tag">spatial</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">8</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Re-analysis of the Human Transcription Factor Atlas Recovers TF-Specific Regulatory Landscapes</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-18</span>
-            <span>|</span>
-            <span>Genomics Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: single-cell, neuro, pipeline</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We re-analyze the Human Transcription Factor Atlas using state-of-the-art single-cell chromatin accessibility data from 50 human tissues. By applying a novel TF-specific regulatory landscape reconstruction pipeline, we identify cell-type-specific TF binding patterns that were missed in the original analysis. Neural-specific regulatory networks show enrichment for neuropsychiatric disease variants...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及单细胞/空间组学技术</li>
-          <li>涉及神经科学相关研究</li>
-          <li>转录因子特异性调控景观重建</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>单细胞数据分析
-        </div>
-        <div class="tags-row">
-          <span class="tag">single-cell</span>
-          <span class="tag">neuro</span>
-          <span class="tag">pipeline</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">9</div>
-        <div class="card-title-wrap">
-          <div class="card-title">An Imbalanced Dataset with Multiple Feature Representations for Studying Complex Diseases</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-17</span>
-            <span>|</span>
-            <span>ML Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: genomic, algorithm, tool</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We present a benchmark dataset for evaluating machine learning methods on imbalanced, multi-modal biomedical data. The dataset includes genomic, transcriptomic, and clinical features from 10 complex diseases (n=50,000). We evaluate 20 ML algorithms and provide recommendations for handling class imbalance in high-dimensional biomedical prediction tasks...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及基因组分析方法</li>
-          <li>机器学习算法基准测试数据集</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>机器学习基准测试
-        </div>
-        <div class="tags-row">
-          <span class="tag">genomic</span>
-          <span class="tag">algorithm</span>
-          <span class="tag">tool</span>
-        </div>
-      </div>
-    </div>
-    <div class="cat-header">
-      <div class="cat-icon tech">🔧</div>
-      <div class="cat-name">工具方法</div>
-      <div class="cat-count">共 11 篇</div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">1</div>
-        <div class="card-title-wrap">
-          <div class="card-title">LAFA: A Framework for Reproducible Longitudinal Assessment of Protein Function Annotations</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-22</span>
-            <span>|</span>
-            <span>Bioinformatics Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: algorithm, tool</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">LAFA (Longitudinal Assessment of Functional Annotations) is a comprehensive framework for tracking and evaluating protein function annotations over time. It addresses reproducibility challenges in functional genomics by providing standardized workflows, version control for annotations, and automated quality assessment. The framework supports integration with 15+ functional annotation databases...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>蛋白质功能注释可重复性评估框架</li>
-          <li>支持15+功能注释数据库整合</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>计算工具/算法
-        </div>
-        <div class="tags-row">
-          <span class="tag">algorithm</span>
-          <span class="tag">tool</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">2</div>
-        <div class="card-title-wrap">
-          <div class="card-title">ECLIPSE: A Composable Pipeline for Predicting ecDNA Formation, Evolution, and Drug Response</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-21</span>
-            <span>|</span>
-            <span>Cancer Genomics Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 5 | 相关领域: tumor, cancer, genomic, tool, pipeline</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">ECLIPSE (ecDNA Characterization, Longitudinal Integration, Prediction, and Simulation Engine) is a comprehensive computational pipeline for analyzing extrachromosomal DNA in cancer. It integrates genomic, epigenomic, and imaging data to predict ecDNA formation mechanisms, evolutionary trajectories, and therapeutic vulnerabilities. Validated on 500 patient samples with 92% accuracy...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及肿瘤/癌症相关研究</li>
-          <li>ecDNA形成与演化预测工具</li>
-          <li>整合多组学与成像数据</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>计算工具/算法
-        </div>
-        <div class="tags-row">
-          <span class="tag">tumor</span>
-          <span class="tag">cancer</span>
-          <span class="tag">genomic</span>
-          <span class="tag">pipeline</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">3</div>
-        <div class="card-title-wrap">
-          <div class="card-title">oxo-call: Documentation-grounded Skill Augmentation for Accurate Bioinformatics Tool Integration</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-20</span>
-            <span>|</span>
-            <span>ML for Science Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 4 | 相关领域: single-cell, transcriptomics, genomic, tool</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">oxo-call is an LLM-based system that automatically generates correct bioinformatics pipeline integrations by grounding tool calls in official documentation. It addresses the challenge of integrating diverse single-cell and bulk -omics tools by using retrieval-augmented generation with documentation knowledge bases. Achieves 94% accuracy on standard bioinformatics benchmark tasks...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及单细胞/空间组学技术</li>
-          <li>生物信息学工具自动集成系统</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>大语言模型/工具开发
-        </div>
-        <div class="tags-row">
-          <span class="tag">single-cell</span>
-          <span class="tag">transcriptomics</span>
-          <span class="tag">genomic</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">4</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Conditional Monte Carlo Tree Diffusion for Designing Cell-Type-Specific and Biological Sequences</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-22</span>
-            <span>|</span>
-            <span>Generative AI Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: immune, algorithm, benchmark</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We present Conditional Monte Carlo Tree Diffusion (CMCTD), a novel generative framework for designing cell-type-specific sequences including proteins, CRISPR guides, and regulatory elements. CMCTD combines Monte Carlo tree search with diffusion models to efficiently explore sequence space while satisfying multiple design constraints. Benchmarked on 5 design tasks with 3x improvement over existing methods...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>涉及免疫治疗相关研究</li>
-          <li>细胞类型特异性序列设计算法</li>
-          <li>扩散模型与树搜索结合</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>生成模型/算法
-        </div>
-        <div class="tags-row">
-          <span class="tag">immune</span>
-          <span class="tag">algorithm</span>
-          <span class="tag">benchmark</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">5</div>
-        <div class="card-title-wrap">
-          <div class="card-title">WebCVTree4: A Newly Designed Phylogenetic and Taxonomic Study Platform</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-19</span>
-            <span>|</span>
-            <span>Bioinformatics Platform Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: genomic, algorithm, tool</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">WebCVTree4 is a web-based platform for phylogenetic tree visualization, comparison, and analysis. It supports trees with up to 100,000 taxa and integrates multiple alignment methods, tree reconstruction algorithms, and comparative genomics tools. The platform requires no installation and provides interactive visualization capabilities for evolutionary studies...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>系统发育树可视化与分析平台</li>
-          <li>支持大规模数据集分析</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>计算工具/平台
-        </div>
-        <div class="tags-row">
-          <span class="tag">genomic</span>
-          <span class="tag">algorithm</span>
-          <span class="tag">tool</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">6</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Benchmarking Heritability Estimation Strategies Across 86 Configurations</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-18</span>
-            <span>|</span>
-            <span>Statistical Genetics Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: algorithm, tool, benchmark</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We present a comprehensive benchmark of heritability estimation methods across 86 configurations using simulated and real GWAS data. The study evaluates 12 methods including LDSC, HAS, and novel approaches across different sample sizes, SNP densities, and genetic architectures. Results provide practical guidelines for method selection in different research contexts...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>遗传度估计方法系统基准测试</li>
-          <li>提供方法选择实践指南</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>基准测试/统计方法
-        </div>
-        <div class="tags-row">
-          <span class="tag">algorithm</span>
-          <span class="tag">tool</span>
-          <span class="tag">benchmark</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">7</div>
-        <div class="card-title-wrap">
-          <div class="card-title">annbatch unlocks terabyte-scale training of biological data in anndata</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-17</span>
-            <span>|</span>
-            <span>Scalable ML Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 3 | 相关领域: single-cell, transcriptomics, benchmark</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">annbatch is a framework for training machine learning models on terabyte-scale single-cell and bulk -omics data stored in AnnData format. It provides memory-efficient batching, distributed training support, and seamless integration with PyTorch and JAX. Enables training on datasets with billions of cells without out-of-memory errors...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>单细胞数据大规模训练工具</li>
-          <li>支持TB级数据处理</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>分布式计算工具
-        </div>
-        <div class="tags-row">
-          <span class="tag">single-cell</span>
-          <span class="tag">transcriptomics</span>
-          <span class="tag">benchmark</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">8</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Applications of deep generative models to DNA reaction kinetics and topology prediction</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-16</span>
-            <span>|</span>
-            <span>Deep Learning Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: benchmark, deep learning</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We survey and benchmark deep generative models for predicting DNA reaction kinetics and topological properties. Evaluating 8 model families including diffusion, flow matching, and autoregressive approaches on 5 DNA manipulation tasks. Provides recommendations for model selection based on accuracy, speed, and data efficiency trade-offs...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>深度生成模型在DNA反应预测中的应用</li>
-          <li>8种模型家族系统比较</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>深度学习/基准测试
-        </div>
-        <div class="tags-row">
-          <span class="tag">benchmark</span>
-          <span class="tag">deep learning</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">9</div>
-        <div class="card-title-wrap">
-          <div class="card-title">Geometric coherence of single-cell CRISPR perturbations reveals regulatory gene networks</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-15</span>
-            <span>|</span>
-            <span>CRISPR Genomics Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: single-cell, crispr</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We develop a geometric framework for analyzing single-cell CRISPR screening data that accounts for cell state manifold structure. By incorporating trajectory inference methods, we identify coherent perturbation effects that reveal regulatory gene networks. Validated on Perturb-seq data from 2 million cells across 500 gene knockouts...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>单细胞CRISPR筛选数据分析框架</li>
-          <li>揭示调控基因网络</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>几何分析/计算工具
-        </div>
-        <div class="tags-row">
-          <span class="tag">single-cell</span>
-          <span class="tag">crispr</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">10</div>
-        <div class="card-title-wrap">
-          <div class="card-title">EvoLen: Evolution-Guided Tokenization for DNA Language Models</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-14</span>
-            <span>|</span>
-            <span>DNA Language Model Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: genomic, benchmark</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">EvoLen is an evolution-guided tokenization scheme for DNA language models that segments sequences based on evolutionary conservation patterns. By learning token boundaries from multiple sequence alignments across species, EvoLen improves downstream task performance on regulatory element prediction and variant effect scoring by 15-30% over k-mer tokenization...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>进化引导的DNA分词方案</li>
-          <li>改进DNA语言模型性能</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>语言模型/基准测试
-        </div>
-        <div class="tags-row">
-          <span class="tag">genomic</span>
-          <span class="tag">benchmark</span>
-        </div>
-      </div>
-    </div>
-    <div class="paper-card">
-      <div class="card-header">
-        <div class="card-num">11</div>
-        <div class="card-title-wrap">
-          <div class="card-title">The Mechanistic Invariance Test: Genomic Language Models Fail to Learn Mechanistic Relationships</div>
-          <div class="card-meta">
-            <span class="card-badge badge-arxiv">arXiv</span>
-            <span>2026-04-13</span>
-            <span>|</span>
-            <span>Interpretable AI Team</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="highlight-box">关键词匹配度: 2 | 相关领域: genomic, benchmark</div>
-        <div class="section-label">摘要</div>
-        <div class="abstract-text">We propose the Mechanistic Invariance Test (MIT) to evaluate whether genomic language models learn biologically meaningful representations. By testing invariance to mechanistically irrelevant transformations, we demonstrate that current genomic LLMs fail to capture fundamental biological relationships. This provides a principled benchmark for evaluating model interpretability in genomics...</div>
-        <div class="section-label">关键发现</div>
-        <ul class="findings-list">
-          <li>基因组语言模型可解释性评估</li>
-          <li>揭示模型局限性</li>
-        </ul>
-        <div class="method-row">
-          <span class="method-label">研究方法:</span>可解释性分析/基准测试
-        </div>
-        <div class="tags-row">
-          <span class="tag">genomic</span>
-          <span class="tag">benchmark</span>
-        </div>
-      </div>
-    </div>
-    <div class="trend-section">
-      <div class="trend-title">本期热点速览</div>
-      <div class="trend-item">
-        <div class="trend-dot">1</div>
-        <div class="trend-text">免疫治疗与单细胞测序仍是研究热点，多项研究探索肿瘤免疫微环境与治疗响应预测</div>
-      </div>
-      <div class="trend-item">
-        <div class="trend-dot">2</div>
-        <div class="trend-text">计算工具与基准测试文章占比显著，生物信息学方法学持续受到关注</div>
-      </div>
-      <div class="trend-item">
-        <div class="trend-dot">3</div>
-        <div class="trend-text">深度学习与AI方法在生物医学领域的应用持续扩展，量子计算开始崭露头角</div>
-      </div>
-    </div>
-    <div class="footer">
-      本报告由自动系统生成 · 数据更新于 2026-04-23 17:35:00<br/>
-      <a href="https://github.com/LML1qa2ws/Biorxiv-Daily">GitHub Repo</a> · 
-      <a href="https://gitlab.digitalit.com.cn/lihui/Biorxiv-Daily">GitLab Repo</a>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">学科</div>
     </div>
   </div>
+  <div class="toc-section">
+    <div class="toc-title">&#128279; 目录</div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">综述类</span>
+      <span class="toc-items">#1</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">研究类</span>
+      <span class="toc-items">#2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14, #15, #16, #17, #18, #19, #20, #21</span>
+    </div>
+    <div class="toc-cat">
+      <span class="toc-cat-label">技术类</span>
+      <span class="toc-items">#22, #23, #24, #25</span>
+    </div>
+  </div>
+
+  <div class="cat-header">
+    <div class="cat-icon review">&#128218;</div>
+    <div class="cat-name">综述类</div>
+    <div class="cat-count">1篇</div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">1</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26350345" target="_blank">Multi-Ancestry Epigenome-Wide Meta-Analysis Identifies Novel Bulk and Cell-Type-Specific Epigenetic Markers of Asthma with Severe Exacerbations</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Perez-Garcia, J.; Martin-Gonzalez, E.; Chen, Z. J.; Martin-A... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：immune, t cell, epigenetic, methylation, gene</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundExtreme-phenotype comparisons allowed the discovery of novel asthma genetic risk loci. However, this approach remains unexplored in epigenome-wide association studies (EWAS). We aimed to identify bulk and cell-specific methylation markers of asthma with severe exacerbations across diverse ancestry groups.
+
+MethodsWe conducted a meta-EWAS of 739,543 CpGs in whole blood among 1,192 African American and Latino pediatric populations, comparing non-asthmatics and asthma exacerbators. Genome...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>揭示免疫检查点通路与肿瘤免疫逃逸机制</li><li>鉴定肿瘤浸润淋巴细胞亚群及其功能状态</li><li>发现与疾病相关的基因变异或表达特征</li><li>揭示表观遗传修饰在疾病中的作用</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">全基因组甲基化测序 / 基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>immune</span><span class='tag'>t cell</span><span class='tag'>epigenetic</span><span class='tag'>methylation</span><span class='tag'>gene</span><span class='tag'>variant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-header">
+    <div class="cat-icon research">&#128269;</div>
+    <div class="cat-name">研究类</div>
+    <div class="cat-count">20篇</div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">2</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.15.26350980" target="_blank">Spatial remodeling of the urothelial carcinoma tumor microenvironment shapes response to neoadjuvant atezolizumab</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Nameki, R.; Kinong, J.; Huang, C.-H.; Saul, M.; Sur, A.; Sch... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：tumor, immune, checkpoint, spatial, transcriptomics</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">1.The ABACUS study was a single arm, phase II trial evaluating neoadjuvant atezolizumab in operable urothelial carcinoma (UC). Initial bulk transcriptomic and immunohistochemistry analyses suggested links between immune activation, tissue remodeling, and resistance pathways such as transforming growth factor {beta} (TGF{beta}) that were associated with clinical outcome. To further characterize spatial and phenotypic changes at high resolution, artificial intelligence-assisted digital image analy...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>通过空间转录组学技术解析肿瘤微环境空间分布特征</li><li>揭示免疫检查点通路与肿瘤免疫逃逸机制</li><li>发现与疾病相关的基因变异或表达特征</li><li>发现肿瘤发生发展过程中的关键分子机制</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">空间转录组 / 基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>tumor</span><span class='tag'>immune</span><span class='tag'>checkpoint</span><span class='tag'>spatial</span><span class='tag'>transcriptomics</span><span class='tag'>genomic</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">3</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.10.26350512" target="_blank">SCOPE: Integrating Organoid Screening and Clinical Variables Through Machine Learning for Cancer Trial Outcome Prediction</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Bouteiller, J.; Gryspeert, A.-R.; Caron, J.; Polit, L.; Alta... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：intestinal, tumor, cancer, gene, tool</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundPredicting whether a treatment will demonstrate meaningful clinical benefit before committing to a large-scale trial remains a major unmet need in oncology. Patient-derived organoids (PDOs) recapitulate individual tumor drug sensitivity, but have not been used to fore-cast population-level trial outcomes. We developed SCOPE (Screening-to-Clinical Outcome Prediction Engine), a platform that integrates PDO drug screening with clinical prognostic modeling to predict arm-level median progr...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>开发机器学习模型用于疾病预测或分类</li><li>发现肿瘤发生发展过程中的关键分子机制</li><li>阐明肠道菌群与宿主免疫的相互作用</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序 / 机器学习/深度学习</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>intestinal</span><span class='tag'>tumor</span><span class='tag'>cancer</span><span class='tag'>gene</span><span class='tag'>tool</span><span class='tag'>machine learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">4</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.17.26351142" target="_blank">Generative AI-assisted Bayesian-frequentist Hybrid Inference in Single-cell RNA Sequencing Analysis for Genes Associated with Alzheimer's Disease</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Han, G.; Yuan, A.; Oware, K. D.; Wright, F.; Carroll, R. J.;... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：single-cell, genomic, gene, alzheimer</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Alzheimers disease genomics and other high-dimensional omics studies demand powerful statistical methods, yet Bayesian inference remains underutilized despite its advantages in small-sample settings, owing to the prohibitive cost of eliciting reliable priors across thousands or millions of parameters. We propose an AI-assisted Bayesian-frequentist hybrid inference framework that couples large language model based prior elicitation with the hybrid inference theory of Yuan (2009). ChatGPT-4o is qu...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>建立认知功能评估与生物标志物的关联</li><li>应用单细胞测序技术鉴定细胞异质性</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">单细胞RNA测序 / 基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>single-cell</span><span class='tag'>genomic</span><span class='tag'>gene</span><span class='tag'>alzheimer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">5</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26351059" target="_blank">Loneliness as a Pathway Linking Hearing Decline to Cognitive Aging: Longitudinal and Genetic Evidence</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Yang, S.; Grilli, M. D.; Wootton, R. E.; van de Weijer, M. P... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, neuro, cognitive, dementia, alzheimer</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Age-related hearing loss is linked to loneliness and poorer cognitive health, but it remains unclear whether loneliness helps explain associations between hearing difficulties and cognitive performance or dementia, and whether these patterns reflect causal pathways or shared underlying liability. In this preregistered study, we triangulated analyses across multiple data sources spanning approximately 18 years of observational data with 8 sources of molecular genetic information to examine whethe...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>建立认知功能评估与生物标志物的关联</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>neuro</span><span class='tag'>cognitive</span><span class='tag'>dementia</span><span class='tag'>alzheimer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">6</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.13.26350473" target="_blank">Non-invasive prehabilitation before neurosurgery modifies the topography of brain language networks without compromising function</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Brault-Boixader, N.; Roca-Ventura, A.; Delgado-Gallen, S.; B... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：tumor, neuro, brain, cognitive</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Patients with brain tumors involving language-critical regions face surgical limitations when balancing resection with preservation of function. Non-invasive neuromodulation-induced prehabilitation (NIP) aims to guide preoperative neuroplastic reorganization, potentially facilitating larger resections while preserving function. We investigated whether NIP selectively modulates the targeted language network compared with control networks, and whether such modulation is behaviorally safe. We enrol...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>阐明神经回路或脑区功能连接的改变</li><li>建立认知功能评估与生物标志物的关联</li><li>发现肿瘤发生发展过程中的关键分子机制</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">临床数据分析 / 生物信息学分析</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>tumor</span><span class='tag'>neuro</span><span class='tag'>brain</span><span class='tag'>cognitive</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">7</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26351038" target="_blank">Soluble CD27 as an indicator of autoimmune disease in severe psychiatric disorders</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Lindqvist, I.; Tigchelaar, C.; Rasmusson, A. J.; Syk, M.; No... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：immune, neuro, psychiatric, tool</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">T-cell activation may be contributing to severe psychiatric disorders. Soluble CD27 (sCD27) - a marker for T-cell activation and disease activity in several autoimmune diseases - was evaluated as a tool for distinguishing T-cell activity in selected patients with severe psychiatric disorders, multiple sclerosis (MS), and controls. We hypothesise that elevated sCD27 levels will be associated with comorbid autoimmune disease (AID).
+
+sCD27 was measured in cerebrospinal fluid (CSF) and blood from a ...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>揭示免疫检查点通路与肿瘤免疫逃逸机制</li><li>阐明神经回路或脑区功能连接的改变</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">临床数据分析 / 生物信息学分析</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>immune</span><span class='tag'>neuro</span><span class='tag'>psychiatric</span><span class='tag'>tool</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">8</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.15.26350768" target="_blank">Synuclein and dopamine transporter biomarkers among phenoconverters to parkinsonian disorders</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Simonet, C.; Yin, J.; Chahine, L. M.; Weintraub, D.; Chatter... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, neuro, neuron, dementia, alzheimer</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundPhenoconversion to Parkinsons disease (PD) or dementia with Lewy bodies (DLB) currently relies on established clinical diagnostic criteria. Availability of in vivo biomarkers--CSF -synuclein seed amplification assay (CSFaSynSAA) and dopamine transporter (DAT) imaging--offer the opportunity to investigate congruency between clinical phenoconversion and biologically defined disease.
+
+MethodsWe analyzed Parkinso[n]s Progression Markers Initiative participants who phenoconverted to PD, DLB...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>建立认知功能评估与生物标志物的关联</li><li>探索帕金森病发病机制及生物标志物</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>neuro</span><span class='tag'>neuron</span><span class='tag'>dementia</span><span class='tag'>alzheimer</span><span class='tag'>parkinson</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">9</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.17.26351138" target="_blank">Genetic and Proteomic Investigation of the Smoking-Parkinson Disease Association</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Shi, M.; Gunawan, T.; Setzer, M.; Okashah, N.; Liu, Y.; Wing... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：genomic, gene, neuro, parkinson</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundEpidemiological studies show an inverse association between cigarette smoking and Parkinsons disease (PD), suggesting a potential protective effect of smoking on PD incidence, despite the well-established and overwhelming harms of smoking to human health. We integrated genomic and proteomic approaches to investigate the causality and molecular basis of this potential relationship.
+
+MethodsWe analyzed summary statistics from genome-wide association studies (GWAS) of smoking initiation (...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>探索帕金森病发病机制及生物标志物</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>genomic</span><span class='tag'>gene</span><span class='tag'>neuro</span><span class='tag'>parkinson</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">10</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26351043" target="_blank">Herpes simplex virus type 1 DNA is less prevalent in persons with Alzheimers disease and genetic factors modify the effect</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Tejeda, M.; Farrell, J.; Zhu, C.; Wetzler, L.; Lunetta, K. L... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, brain, alzheimer</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">INTRODUCTIONHerpes simplex virus-1 (HSV-1) has been implicated in Alzheimer disease (AD).
+
+METHODSReads from Alzheimers Disease Sequencing Project whole-genome sequencing data collected from brain (2,203 AD; 616 controls) and blood (8,908 AD; 15,768 controls) were aligned to viral genomes. Generalized linear mixed-models tested for the effect of HSV-1 DNA on AD, and we performed GWAS on HSV-1 presence and SNPxHSV-1 interaction effects on AD, adjusting for age, sex, tissue, library preparation, r...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>建立认知功能评估与生物标志物的关联</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>brain</span><span class='tag'>alzheimer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">11</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26351065" target="_blank">Shared Genetic Architecture and Causal Relationship Between Diabetes, Glycemic Traits, and Cerebral Small Vessel Disease</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Lee, K.-J.; Lee, J.-Y.; Lee, S. J.; Bae, H.-J.; Sung, J. &#183; 2026-04-19</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：immune, genomic, gene, variant, brain</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundType 2 diabetes mellitus (T2DM) has long been considered a risk factor for cerebral small vessel disease (cSVD), yet the exact relationship between glycemic markers and cSVD remains unclear. This study explores the genetic overlap and causal associations between T2DM, glycemic indices, and cSVD phenotypes using genome-wide association studies (GWAS).
+
+MethodsUsing large consortium-based GWAS data, we examined relationships between T2DM, glycemic indicators (glycated hemoglobin, fasting...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>揭示免疫检查点通路与肿瘤免疫逃逸机制</li><li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>immune</span><span class='tag'>genomic</span><span class='tag'>gene</span><span class='tag'>variant</span><span class='tag'>brain</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">12</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.13.26350778" target="_blank">Predicting Traffic Accident Injury Severity Using Ensemble Machine Learning Models: Incident Level and Generalized Insights via Explainable AI</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Zhang, E. R.; Mermer, O.; Demir, I. &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, tool, machine learning</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Road traffic accidents represent a global public safety crisis, necessitating advanced computational tools for accurate injury severity prediction and effective decision support. This study evaluates high-performing ensemble machine learning models, including AdaBoost, XGBoost, LightGBM, HistGBRT, CatBoost, Gradient Boosting, NGBoost, and Random Forest, using a comprehensive National Highway Traffic Safety Administration (NHTSA) dataset from 2018 to 2022. While all models demonstrated exceptiona...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>开发机器学习模型用于疾病预测或分类</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序 / 机器学习/深度学习</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>tool</span><span class='tag'>machine learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">13</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.1101/2022.03.09.22271906" target="_blank">CACNA1B gain-of-function mutation causes familial atrioventricular node re-entrant tachycardia (AVNRT) via sympathetic overdrive</a></div>
+          <span class="badge badge-biorxiv">bioRxiv</span>
+        </div>
+        <div class="paper-meta">Luo, R.; Cao, X.; Zheng, C.; Tang, Q.; Tang, Y.; Wang, Z.; L... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：t cell, single-cell, gene, variant, neuro</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundFamilial clustering of atrioventricular nodal re-entrant tachycardia (AVNRT) suggests a genetic basis, yet the underlying molecular etiology remains undefined. CACNA1B encodes the 1 subunit of the N-type calcium channel (CaV2.2), a key regulator of sympathetic neurotransmission. We identify CACNA1B as a novel causative gene for familial AVNRT and define its neurogenic mechanism of arrhythmogenesis.
+
+MethodsWhole-exome sequencing of a four-generation pedigree with autosomal dominant AVN...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>鉴定肿瘤浸润淋巴细胞亚群及其功能状态</li><li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>应用单细胞测序技术鉴定细胞异质性</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">单细胞RNA测序 / 基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>t cell</span><span class='tag'>single-cell</span><span class='tag'>gene</span><span class='tag'>variant</span><span class='tag'>neuro</span><span class='tag'>neuron</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">14</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.08.26350031" target="_blank">Cohort Profile: Investigation into Biomarkers to Predict Preterm Birth (INSIGHT) -- a Prospective Pregnancy Cohort Focused on Preterm Birth in the United Kingdom</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Jackson, R.; Valensin, C.; Chin-Smith, E.; Suff, N.; Shennan... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：microbiome, metabolite, immune, gene, tool</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">1. PurposeSpontaneous preterm birth (sPTB), particularly early preterm birth and mid-trimester loss, remains poorly understood and difficult to predict. The INSIGHT cohort was established to create a deeply phenotyped, longitudinal pregnancy dataset integrating clinical data and biological sampling to investigate the mechanisms of cervical shortening and sPTB, with a focus on linking innate immune responses, the vaginal microbiome, and host biology to identify early biomarkers of risk.
+
+2. Parti...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>揭示免疫检查点通路与肿瘤免疫逃逸机制</li><li>发现与疾病相关的基因变异或表达特征</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>microbiome</span><span class='tag'>metabolite</span><span class='tag'>immune</span><span class='tag'>gene</span><span class='tag'>tool</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">15</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.02.05.26345627" target="_blank">Intermittent Theta-burst Transcranial Temporal Interference Stimulation focusing on the Putamen improves Motor Functions in Parkinsons Disease - A randomized, controlled Trial</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Stalter, J.; Stecher, H.; Bergmann, L.; Arizpe-Gomez, P.; He... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, brain, parkinson</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundTranscranial temporal interference stimulation (tTIS) is a non-invasive method designed to target deep brain regions, such as the basal ganglia, without affecting overlying cortical areas. This study investigated intermittent theta-burst (iTBS) tTIS effects on symptom severity in Parkinsons disease (PD) and motor learning behavior, a condition associated with - among others - basal ganglia dysfunction. We hypothesized that iTBS-tTIS applied to the right putamen would alleviate PD sympt...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>阐明神经回路或脑区功能连接的改变</li><li>探索帕金森病发病机制及生物标志物</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>brain</span><span class='tag'>parkinson</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">16</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.13.26350765" target="_blank">Inter-scanner reproducibility of brain multifrequency MR elastography</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Murk, S.; Laun, F. B.; Rampp, S.; Vossiek, M.; Schattenfroh,... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：neuro, brain, benchmark</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">AO_SCPLOWBSTRACTC_SCPLOWO_ST_ABSBackgroundC_ST_ABSBrain magnetic resonance elastography (MRE) is an emerging quantitative neuroimaging technique that provides noninvasive maps of brain tissue viscoelasticity. For multi-center applications, robust cross-site reproducibility across scanner platforms is essential but remains insufficiently characterized.
+
+PurposeTo evaluate cross-site reproducibility of brain multifrequency MRE measurements between two MRI scanner platforms using harmonized protoco...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>阐明神经回路或脑区功能连接的改变</li><li>为后续研究提供重要线索</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">临床数据分析 / 生物信息学分析</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>neuro</span><span class='tag'>brain</span><span class='tag'>benchmark</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">17</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.17.26351108" target="_blank">A loss of function variant in SLC30A8/ZnT8 drives proteomic changes associated with lowered apoptosis in human stem cell-derived islets</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Gasser, M.; Cherkaoui, I.; Ostinelli, G.; Ferron, M.; Du, Q.... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：crispr, gene, variant</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">(1) Aims and hypothesisLoss-of-function mutations in SLC30A8, encoding the zinc ion (Zn2+) transporter ZnT8 in pancreatic beta cells, lower type 2 diabetes risk dose-dependently, but the underlying mechanisms remain unclear. Here, we combine proteomic, transcriptomic and functional approaches in human stem cell-derived islet-like clusters bearing common alleles or the inactivating variant R138X. We hypothesized that this variant protects against the deleterious effect of Zn2+ depletion on cell s...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>为后续研究提供重要线索</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>crispr</span><span class='tag'>gene</span><span class='tag'>variant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">18</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.17.26351083" target="_blank">Predicting clozapine initiation among patients with schizophrenia via machine learning trained on electronic health record data</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Perfalk, E.; Damgaard, J. G.; Danielsen, A. A.; Ostergaard, ... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：psychiatric, tool, machine learning</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Background and HypothesisClozapine is the only medication with proven efficacy for treatment-resistant schizophrenia, yet many patients experience delays of several years before initiation. Our aim was to develop and validate a dynamic prediction model for clozapine initiation among patients with schizophrenia trained solely on electronic health record (EHR) data from routine clinical practice.
+
+Study DesignEHR data from all adults ([&amp;ge;] 18 years) with a schizophrenia (ICD10: F20) or schizoaff...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>开发机器学习模型用于疾病预测或分类</li><li>为后续研究提供重要线索</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">机器学习/深度学习</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>psychiatric</span><span class='tag'>tool</span><span class='tag'>machine learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">19</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.19.26351206" target="_blank">Adaptive Frequency-Spatial Dual-Stream Network (AFS-DSN) for Nasal and Paranasal Sinus CT Segmentation</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Wan, S.-Y.; Chen, W.-Y. &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：spatial, variant, deep learning</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Accurate segmentation of nasal and paranasal sinus structures from CT scans is critical for surgical planning and treatment evaluation in rhinology. However, the complex anatomical topology and thin-wall boundaries of these structures pose significant challenges for automated segmentation methods. We propose AFS-DSN (Adaptive Frequency-Spatial Dual-Stream Network), a novel deep learning architecture that integrates multi-scale wavelet decomposition with spatial feature learning for binary segmen...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>通过空间转录组学技术解析肿瘤微环境空间分布特征</li><li>开发机器学习模型用于疾病预测或分类</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">空间转录组 / 机器学习/深度学习</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>spatial</span><span class='tag'>variant</span><span class='tag'>deep learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">20</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.18.26351182" target="_blank">Trial protocol: RadTARGET, a multicenter phase II randomized controlled trial evaluating focal radiotherapy boost with de-intensification of dose to non-suspicious prostate in patients with intermediate- or high-risk prostate cancer</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Dornisch, A.; Rojo Domingo, M.; Alexander, R. V.; Conlin, C.... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：intestinal, tumor, cancer</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Definitive radiotherapy (RT) for prostate cancer (PC) with dose intensification and/or focal boosting has excellent oncologic outcomes, but many patients experience adverse events. Dose escalation to the whole prostate improves outcomes at the expense of increased late adverse events. Intraprostatic recurrence after definitive RT typically occurs at the site of the primary tumor, suggesting that dose to the site of the dominant lesion is an important predictor of future failure. The efficacy and...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现肿瘤发生发展过程中的关键分子机制</li><li>阐明肠道菌群与宿主免疫的相互作用</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">临床数据分析 / 生物信息学分析</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>intestinal</span><span class='tag'>tumor</span><span class='tag'>cancer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">21</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.18.26351193" target="_blank">Interpretable AI for Accelerated Video-Based Surgical Skill Assessment: A Highlights-Reel Approach</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Lafouti, M.; Feldman, L. S.; Hooshiar, A. &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：spatial, gene, variant, tool, pipeline</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundManual video-based evaluation of surgical skills can be time-consuming and delays trainee feedback. Artificial intelligence (AI) offers opportunities to automate aspects of assessment while maintaining clinician oversight. We developed an interpretable spatiotemporal model that classifies surgical expertise directly from endoscopic video in standardized training tasks and generates saliency-based &quot;highlights reels&quot; showing the most influential frames.
+
+MethodsAn RGB pipeline combining ...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>通过空间转录组学技术解析肿瘤微环境空间分布特征</li><li>发现与疾病相关的基因变异或表达特征</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">空间转录组 / 基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>spatial</span><span class='tag'>gene</span><span class='tag'>variant</span><span class='tag'>tool</span><span class='tag'>pipeline</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-header">
+    <div class="cat-icon tech">&#9881;</div>
+    <div class="cat-name">技术类</div>
+    <div class="cat-count">4篇</div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">22</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.02.16.26346446" target="_blank">A National Genomic Framework for Breast Cancer Risk Stratification in UAE</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Sanchez, D. M.; Khan, F.; Rawashdeh, R.; Alshehhi, A.; Abdur... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：cancer, genomic, gene, variant</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundThe genetic architecture of Breast Cancer (BC) in Arab populations remains largely understudied, limiting the precision of current prevention and screening programs. The Emirati Genome Program (EGP), one of the worlds first nation-wide sequencing initiatives, offers an unprecedented opportunity to delineate inherited BC risk across an entire population.
+
+MethodsWe analyzed 436,780 EGP individuals, including 229,309 women, integrating whole-genome sequencing (WGS) with electronic health...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>发现肿瘤发生发展过程中的关键分子机制</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>cancer</span><span class='tag'>genomic</span><span class='tag'>gene</span><span class='tag'>variant</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">23</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26350801" target="_blank">Evaluating Individual Level Performance of Polygenic Risk Scores Using Early Onset High Genetic Risk Coronary Artery Disease as a Benchmark</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Liang, S.; Kim, M. S.; Sui, Y.; Tan, Y.; Li, L.; Cho, S. M.;... &#183; 2026-04-18</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：gene, benchmark</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Polygenic risk scores (PRSs) are typically validated using population-level metrics, masking variability in individual-level risk prediction and hindering clinical translation. To address this, we introduced a novel framework using a &quot;benchmark&quot; cohort (N=1184) of &quot;unexpected coronary artery disease (CAD)&quot;: early-onset patients (&lt;55 years) with a clinical profile--low 10-year risk, no diabetes or severe hypercholesterolemia--that excludes therapy indications. The occurrence of early CAD in these...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>发现与疾病相关的基因变异或表达特征</li><li>为后续研究提供重要线索</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">基因组测序</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>gene</span><span class='tag'>benchmark</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">24</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.16.26351021" target="_blank">sEEGnal: an automated EEG preprocessing pipeline evaluated against expert-driven preprocessing</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Ramirez-Torano, F.; Hatlestad-Hall, C.; Drews, A.; Renvall, ... &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：neuro, brain, pipeline, benchmark</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">Electroencephalography (EEG) preprocessing is a critical yet time-consuming step that often relies on expert-driven, semi-automatic pipelines, limiting scalability and reproducibility across large datasets. In this work, we present sEEGnal, a fully automated and modular pipeline for EEG preprocessing designed to produce outputs comparable to expert-driven analyses while ensuring consistency and computational efficiency. The pipeline integrates three main modules: data standardization following t...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>阐明神经回路或脑区功能连接的改变</li><li>为后续研究提供重要线索</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">临床数据分析 / 生物信息学分析</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>neuro</span><span class='tag'>brain</span><span class='tag'>pipeline</span><span class='tag'>benchmark</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper-card">
+    <div class="card-top">
+      <div class="paper-num">25</div>
+      <div class="paper-body">
+        <div class="paper-title-row">
+          <div class="paper-title"><a href="https://doi.org/10.64898/2026.04.18.26350809" target="_blank">Explainable, Lightweight Deep Learning for Colorectal Cancer Microsatellite Instability Screening in Low-Resource Settings</a></div>
+          <span class="badge badge-medrxiv">medRxiv</span>
+        </div>
+        <div class="paper-meta">Adegbosin, O. T.; Patel, H. &#183; 2026-04-20</div>
+      </div>
+    </div>
+    <div class="paper-highlight">关键词：cancer, deep learning</div>
+    <div class="paper-section">
+      <div class="section-label">摘要</div>
+      <div class="paper-abstract">BackgroundMicrosatellite stability status determination is important for prognostication and therapeutic decision making in colorectal cancer management, but the conventional methods for this assessment are not readily available, especially in low- and middle-income countries. Deep learning (DL) models have been proposed for addressing this problem; however, potential computational cost due to model complexity and inadequate explainability may limit their adoption in low-resource settings. This ...</div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">主要发现</div>
+      <ul class="findings-list">
+        <li>开发机器学习模型用于疾病预测或分类</li><li>发现肿瘤发生发展过程中的关键分子机制</li>
+      </ul>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">方法</div>
+      <div><span class="method-badge">机器学习/深度学习</span></div>
+    </div>
+    <div class="paper-section">
+      <div class="section-label">标签</div>
+      <div class="tag-list">
+        <span class='tag'>cancer</span><span class='tag'>deep learning</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    本日报由自动化系统生成 &#183; 收录标准：生物医学相关度高、创新性强
+  </div>
+</div>
 </body>
 </html>
